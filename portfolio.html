@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>まいち | SNS運用 × デザイン Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #FF6B9D;
+    --peach: #FFB3CC;
+    --yellow: #FFE566;
+    --mint: #A8F0D8;
+    --lavender: #C9B8FF;
+    --white: #FFFAF8;
+    --dark: #2D1B2E;
+    --coral: #FF8C69;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    background: var(--white);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #FFE0EE 0%, #FFF3E0 40%, #E8F8F0 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255,107,157,0.2) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(168,240,216,0.3) 0%, transparent 70%);
+    bottom: -80px; left: -80px;
+    animation: float 8s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .deco-circles {
+    position: absolute;
+    width: 100%; height: 100%;
+    pointer-events: none;
+  }
+
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    animation: pop 0.6s ease-out both;
+  }
+
+  .c1 { width: 60px; height: 60px; background: var(--yellow); top: 15%; left: 10%; opacity: 0.7; animation-delay: 0.2s; }
+  .c2 { width: 30px; height: 30px; background: var(--pink); top: 25%; right: 15%; opacity: 0.6; animation-delay: 0.4s; }
+  .c3 { width: 80px; height: 80px; background: var(--lavender); bottom: 20%; right: 10%; opacity: 0.5; animation-delay: 0.6s; }
+  .c4 { width: 20px; height: 20px; background: var(--mint); bottom: 30%; left: 20%; opacity: 0.8; animation-delay: 0.3s; }
+  .c5 { width: 45px; height: 45px; background: var(--coral); top: 60%; left: 5%; opacity: 0.4; animation-delay: 0.5s; }
+
+  @keyframes pop {
+    0% { transform: scale(0); opacity: 0; }
+    80% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .hero-tag {
+    background: var(--pink);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    animation: slideDown 0.8s ease both;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-name {
+    font-size: clamp(52px, 12vw, 100px);
+    font-weight: 900;
+    line-height: 1;
+    text-align: center;
+    animation: slideUp 0.8s ease 0.2s both;
+  }
+
+  .hero-name .accent { color: var(--pink); }
+  .hero-name .small-text {
+    display: block;
+    font-size: clamp(16px, 3vw, 24px);
+    font-weight: 400;
+    color: #888;
+    margin-top: 8px;
+    letter-spacing: 3px;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-desc {
+    margin-top: 24px;
+    font-size: clamp(14px, 2vw, 17px);
+    color: #666;
+    text-align: center;
+    line-height: 1.8;
+    max-width: 500px;
+    animation: slideUp 0.8s ease 0.4s both;
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 28px;
+    animation: slideUp 0.8s ease 0.5s both;
+  }
+
+  .badge {
+    background: white;
+    border: 2px solid var(--peach);
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--pink);
+    box-shadow: 3px 3px 0 var(--peach);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    font-size: 12px;
+    color: #aaa;
+    letter-spacing: 2px;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ===== SECTION BASE ===== */
+  section {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--dark);
+    font-size: 11px;
+    font-weight: 900;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 40px;
+  }
+
+  /* ===== ABOUT ===== */
+  .about-section {
+    max-width: 900px;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media(max-width: 600px) {
+    .about-grid { grid-template-columns: 1fr; }
+  }
+
+  .about-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    border: 2px solid #FFE0EE;
+    box-shadow: 4px 4px 0 #FFD0E8;
+    transition: transform 0.2s;
+  }
+
+  .about-card:hover { transform: translate(-2px, -2px); }
+
+  .about-card .icon { font-size: 32px; margin-bottom: 12px; }
+  .about-card h3 { font-size: 15px; font-weight: 900; color: var(--pink); margin-bottom: 8px; }
+  .about-card p { font-size: 14px; line-height: 1.7; color: #555; }
+
+  /* ===== RESULTS ===== */
+  .results-section {
+    background: linear-gradient(135deg, #2D1B2E 0%, #3D2040 100%);
+    max-width: 100%;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .results-section::before {
+    content: '✦ RESULTS ✦ RESULTS ✦ RESULTS ✦ RESULTS ✦';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    white-space: nowrap;
+    font-size: 11px;
+    color: rgba(255,255,255,0.1);
+    letter-spacing: 4px;
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .results-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .results-inner .section-label { background: var(--pink); color: white; }
+  .results-inner .section-title { color: white; }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  @media(max-width: 700px) {
+    .results-grid { grid-template-columns: 1fr; }
+  }
+
+  .result-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 28px 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .result-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.13);
+  }
+
+  .result-card .emoji { font-size: 36px; margin-bottom: 12px; }
+
+  .result-card .big-num {
+    font-size: clamp(36px, 6vw, 52px);
+    font-weight: 900;
+    color: var(--yellow);
+    line-height: 1;
+    font-family: 'DM Serif Display', serif;
+  }
+
+  .result-card .unit {
+    font-size: 16px;
+    color: var(--peach);
+    font-weight: 700;
+    margin-top: 4px;
+    margin-bottom: 12px;
+  }
+
+  .result-card .label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+  }
+
+  .result-card .highlight {
+    display: inline-block;
+    background: var(--pink);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 10px;
+    margin-top: 8px;
+  }
+
+  /* ===== WORKS ===== */
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @media(max-width: 600px) {
+    .works-grid { grid-template-columns: 1fr; }
+  }
+
+  .work-card {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid #FFE0EE;
+    box-shadow: 5px 5px 0 #FFD0E8;
+    transition: transform 0.2s;
+    background: white;
+  }
+
+  .work-card:hover { transform: translate(-3px, -3px); }
+
+  .work-thumb {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .work-thumb.lp { background: linear-gradient(135deg, #FFD6E7, #FFF0D6); }
+  .work-thumb.banner { background: linear-gradient(135deg, #D6F0FF, #D6FFE8); }
+  .work-thumb.squeeze { background: linear-gradient(135deg, #FFD6D6, #FFD6FF); }
+  .work-thumb.ax { background: linear-gradient(135deg, #1a0030, #2d0050); }
+
+  .work-info { padding: 20px; }
+  .work-info h3 { font-size: 15px; font-weight: 900; margin-bottom: 6px; }
+  .work-info p { font-size: 13px; color: #888; line-height: 1.6; }
+
+  .work-tag {
+    display: inline-block;
+    background: #FFE0EE;
+    color: var(--pink);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  /* ===== SKILLS ===== */
+  .skills-section {
+    background: linear-gradient(135deg, #FFF8E1, #FFF0F5);
+    max-width: 100%;
+    padding: 80px 20px;
+  }
+
+  .skills-inner { max-width: 900px; margin: 0 auto; }
+
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  @media(max-width: 600px) {
+    .skills-list { grid-template-columns: 1fr 1fr; }
+  }
+
+  .skill-item {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 16px;
+    text-align: center;
+    border: 2px solid #FFE0EE;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--dark);
+    transition: transform 0.2s;
+  }
+
+  .skill-item:hover { transform: translateY(-3px); }
+  .skill-item .sk-icon { font-size: 28px; margin-bottom: 8px; }
+
+  /* ===== CONTACT ===== */
+  .contact-section {
+    text-align: center;
+    padding: 80px 20px 100px;
+    background: linear-gradient(135deg, #FFE0EE 0%, #E8F8F0 100%);
+    max-width: 100%;
+  }
+
+  .contact-inner { max-width: 600px; margin: 0 auto; }
+  .contact-inner .section-title { font-size: clamp(28px, 5vw, 40px); }
+
+  .contact-desc {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 36px;
+  }
+
+  .contact-btn {
+    display: inline-block;
+    background: var(--pink);
+    color: white;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 16px 48px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 4px 4px 0 #C0005A;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .contact-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #C0005A;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 50px;
+    padding: 10px 28px;
+    display: flex;
+    gap: 28px;
+    z-index: 100;
+    border: 1px solid rgba(255,107,157,0.2);
+    box-shadow: 0 4px 20px rgba(255,107,157,0.15);
+  }
+
+  nav a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    color: #888;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--pink); }
+
+  /* ===== STORY ===== */
+  .story-section {
+    max-width: 100%;
+    padding: 80px 20px;
+    background: var(--white);
+  }
+
+  .story-inner { max-width: 900px; margin: 0 auto; }
+
+  .story-intro {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.9;
+    margin-bottom: 56px;
+    max-width: 680px;
+  }
+
+  .story-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .story-timeline::before {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--peach), var(--lavender), var(--mint));
+    border-radius: 3px;
+  }
+
+  @media(max-width: 600px) {
+    .story-timeline::before { left: 20px; }
+  }
+
+  .story-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    padding-bottom: 48px;
+    position: relative;
+  }
+
+  @media(max-width: 600px) {
+    .story-item { grid-template-columns: 44px 1fr; gap: 16px; }
+  }
+
+  .story-dot {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .dot-1 { background: linear-gradient(135deg, #FFE566, #FFB347); }
+  .dot-2 { background: linear-gradient(135deg, #FF6B9D, #FF9BB3); }
+  .dot-3 { background: linear-gradient(135deg, #A8F0D8, #5BD9A8); }
+
+  .story-content {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    border: 2px solid #FFE0EE;
+    box-shadow: 4px 4px 0 #FFE0EE;
+  }
+
+  .story-step {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--pink);
+    margin-bottom: 6px;
+  }
+
+  .story-content h3 {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .story-content p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: 12px;
+  }
+
+  .story-content p:last-child { margin-bottom: 0; }
+
+  .story-result {
+    background: linear-gradient(135deg, #FFF0F5, #FFF8E1);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--dark);
+    border-left: 4px solid var(--pink);
+  }
+
+  .story-num {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--pink);
+  }
+
+  /* ===== WORKS with photos ===== */
+  .work-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#story">ストーリー</a>
+  <a href="#results">実績</a>
+  <a href="#works">制作物</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="deco-circles">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+    <div class="circle c4"></div>
+    <div class="circle c5"></div>
+  </div>
+
+  <div class="hero-tag">✦ PORTFOLIO ✦</div>
+
+  <h1 class="hero-name">
+    <span class="accent">まいち</span>
+    <span class="small-text">Maichi Sasada</span>
+  </h1>
+
+  <p class="hero-desc">
+    SNS運用 × デザイン × コンテンツ制作<br>
+    「売れる導線」を設計するクリエイター
+  </p>
+
+  <div class="hero-badges">
+    <span class="badge">📱 TikTok運用</span>
+    <span class="badge">🎨 バナー・LP制作</span>
+    <span class="badge">📸 SNSコンテンツ</span>
+    <span class="badge">✍️ コピーライティング</span>
+  </div>
+
+  <div class="scroll-hint">▼ SCROLL</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+  <span class="section-label">ABOUT</span>
+  <h2 class="section-title">どんな人？</h2>
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="icon">🏪</div>
+      <h3>雑貨店でのリアル経験</h3>
+      <p>大阪・日本橋の雑貨店でSNS運用・デザイン・コンテンツ制作を約2年担当。実店舗の売上に直結するSNS戦略を実践してきました。</p>
+    </div>
+    <div class="about-card">
+      <div class="icon">📱</div>
+      <h3>TikTokバズの実績あり</h3>
+      <p>TikTokで最大18.4万再生を達成。数字を見ながら改善し、「バズるコンテンツの法則」を身をもって体験しています。</p>
+    </div>
+    <div class="about-card">
+      <div class="icon">🎨</div>
+      <h3>デザイン × マーケ両刀</h3>
+      <p>バナー・LP・チラシ制作だけでなく、販促企画・コピーライティングまで一気通貫で対応できます。</p>
+    </div>
+    <div class="about-card">
+      <div class="icon">💡</div>
+      <h3>長年の発信経験</h3>
+      <p>mixi・ブログ・ホームページ制作など、SNS黎明期から情報発信に取り組んできた「発信歴の長いクリエイター」です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<div class="story-section" id="story">
+  <div class="story-inner">
+    <span class="section-label">STORY</span>
+    <h2 class="section-title">どうやってバズらせたか</h2>
+    <p class="story-intro">
+      ゼロから試行錯誤して、戦略的にTikTokを育てた2年間の記録。<br>
+      「なんとなく投稿する」じゃなく、「誰に・何を・なぜ見せるか」を常に考えながら動いてきました。
+    </p>
+
+    <div class="story-timeline">
+
+      <!-- STEP 1 -->
+      <div class="story-item">
+        <div class="story-dot dot-1">💃</div>
+        <div class="story-content">
+          <div class="story-step">STEP 01 ── 視聴者層を探る</div>
+          <h3>「スクイーズが好きな人」って、どんな人？</h3>
+          <p>
+            当時、お店への来客は週に2組来れば良い方。まずTikTokでスクイーズを見てくれそうな層を探ることから始めました。
+          </p>
+          <p>
+            「TikTokといえばダンス動画が主流」という発想から、ダンス動画を投稿。視聴者の属性データを分析することで、スクイーズに興味を持ちそうなペルソナのイメージが少しずつ掴めてきました。
+          </p>
+          <div class="story-result">
+            📊 結果：<span class="story-num">10K</span>再生・フル視聴率<span class="story-num">30.7%</span>達成。ターゲット層の輪郭が見えてきた。
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="story-item">
+        <div class="story-dot dot-2">🎬</div>
+        <div class="story-content">
+          <div class="story-step">STEP 02 ── トレンドと掛け合わせる</div>
+          <h3>流行りのショートコントを、うちのお店で再現してみた</h3>
+          <p>
+            視聴者層がわかってきたので、次は「もっと見てもらえるコンテンツ」を模索。当時流行していたショートコントをお店で再現した「ジャージギャル会計」動画を制作しました。
+          </p>
+          <p>
+            ギャルのキャラクターが視聴者層とドンピシャでハマり、お客様がちらほら来店してくれるように。まだ売上には繋がっていなかったけれど、「認知」の手応えを初めて感じた瞬間でした。
+          </p>
+          <div class="story-result">
+            📊 結果：<span class="story-num">143K</span>再生・保存<span class="story-num">728件</span>・フォロワー<span class="story-num">+389人</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="story-item">
+        <div class="story-dot dot-3">🚀</div>
+        <div class="story-content">
+          <div class="story-step">STEP 03 ── ファンの声に応える</div>
+          <h3>「まだ入荷しないですか？」の声が、18万再生を生んだ</h3>
+          <p>
+            来店してくれたお客様から「スクイーズの入荷はまだですか？」という声をずっと聞いていました。フォロワーが何を求めているかがはっきりわかった瞬間でした。
+          </p>
+          <p>
+            「新しいスクイーズ入荷しました！」と全力で宣伝。値段・触り心地・数量限定であることまで詰め込み、「水感スクイーズ」というワードが既存フォロワーだけでなくスクイーズ専門の視聴者層にも刺さりました。
+          </p>
+          <p>
+            結果、お客様がひっきりなしに来店。狭い店内が所狭しと埋まるほどになり、<strong>1日の売上が10万円を超える日も珍しくなくなりました。</strong>
+          </p>
+          <div class="story-result">
+            📊 結果：<span class="story-num">184K</span>再生・いいね<span class="story-num">2,180件</span>・保存<span class="story-num">382件</span>・売上<span class="story-num">10万円/日</span>突破
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="results-section" id="results">
+  <div class="results-inner">
+    <span class="section-label">RESULTS</span>
+    <h2 class="section-title">TikTok運用実績</h2>
+    <div class="results-grid">
+
+      <div class="result-card">
+        <div class="emoji">🏆</div>
+        <div class="big-num">184K</div>
+        <div class="unit">再生</div>
+        <div class="label">スクイーズ入荷動画<br>いいね2,180件・保存382件</div>
+        <span class="highlight">最高再生数</span>
+      </div>
+
+      <div class="result-card">
+        <div class="emoji">🔥</div>
+        <div class="big-num">143K</div>
+        <div class="unit">再生</div>
+        <div class="label">ジャージギャル会計動画<br>保存728件・フォロワー+389人</div>
+        <span class="highlight">保存数ダントツ1位</span>
+      </div>
+
+      <div class="result-card">
+        <div class="emoji">👀</div>
+        <div class="big-num">30.7%</div>
+        <div class="unit">フル視聴率</div>
+        <div class="label">通常の約10倍の完全視聴率<br>最後まで見てもらえる設計力</div>
+        <span class="highlight">エンゲージ力の証明</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- WORKS -->
+<section id="works">
+  <span class="section-label">WORKS</span>
+  <h2 class="section-title">制作物</h2>
+  <div class="works-grid">
+
+    <div class="work-card">
+      <img class="work-img" src="/mnt/user-data/uploads/韓国コンヒ_ニて_大ヒット_チャント_ゥククッキーか_市販て_食へ_れる__.png" alt="韓国お菓子LP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="work-thumb lp" style="display:none">🛍️</div>
+      <div class="work-info">
+        <h3>韓国お菓子 LP</h3>
+        <p>商品紹介・価格・成分表まで網羅したランディングページ。複数セクション構成で情報整理力をアピール。</p>
+        <span class="work-tag">LP制作</span>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <img class="work-img" src="/mnt/user-data/uploads/マク_ネット付まるて_本物_フルーツハ_ンスクイース_.jpeg" alt="フルーツパンスクイーズ" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="work-thumb squeeze" style="display:none">🧸</div>
+      <div class="work-info">
+        <h3>フルーツパンスクイーズ 商品チラシ</h3>
+        <p>商品訴求・スペック・価格を整理した販促チラシ。かわいい×情報量の両立を実現。</p>
+        <span class="work-tag">販促デザイン</span>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <img class="work-img" src="/mnt/user-data/uploads/1E72BAC1-C39E-44DE-B8AC-1DECDFDECBCE.png" alt="AXEボディスプレー" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="work-thumb ax" style="display:none">⚡</div>
+      <div class="work-info">
+        <h3>AXE ボディスプレー 商品画像</h3>
+        <p>ダーク・スタイリッシュ系のビジュアル。かわいい系とは異なる振り幅を持つデザイン力を示す一枚。</p>
+        <span class="work-tag">ビジュアルデザイン</span>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <img class="work-img" src="/mnt/user-data/uploads/IMG_7203.jpeg" alt="海外お菓子バナー" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="work-thumb banner" style="display:none">🍬</div>
+      <div class="work-info">
+        <h3>海外お菓子 SNSバナー</h3>
+        <p>InstagramなどSNS向けの賑やかなバナー。視線を引く構成でSNS運用代行の営業にも活用できる実績。</p>
+        <span class="work-tag">SNSバナー</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<div class="skills-section">
+  <div class="skills-inner">
+    <span class="section-label">SKILLS</span>
+    <h2 class="section-title">できること</h2>
+    <div class="skills-list">
+      <div class="skill-item"><div class="sk-icon">📱</div>TikTok運用</div>
+      <div class="skill-item"><div class="sk-icon">📸</div>Instagram運用</div>
+      <div class="skill-item"><div class="sk-icon">🎬</div>動画構成・企画</div>
+      <div class="skill-item"><div class="sk-icon">🎨</div>バナー制作</div>
+      <div class="skill-item"><div class="sk-icon">📄</div>LP制作</div>
+      <div class="skill-item"><div class="sk-icon">✍️</div>コピーライティング</div>
+      <div class="skill-item"><div class="sk-icon">📊</div>分析・改善提案</div>
+      <div class="skill-item"><div class="sk-icon">🛍️</div>販促企画</div>
+      <div class="skill-item"><div class="sk-icon">💬</div>キャプション作成</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <span class="section-label">CONTACT</span>
+    <h2 class="section-title">お仕事のご依頼</h2>
+    <p class="contact-desc">
+      SNS運用代行・バナー制作・LP制作など<br>
+      お気軽にご相談ください✉️<br>
+      クラウドワークス・直接依頼どちらも対応しています。
+    </p>
+    <a class="contact-btn" href="/cdn-cgi/l/email-protection#d2abbda7a092b7bfb3bbbefcb1bdbf">お問い合わせはこちら ✦</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 まいち（Maichi Sasada） — SNS運用 × デザイン 
