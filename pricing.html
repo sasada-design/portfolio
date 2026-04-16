@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>料金・サービス一覧 | SASADA MAI</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root { --ink:#111010; --paper:#f8f6f2; --paper2:#eeebe4; --rule:#d8d4cc; --muted:#8a8480; --warm:#c8a96e; --warm-light:#f0e4cc; }
+html { scroll-behavior:smooth; }
+body { background:var(--paper); color:var(--ink); font-family:'Noto Sans JP',sans-serif; font-weight:300; line-height:1.7; cursor:none; }
+.cur { width:6px; height:6px; background:var(--ink); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:9999; }
+.cur-o { width:28px; height:28px; border:1px solid var(--ink); border-radius:50%; position:fixed; top:-14px; left:-14px; pointer-events:none; z-index:9998; transition:all 0.1s ease; }
+
+nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; justify-content:space-between; align-items:center; padding:20px 48px; background:rgba(248,246,242,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--rule); }
+.nav-logo { font-family:'DM Mono',monospace; font-size:13px; letter-spacing:0.12em; text-decoration:none; color:var(--ink); }
+.nav-back { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; color:var(--muted); display:flex; align-items:center; gap:8px; transition:color 0.2s; }
+.nav-back:hover { color:var(--ink); }
+.nav-back::before { content:'←'; }
+
+/* HERO */
+.page-hero { padding:140px 48px 80px; border-bottom:1px solid var(--rule); display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:end; }
+.page-hero-l {}
+.page-label { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--muted); margin-bottom:20px; display:flex; align-items:center; gap:16px; }
+.page-label::before { content:''; width:32px; height:1px; background:var(--warm); }
+.page-title { font-family:'Cormorant Garamond',serif; font-size:clamp(40px,5vw,72px); font-weight:300; line-height:1.05; letter-spacing:-0.02em; margin-bottom:24px; }
+.page-title em { font-style:italic; color:var(--warm); }
+.page-desc { font-size:13px; line-height:2.1; color:#555; max-width:420px; }
+.page-hero-r { display:flex; flex-direction:column; gap:16px; }
+.promise-item { display:flex; align-items:flex-start; gap:16px; padding:20px 0; border-bottom:1px solid var(--rule); }
+.promise-item:first-child { border-top:1px solid var(--rule); }
+.promise-icon { font-size:18px; flex-shrink:0; margin-top:2px; }
+.promise-text { font-size:13px; line-height:1.8; color:#444; }
+.promise-text strong { font-weight:500; display:block; margin-bottom:4px; }
+
+/* SECTION */
+section { border-top:1px solid var(--rule); }
+.sh { display:flex; justify-content:space-between; align-items:baseline; padding:52px 48px 40px; }
+.sh-title { font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:300; }
+.sh-sub { font-size:12px; color:var(--muted); }
+
+/* PLAN CARDS */
+.plans { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--rule); }
+.plan { padding:48px 40px; border-right:1px solid var(--rule); position:relative; }
+.plan:last-child { border-right:none; }
+.plan.featured { background:var(--ink); color:var(--paper); }
+.plan-badge { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm); margin-bottom:16px; display:inline-block; }
+.plan.featured .plan-badge { color:var(--warm); }
+.plan-name { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:300; margin-bottom:8px; line-height:1.2; }
+.plan-desc { font-size:12px; color:var(--muted); line-height:1.8; margin-bottom:28px; }
+.plan.featured .plan-desc { color:rgba(248,246,242,0.55); }
+.plan-price { margin-bottom:28px; }
+.plan-price-num { font-family:'Cormorant Garamond',serif; font-size:52px; font-weight:300; line-height:1; }
+.plan-price-unit { font-size:14px; color:var(--muted); margin-left:4px; }
+.plan.featured .plan-price-unit { color:rgba(248,246,242,0.55); }
+.plan-price-note { font-family:'DM Mono',monospace; font-size:9px; color:var(--muted); letter-spacing:0.1em; margin-top:6px; }
+.plan.featured .plan-price-note { color:rgba(248,246,242,0.45); }
+.plan-items { list-style:none; margin-bottom:32px; }
+.plan-items li { font-size:12px; line-height:1.7; padding:8px 0; border-bottom:1px solid var(--rule); display:flex; align-items:center; gap:10px; }
+.plan.featured .plan-items li { border-bottom:1px solid rgba(255,255,255,0.1); }
+.plan-items li::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--warm); flex-shrink:0; }
+.plan-cta { display:inline-block; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; padding:13px 24px; border:1px solid var(--ink); color:var(--ink); transition:all 0.2s; }
+.plan-cta:hover { background:var(--ink); color:var(--paper); }
+.plan.featured .plan-cta { border-color:var(--warm); color:var(--warm); }
+.plan.featured .plan-cta:hover { background:var(--warm); color:var(--ink); }
+
+/* MENU TABLE */
+.menu-section { border-top:1px solid var(--rule); }
+.menu-category { border-top:1px solid var(--rule); }
+.menu-cat-header { padding:24px 48px; background:var(--paper2); display:flex; align-items:center; gap:16px; }
+.menu-cat-icon { font-size:18px; }
+.menu-cat-name { font-size:13px; font-weight:500; letter-spacing:0.05em; }
+.menu-cat-desc { font-size:11px; color:var(--muted); margin-left:auto; }
+.menu-items { }
+.menu-item { display:grid; grid-template-columns:1fr 200px 160px; gap:0; border-bottom:1px solid var(--rule); align-items:center; }
+.menu-item:hover { background:var(--paper2); }
+.menu-item-main { padding:20px 48px; }
+.menu-item-name { font-size:13px; font-weight:500; margin-bottom:4px; }
+.menu-item-detail { font-size:11px; color:var(--muted); line-height:1.7; }
+.menu-item-delivery { padding:20px 24px; font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:0.08em; border-left:1px solid var(--rule); }
+.menu-item-price { padding:20px 32px; border-left:1px solid var(--rule); }
+.menu-item-price-num { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:300; line-height:1; }
+.menu-item-price-tax { font-size:10px; color:var(--muted); margin-top:2px; }
+.menu-item-price-range { font-size:11px; color:var(--muted); }
+
+/* MONTHLY */
+.monthly-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--rule); }
+.monthly-item { padding:44px 40px; border-right:1px solid var(--rule); }
+.monthly-item:last-child { border-right:none; }
+.monthly-name { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:300; margin-bottom:8px; }
+.monthly-price { font-family:'Cormorant Garamond',serif; font-size:44px; font-weight:300; color:var(--warm); line-height:1; margin-bottom:4px; }
+.monthly-price span { font-size:16px; color:var(--muted); }
+.monthly-note { font-family:'DM Mono',monospace; font-size:9px; color:var(--muted); letter-spacing:0.1em; margin-bottom:20px; }
+.monthly-list { list-style:none; }
+.monthly-list li { font-size:12px; line-height:1.7; padding:7px 0; border-bottom:1px solid var(--rule); display:flex; gap:10px; }
+.monthly-list li::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--warm); flex-shrink:0; margin-top:8px; }
+
+/* FLOW */
+.flow { padding:0 48px 64px; }
+.flow-steps { display:grid; grid-template-columns:repeat(5,1fr); gap:0; margin-top:8px; }
+.flow-step { padding:28px 24px; position:relative; }
+.flow-step::after { content:'→'; position:absolute; right:-8px; top:50%; transform:translateY(-50%); font-size:16px; color:var(--rule); }
+.flow-step:last-child::after { display:none; }
+.flow-num { font-family:'DM Mono',monospace; font-size:10px; color:var(--warm); letter-spacing:0.2em; margin-bottom:10px; }
+.flow-title { font-size:13px; font-weight:500; margin-bottom:6px; }
+.flow-desc { font-size:11px; color:var(--muted); line-height:1.7; }
+
+/* FAQ */
+.faq { padding:0 48px 80px; }
+.faq-item { border-top:1px solid var(--rule); }
+.faq-item:last-child { border-bottom:1px solid var(--rule); }
+.faq-q { padding:24px 0; display:flex; align-items:flex-start; gap:20px; cursor:pointer; }
+.faq-q-mark { font-family:'Cormorant Garamond',serif; font-size:22px; color:var(--warm); flex-shrink:0; line-height:1.4; }
+.faq-q-text { font-size:14px; font-weight:500; line-height:1.6; flex:1; }
+.faq-q-arrow { font-size:11px; color:var(--muted); margin-left:auto; transition:transform 0.3s; flex-shrink:0; margin-top:4px; }
+.faq-a { padding:0 0 24px 42px; font-size:13px; line-height:2.0; color:#555; display:none; }
+.faq-item.open .faq-a { display:block; }
+.faq-item.open .faq-q-arrow { transform:rotate(180deg); }
+
+/* CTA */
+.cta-section { background:var(--ink); color:var(--paper); border-top:none; padding:80px 48px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+.cta-title { font-family:'Cormorant Garamond',serif; font-size:clamp(36px,4vw,56px); font-weight:300; line-height:1.1; margin-bottom:16px; }
+.cta-desc { font-size:13px; color:rgba(248,246,242,0.6); line-height:2.0; }
+.cta-links { display:flex; flex-direction:column; gap:0; }
+.cta-link { display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--paper); font-size:13px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.1); transition:gap 0.2s; }
+.cta-link:first-child { border-top:1px solid rgba(255,255,255,0.1); }
+.cta-link:hover { gap:22px; }
+.cta-lbl { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(248,246,242,0.45); width:84px; flex-shrink:0; }
+.cta-arr { margin-left:auto; font-size:11px; color:rgba(248,246,242,0.4); }
+
+/* 注意書き */
+.notes { padding:40px 48px; background:var(--paper2); border-top:1px solid var(--rule); }
+.notes-title { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:16px; }
+.notes-list { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px 48px; }
+.notes-list li { font-size:11px; color:var(--muted); line-height:1.8; padding-left:12px; position:relative; }
+.notes-list li::before { content:'*'; position:absolute; left:0; color:var(--warm); }
+
+.fu { opacity:0; transform:translateY(20px); transition:opacity 0.65s ease, transform 0.65s ease; }
+.fu.vis { opacity:1; transform:translateY(0); }
+
+@media(max-width:900px) {
+  nav { padding:18px 24px; }
+  .page-hero { grid-template-columns:1fr; padding:120px 24px 56px; gap:32px; }
+  .sh { padding:40px 24px 32px; }
+  .plans { grid-template-columns:1fr; }
+  .plan { border-right:none; border-bottom:1px solid var(--rule); }
+  .plan.featured { border-bottom:1px solid rgba(255,255,255,0.1); }
+  .menu-item { grid-template-columns:1fr 120px; }
+  .menu-item-delivery { display:none; }
+  .menu-item-main { padding:18px 24px; }
+  .menu-item-price { padding:18px 20px; }
+  .menu-cat-header { padding:18px 24px; }
+  .monthly-grid { grid-template-columns:1fr; }
+  .monthly-item { border-right:none; border-bottom:1px solid var(--rule); }
+  .flow-steps { grid-template-columns:1fr; }
+  .flow-step::after { display:none; }
+  .faq { padding:0 24px 56px; }
+  .cta-section { grid-template-columns:1fr; padding:56px 24px; }
+  .notes { padding:32px 24px; }
+  .notes-list { grid-template-columns:1fr; }
+  .flow { padding:0 24px 48px; }
+}
+</style>
+</head>
+<body>
+<div class="cur" id="cur"></div>
+<div class="cur-o" id="curO"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">SASADA MAI</a>
+  <a href="index.html" class="nav-back">ポートフォリオに戻る</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-l fu">
+    <p class="page-label">Pricing & Service</p>
+    <h1 class="page-title">明朗会計。<br><em>成果で</em><br>返します。</h1>
+    <p class="page-desc">「頼んだらいくらかかるの？」をすべて明示しています。追加費用なし、修正回数の明記、納期の目安まで全部オープン。まずは気軽にご相談ください。</p>
+  </div>
+  <div class="page-hero-r fu">
+    <div class="promise-item">
+      <div class="promise-icon">💰</div>
+      <div class="promise-text">
+        <strong>追加費用なし・明朗会計</strong>
+        表示価格がそのまま請求額。隠れた費用は一切ありません。
+      </div>
+    </div>
+    <div class="promise-item">
+      <div class="promise-icon">🔄</div>
+      <div class="promise-text">
+        <strong>修正2回まで無料</strong>
+        イメージと違った場合も安心。細かいご要望にも対応します。
+      </div>
+    </div>
+    <div class="promise-item">
+      <div class="promise-icon">⚡</div>
+      <div class="promise-text">
+        <strong>スピード納品・進捗共有</strong>
+        作業中は定期的に進捗を共有。「どうなってる？」の不安なし。
+      </div>
+    </div>
+    <div class="promise-item">
+      <div class="promise-icon">📊</div>
+      <div class="promise-text">
+        <strong>FP視点の提案付き</strong>
+        ただ作るだけでなく「なぜその構成か」を言語化して納品します。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- おすすめプラン -->
+<section>
+  <div class="sh fu">
+    <h2 class="sh-title">おすすめプラン</h2>
+    <span class="sh-sub">まず迷ったらこの3つから</span>
+  </div>
+  <div class="plans">
+    <div class="plan fu">
+      <div class="plan-badge">Single</div>
+      <h3 class="plan-name">スタート<br>パック</h3>
+      <p class="plan-desc">「とりあえず1枚試したい」「急ぎで1本欲しい」方向け。まずはここから。</p>
+      <div class="plan-price">
+        <div class="plan-price-num">¥3,000<span class="plan-price-unit">〜</span></div>
+        <div class="plan-price-note">バナー1枚 / SNS投稿1枚など</div>
+      </div>
+      <ul class="plan-items">
+        <li>バナー・EC画像（1枚）</li>
+        <li>SNS投稿デザイン（1枚）</li>
+        <li>修正2回まで無料</li>
+        <li>納期 2〜3営業日</li>
+      </ul>
+      <a href="mailto:maimaimaitann88@gmail.com?subject=スタートパック相談" class="plan-cta">相談してみる</a>
+    </div>
+
+    <div class="plan featured fu">
+      <div class="plan-badge">⭐ Most Popular</div>
+      <h3 class="plan-name">セット<br>パック</h3>
+      <p class="plan-desc">まとめて依頼でお得。イベント前後のSNS・EC素材をまとめて揃えたい方に。</p>
+      <div class="plan-price">
+        <div class="plan-price-num">¥8,000<span class="plan-price-unit">〜</span></div>
+        <div class="plan-price-note">バナー3枚 or SNS投稿5枚セットなど</div>
+      </div>
+      <ul class="plan-items">
+        <li>バナー3枚 or SNS投稿5枚</li>
+        <li>サイズ違い・縦横違いOK</li>
+        <li>修正2回まで無料（各作品）</li>
+        <li>納期 3〜5営業日</li>
+        <li>制作意図レポート付き</li>
+      </ul>
+      <a href="mailto:maimaimaitann88@gmail.com?subject=セットパック相談" class="plan-cta">相談してみる</a>
+    </div>
+
+    <div class="plan fu">
+      <div class="plan-badge">Campaign</div>
+      <h3 class="plan-name">イベント<br>一式パック</h3>
+      <p class="plan-desc">ブラックフライデーや季節セールなど、イベント施策を丸ごとお任せ。</p>
+      <div class="plan-price">
+        <div class="plan-price-num">¥20,000<span class="plan-price-unit">〜</span></div>
+        <div class="plan-price-note">施策設計〜バナー・SNS告知まで</div>
+      </div>
+      <ul class="plan-items">
+        <li>クーポン・割引率の設計提案</li>
+        <li>イベントバナー（3〜5枚）</li>
+        <li>SNS投稿・ストーリー用素材</li>
+        <li>LINE・BASE告知素材</li>
+        <li>修正2回まで無料（各作品）</li>
+        <li>FP視点のROI試算付き</li>
+      </ul>
+      <a href="mailto:maimaimaitann88@gmail.com?subject=イベント一式パック相談" class="plan-cta">相談してみる</a>
+    </div>
+  </div>
+</section>
+
+<!-- 単品メニュー -->
+<section class="menu-section">
+  <div class="sh fu">
+    <h2 class="sh-title">単品メニュー</h2>
+    <span class="sh-sub">必要なものだけ選べます</span>
+  </div>
+
+  <div class="menu-category">
+    <div class="menu-cat-header">
+      <span class="menu-cat-icon">🖼</span>
+      <span class="menu-cat-name">バナー・EC画像</span>
+      <span class="menu-cat-desc">ECサイト・SNS・広告・印刷物</span>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item">
+        <div class="menu-item-main">
+          <div class="menu-item-name">SNS投稿バナー（1枚）</div>
+          <div class="menu-item-detail">Instagram・TikTok・X向け正方形または縦型 / テキスト・デザイン込み</div>
+        </div>
+        <div class="menu-item-delivery">2〜3営業日</div>
+        <div class="menu-item-price"><div class="menu-item-price-num">¥3,000</div><div class="menu-item-price-tax">税込</div></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-main">
+          <div class="menu-item-name">SNS投稿バナー（3枚セット）</div>
+          <div class="menu-item-detail">世界観統一・3枚まとめて / 1枚あたり約¥2,300</div>
+        </div>
+        <div class="menu-item-delivery">3〜4営業日</div>
+        <div class="menu-item-price"><div class="menu-item-price-num">¥7,000</div><div class="menu-item-price-tax">税込</div></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-main">
+          <div class="menu-item-name">EC商品画像・バナー（1枚）</div>
+          <div class="menu-item-detail">BASE・楽天・Amazon等の商品ページ向け / 商品写真支給が必要</div>
+        </div>
+        <div class="menu-item-delivery">2〜3営業日</div>
+        <div class="menu-item-price"><div class="menu-item-price-num">¥3,500</div><div class="menu-item-price-tax">税込</div></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-main">
+          <div class="menu-item-name">イベント・セールバナー（1枚）</div>
+          <div class="menu-item-detail">ブラックフライデー・季節セール等 / 訴求コピー・価格の設計も相談可</div>
+        </div>
+        <div class="menu-item-delivery">2〜3営業日</div>
+        <div class="menu-item-price"><div class="menu-item-price-num">¥4,000</div><div class="menu-item-price-tax">税込</div></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-main">
+          <div class="menu-item-name">横長バナー（HP・ブログ・広告用）</div>
+          <div class="menu-item-detail">1200×628px等 / Google広告・SNS広告バナーにも対応</div>
+        </div>
+        <div class="menu-item-delivery">2〜3営業日</div>
+        <div class="menu-item-price"><div class="menu-item-price-num">¥4,000</div><div class="menu-item-price-tax">税込</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-category">
+    <div class="menu-cat-header">
+      <span class="menu-cat-icon">📄</span>
+      <span class="menu-cat-name">チラシ・販促物</span>
+      <span class="menu-cat-desc">印刷・デジタル配布用</span>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item">
+        <div class="menu-item-main">
+          <div class="menu-item-name">A4チラシ（片面）</div>
+          <div class="menu-item-detail">店舗配布・EC同梱・イベント用 / 印刷入稿データで納品</div>
+        </div>
+        <div class="menu-item-delivery">3〜5営業日</div>
+        <div class="menu-item-price"><div class="menu-item-price-num">¥6,000</div><div class="menu-item-price-tax">税込</div></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-main">
+          <div class="menu-item-name">A4チラシ（両面）</div>
+          <div class="menu-item-detail">表裏デザイン / 商品紹介・店舗案内・イベント告知に最適</div>
+        </div>
+        <div class="menu-item-delivery">4〜6営業日</div>
+        <div class="menu-item-price"><div class="menu-item-price-num">¥10,000</div><div class="menu-item-price-tax">税込</div></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-main">
+          <div class="menu-item-name">商品カタログ（A4・2〜4ページ）</div>
+          <div class="menu-item-detail">商品一覧・紹介・食べ方提案など / 導線設計込み</div>
+        </div>
+        <div class="menu-item-delivery">5〜7営業日</div>
+        <div class="menu-item-price"><div class="menu-item-price-num">¥15,000</div><div class="menu-item-price-tax">〜 / 税込</div></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-main">
+          <div class="menu-item-name">名刺・ショップカード</div>
+          <div class="menu-item-detail">両面デザイン / 印刷入稿データで納品</div>
+        </div>
+        <div class="menu-item-delivery">3〜5営業日</div>
+        <div class="menu-item-price"><div class="menu-item-price-num">¥5,000</div><div class="menu-item-price-tax">税込</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-category">
+    <div class="menu-cat-header">
+      <span class="menu-cat-icon">📱</span>
+      <span class="menu-cat-name">SNS・LINE</span>
+      <span class="menu-cat-desc">投稿デザイン・導線設計</span>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item">
+        <div class="menu-item-main">
+          <div class="menu-item-name">LINEリッチメニュー</div>
+          <div class="menu-item-detail">導線設計〜デザイン制作まで / EC・来店・問い合わせ導線を最適化</div>
+        </div>
+        <div class="menu-item-delivery">5〜7営業日</div>
+        <div class="menu-item-price"><div class="menu-item-price-num">¥12,000</div><div class="menu-item-price-tax">税込</div></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-main">
+          <div class="menu-item-name">Instagramストーリー（3枚セット）</div>
+          <div class="menu-item-detail">縦型9:16 / 商品告知・イベント・キャンペーン案内向け</div>
+        </div>
+        <div class="menu-item-delivery">2〜3営業日</div>
+        <div class="menu-item-price"><div class="menu-item-price-num">¥6,000</div><div class="menu-item-price-tax">税込</div></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-main">
+          <div class="menu-item-name">TikTokサムネイル（1枚）</div>
+          <div class="menu-item-detail">クリック率を最大化するサムネイル設計 / キャプションの訴求案も提案</div>
+        </div>
+        <div class="menu-item-delivery">1〜2営業日</div>
+        <div class="menu-item-price"><div class="menu-item-price-num">¥2,000</div><div class="menu-item-price-tax">税込</div></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-main">
+          <div class="menu-item-name">SNS投稿キャプション作成（5投稿分）</div>
+          <div class="menu-item-detail">ターゲットに合わせたコピーライティング / ハッシュタグ提案込み</div>
+        </div>
+        <div class="menu-item-delivery">2〜3営業日</div>
+        <div class="menu-item-price"><div class="menu-item-price-num">¥5,000</div><div class="menu-item-price-tax">税込</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-category">
+    <div class="menu-cat-header">
+      <span class="menu-cat-icon">🎬</span>
+      <span class="menu-cat-name">動画編集</span>
+      <span class="menu-cat-desc">ショート動画・リール</span>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item">
+        <div class="menu-item-main">
+          <div class="menu-item-name">ショート動画編集（60秒以内・1本）</div>
+          <div class="menu-item-detail">TikTok・Instagram Reels・YouTube Shorts / テロップ・BGM・エフェクト込み</div>
+        </div>
+        <div class="menu-item-delivery">3〜5営業日</div>
+        <div class="menu-item-price"><div class="menu-item-price-num">¥8,000</div><div class="menu-item-price-tax">〜 / 税込</div></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-main">
+          <div class="menu-item-name">商品紹介動画（30秒以内・1本）</div>
+          <div class="menu-item-detail">商品の魅力を伝えるショートPR動画 / 素材支給が必要</div>
+        </div>
+        <div class="menu-item-delivery">3〜4営業日</div>
+        <div class="menu-item-price"><div class="menu-item-price-num">¥6,000</div><div class="menu-item-price-tax">〜 / 税込</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 月額顧問 -->
+<section>
+  <div class="sh fu">
+    <h2 class="sh-title">月額顧問プラン</h2>
+    <span class="sh-sub">継続でもっとお得に・もっと効果的に</span>
+  </div>
+  <div class="monthly-grid">
+    <div class="monthly-item fu">
+      <div class="monthly-name">ライト</div>
+      <div class="monthly-price">¥30,000<span> / 月</span></div>
+      <div class="monthly-note">税込 / 3ヶ月〜契約</div>
+      <ul class="monthly-list">
+        <li>SNS投稿デザイン 月8枚まで</li>
+        <li>バナー制作 月2枚まで</li>
+        <li>月1回の改善レポート</li>
+        <li>LINEでのご相談対応</li>
+        <li>修正2回まで無料（各作品）</li>
+      </ul>
+    </div>
+    <div class="monthly-item fu" style="background:var(--ink);color:var(--paper);">
+      <div class="monthly-name" style="color:var(--paper);">スタンダード</div>
+      <div class="monthly-price">¥55,000<span style="color:rgba(248,246,242,0.5);"> / 月</span></div>
+      <div class="monthly-note" style="color:rgba(248,246,242,0.45);">税込 / 3ヶ月〜契約 ⭐おすすめ</div>
+      <ul class="monthly-list" style="border-color:rgba(255,255,255,0.1);">
+        <li style="border-color:rgba(255,255,255,0.1);">SNS投稿デザイン 月15枚まで</li>
+        <li style="border-color:rgba(255,255,255,0.1);">バナー制作 月4枚まで</li>
+        <li style="border-color:rgba(255,255,255,0.1);">チラシ・販促物 月1点まで</li>
+        <li style="border-color:rgba(255,255,255,0.1);">月1回の改善提案ミーティング</li>
+        <li style="border-color:rgba(255,255,255,0.1);">FP視点のEC改善提案</li>
+        <li style="border-color:rgba(255,255,255,0.1);">イベント施策の設計サポート</li>
+        <li style="border-color:rgba(255,255,255,0.1);">修正2回まで無料（各作品）</li>
+      </ul>
+    </div>
+    <div class="monthly-item fu">
+      <div class="monthly-name">フルサポート</div>
+      <div class="monthly-price">¥90,000<span> / 月</span></div>
+      <div class="monthly-note">税込 / 3ヶ月〜契約</div>
+      <ul class="monthly-list">
+        <li>SNS投稿デザイン 月20枚まで</li>
+        <li>バナー制作 月6枚まで</li>
+        <li>チラシ・カタログ 月1〜2点まで</li>
+        <li>動画編集 月2本まで</li>
+        <li>週次の進捗共有・施策相談</li>
+        <li>FP視点のEC全体改善提案</li>
+        <li>イベント施策の設計〜実行サポート</li>
+        <li>修正2回まで無料（各作品）</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 依頼の流れ -->
+<section>
+  <div class="sh fu">
+    <h2 class="sh-title">依頼の流れ</h2>
+    <span class="sh-sub">最短翌日から作業開始できます</span>
+  </div>
+  <div class="flow fu">
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-num">STEP 01</div>
+        <div class="flow-title">お問い合わせ</div>
+        <div class="flow-desc">DM・メール・CrowdWorksからお気軽に。「こんなもの作りたい」だけでOK。</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">STEP 02</div>
+        <div class="flow-title">ヒアリング</div>
+        <div class="flow-desc">目的・ターゲット・参考イメージをお聞きします。無料で対応。</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">STEP 03</div>
+        <div class="flow-title">お見積り</div>
+        <div class="flow-desc">内容を確認の上、金額・納期を明示してご提案。納得されてからご依頼。</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">STEP 04</div>
+        <div class="flow-title">制作・確認</div>
+        <div class="flow-desc">進捗をこまめに共有しながら制作。修正2回まで無料で対応。</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">STEP 05</div>
+        <div class="flow-title">納品・お支払い</div>
+        <div class="flow-desc">データをお渡し後にお支払い。CrowdWorks経由もOK。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="sh fu">
+    <h2 class="sh-title">よくある質問</h2>
+    <span class="sh-sub"></span>
+  </div>
+  <div class="faq fu">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">素材や写真がない状態でも依頼できますか？</span>
+        <span class="faq-q-arrow">▼</span>
+      </div>
+      <div class="faq-a">はい、可能です。フリー素材の活用や、AIを使った画像生成でカバーできるケースが多いです。ただし商品画像が必要なバナーの場合は、スマホ写真でも構いませんので素材をご用意いただけると助かります。まずご相談ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">急ぎの依頼にも対応できますか？</span>
+        <span class="faq-q-arrow">▼</span>
+      </div>
+      <div class="faq-a">内容によっては翌日〜即日対応も可能です（別途特急料金あり：通常料金の30〜50%）。まずDMかメールでご相談ください。スケジュールを確認してすぐにお答えします。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">修正が多くなった場合はどうなりますか？</span>
+        <span class="faq-q-arrow">▼</span>
+      </div>
+      <div class="faq-a">各作品につき修正2回まで無料です。3回目以降は1回あたり¥1,000〜（内容による）で対応します。ただし、最初のヒアリングをしっかり行うことで、2回以内に収まることがほとんどです。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">FP視点の提案って具体的に何をしてもらえますか？</span>
+        <span class="faq-q-arrow">▼</span>
+      </div>
+      <div class="faq-a">例えば「このクーポン割引率だと原価割れする」「このターゲット層は¥2,000以下でないと衝動買いしにくい」「バナーの訴求を価格ではなく希少性に変えた方がCVRが上がる」など、数字と購買心理の両面からアドバイスします。追加料金なし、制作の一部として行っています。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">お支払い方法は？</span>
+        <span class="faq-q-arrow">▼</span>
+      </div>
+      <div class="faq-a">銀行振込、またはCrowdWorks経由でのお支払いに対応しています。納品後のお支払いを基本としていますが、大型案件の場合は着手金（50%）をお願いする場合があります。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">クラウドワークス以外でも依頼できますか？</span>
+        <span class="faq-q-arrow">▼</span>
+      </div>
+      <div class="faq-a">はい。Instagram DM・メール・LINEからの直接依頼も受け付けています。クラウドワークス経由の方が手続きがスムーズな場合もありますので、どちらでもお気軽にどうぞ。</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div>
+    <h2 class="cta-title">まずは<br>気軽に<br>相談から。</h2>
+    <p class="cta-desc">見積もり無料・ヒアリング無料。<br>「こんなのできる？」の段階でOKです。<br>大阪府在住 / リモート全国対応</p>
+  </div>
+  <div class="cta-links">
+    <a href="https://www.instagram.com/web.design_sasada.mai" class="cta-link" target="_blank"><span class="cta-lbl">Instagram</span><span>@web.design_sasada.mai</span><span class="cta-arr">→</span></a>
+    <a href="https://www.tiktok.com/@sasakamaboko_1" class="cta-link" target="_blank"><span class="cta-lbl">TikTok</span><span>@sasakamaboko_1</span><span class="cta-arr">→</span></a>
+    <a href="https://crowdworks.jp/public/employees/3935241" class="cta-link" target="_blank"><span class="cta-lbl">CrowdWorks</span><span>笹田麻衣 / SNSデザイン</span><span class="cta-arr">→</span></a>
+    <a href="mailto:maimaimaitann88@gmail.com" class="cta-link"><span class="cta-lbl">Email</span><span>maimaimaitann88@gmail.com</span><span class="cta-arr">→</span></a>
+    <a href="https://note.com/sasakamaboko01" class="cta-link" target="_blank"><span class="cta-lbl">note</span><span>sasakamaboko01（デジタル販売中）</span><span class="cta-arr">→</span></a>
+  </div>
+</div>
+
+<!-- 注意書き -->
+<div class="notes">
+  <div class="notes-title">ご注意・免責事項</div>
+  <ul class="notes-list">
+    <li>表示価格はすべて税込です</li>
+    <li>内容・複雑さによって変動する場合があります。事前にお見積りをご確認ください</li>
+    <li>著作権・肖像権のある素材の使用はお断りする場合があります</li>
+    <li>素材（写真・テキスト）のご用意はクライアント様にお願いしています</li>
+    <li>納期はご依頼内容・込み具合により前後する場合があります</li>
+    <li>修正3回目以降は別途費用が発生します（¥1,000〜）</li>
+    <li>特急対応（翌日以内）は通常料金の30〜50%の特急料金が発生します</li>
+    <li>月額プランは3ヶ月〜の契約が最低条件となります</li>
+  </ul>
+</div>
+
+<script>
+const cur=document.getElementById('cur'),curO=document.getElementById('curO');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=(e.clientX-3)+'px'; cur.style.top=(e.clientY-3)+'px';
+  curO.style.left=(e.clientX-14)+'px'; curO.style.top=(e.clientY-14)+'px';
+});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach((el,i)=>{ if(el.isIntersecting) setTimeout(()=>el.target.classList.add('vis'),i*55); });
+},{threshold:0.08});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+function toggleFaq(el) {
+  const item = el.parentElement;
+  item.classList.toggle('open');
+}
+</script>
+</body>
+</html>
