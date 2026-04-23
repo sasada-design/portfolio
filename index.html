@@ -701,6 +701,7 @@ function openModal(i){
   }
 
   document.getElementById('mClose').addEventListener('click', closeModal);
+  box.scrollTop = 0;
   document.getElementById('modalBg').classList.add('on');
   document.body.style.overflow = 'hidden';
 }
