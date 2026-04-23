@@ -77,17 +77,18 @@ section { border-top:1px solid var(--rule); }
 .works-category { padding:20px 48px 0; }
 .wcat-label { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--warm); display:inline-flex; align-items:center; gap:12px; }
 .wcat-label::before { content:''; width:20px; height:1px; background:var(--warm); }
-.works-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--rule); margin-top:12px; }
-.work { border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); aspect-ratio:4/3; overflow:hidden; position:relative; background:var(--paper2); cursor:none; }
-.work:nth-child(4n) { border-right:none; }
-.work img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); display:block; }
-.work:hover img { transform:scale(1.06); }
-.work-ov { position:absolute; inset:0; background:rgba(26,26,26,0); display:flex; flex-direction:column; justify-content:flex-end; padding:16px; transition:background 0.35s ease; pointer-events:none; }
-.work:hover .work-ov { background:rgba(26,26,26,0.82); }
-.work-info { opacity:0; transform:translateY(6px); transition:all 0.28s ease; }
-.work:hover .work-info { opacity:1; transform:translateY(0); }
-.work-cat { font-family:'Noto Sans JP',sans-serif; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm); margin-bottom:4px; }
-.work-name { font-size:12px; color:var(--paper); line-height:1.4; }
+.works-grid { display:grid; grid-template-columns:repeat(2,1fr); border-top:1px solid var(--rule); margin-top:12px; }
+.work { border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); overflow:hidden; background:var(--paper); display:flex; flex-direction:column; }
+.work:nth-child(2n) { border-right:none; }
+.work-img-wrap { overflow:hidden; aspect-ratio:4/3; flex-shrink:0; background:var(--paper2); }
+.work-img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease; display:block; }
+.work:hover .work-img-wrap img { transform:scale(1.04); }
+.work-detail { padding:22px 28px 28px; display:flex; flex-direction:column; flex:1; }
+.work-cat { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm); margin-bottom:8px; }
+.work-name { font-size:15px; font-weight:500; line-height:1.5; color:var(--ink); margin-bottom:10px; }
+.work-desc { font-size:12px; color:#666; line-height:1.9; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; flex:1; }
+.work-tools { font-size:10px; color:var(--muted); margin-top:10px; letter-spacing:0.05em; }
+.work-ba-badge { display:inline-block; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; background:var(--warm); color:#fff; padding:2px 8px; margin-bottom:8px; align-self:flex-start; }
 .work.hidden { display:none; }
 .dp-section { background:var(--paper2); border-top:1px solid var(--rule); }
 .dp-grid { display:grid; grid-template-columns:200px 1fr 1fr; border-top:1px solid var(--rule); }
@@ -139,39 +140,6 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
 .pricing-cta-sub { font-size:12px; color:rgba(248,246,242,0.85); line-height:1.8; }
 .pricing-cta-btn { font-family:'Noto Sans JP',sans-serif; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; color:var(--warm); border:1px solid var(--warm); padding:14px 28px; transition:all 0.2s; flex-shrink:0; }
 .pricing-cta-btn:hover { background:var(--warm); color:var(--ink); }
-/* モーダル */
-.modal-bg { position:fixed; inset:0; background:rgba(26,26,26,0.93); z-index:1000; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity 0.3s ease; padding:40px; }
-.modal-bg.on { opacity:1; pointer-events:all; }
-.modal-box { background:var(--paper); max-width:860px; width:100%; max-height:90vh; overflow-y:auto; display:grid; grid-template-columns:1fr 1fr; transform:translateY(12px); transition:transform 0.3s ease; }
-.modal-bg.on .modal-box { transform:translateY(0); }
-.modal-img { background:var(--paper2); min-height:360px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
-.modal-img img { width:100%; height:100%; object-fit:contain; }
-.modal-body { padding:44px 36px; display:flex; flex-direction:column; justify-content:space-between; }
-.m-cat { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
-.m-title { font-family:'Noto Serif JP',serif; font-size:24px; font-weight:300; line-height:1.35; margin-bottom:18px; white-space:pre-line; }
-.m-desc { font-size:12px; line-height:2.0; color:#555; flex:1; }
-.m-close { margin-top:24px; background:none; border:1px solid var(--ink); padding:10px 20px; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; transition:all 0.2s; align-self:flex-start; font-family:'Noto Sans JP',sans-serif; }
-.m-close:hover { background:var(--ink); color:var(--paper); }
-/* モーダル Before/After レイアウト */
-.modal-box.has-ba { grid-template-columns:1fr; max-width:960px; }
-.modal-ba { display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--rule); }
-.modal-ba-item { position:relative; overflow:hidden; background:var(--paper2); min-height:280px; display:flex; align-items:center; justify-content:center; }
-.modal-ba-item:first-child { border-right:1px solid var(--rule); }
-.modal-ba-item img { width:100%; height:100%; object-fit:contain; display:block; }
-.modal-ba-label { position:absolute; top:12px; left:12px; font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; padding:4px 10px; }
-.modal-ba-label.before { background:var(--muted); color:var(--paper); }
-.modal-ba-label.after  { background:var(--warm); color:var(--ink); }
-/* モーダル 詳細情報（制作背景・ツール・ポイント） */
-.modal-body-full { padding:36px 44px; }
-.modal-body-full .m-cat { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
-.modal-body-full .m-title { font-family:'Noto Serif JP',serif; font-size:24px; font-weight:300; line-height:1.35; margin-bottom:12px; white-space:pre-line; }
-.modal-body-full .m-desc { font-size:12px; line-height:2.0; color:#555; margin-bottom:0; }
-.m-meta { margin-top:20px; border-top:1px solid var(--rule); padding-top:4px; }
-.m-meta-item { display:grid; grid-template-columns:110px 1fr; gap:16px; padding:14px 0; border-bottom:1px solid var(--rule); align-items:start; }
-.m-meta-item:last-child { border-bottom:none; }
-.m-meta-key { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); padding-top:2px; }
-.m-meta-val { font-size:12px; line-height:1.85; color:#555; }
-.modal-footer { display:flex; justify-content:flex-start; padding:0 44px 36px; }
 @media(max-width:900px) {
   nav { padding:18px 24px; } .nav-links { display:none; }
   .hero { grid-template-columns:1fr; display:flex; flex-direction:column; min-height:auto; }
@@ -184,16 +152,11 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
   .str-grid { grid-template-columns:1fr; } .str-item { border-right:none; border-bottom:1px solid var(--rule); }
   .svc-grid { grid-template-columns:1fr 1fr; } .svc:nth-child(4n) { border-right:1px solid var(--rule); } .svc:nth-child(2n) { border-right:none; }
   .works-filter { padding:16px 24px 0; }
-  .works-category { padding:16px 24px 0; } .works-grid { grid-template-columns:repeat(2,1fr); } .work:nth-child(4n) { border-right:1px solid var(--rule); } .work:nth-child(2n) { border-right:none; }
+  .works-category { padding:16px 24px 0; } .works-grid { grid-template-columns:1fr; } .work { border-right:none; } .work-detail { padding:18px 20px 22px; }
   .pricing-cta { flex-direction:column; gap:24px; align-items:flex-start; padding:36px 24px; }
   .dp-grid { grid-template-columns:1fr; } .dp-l { padding:44px 24px; } .dp-m { border-right:none; border-bottom:1px solid var(--rule); padding:36px 24px; } .dp-r { padding:36px 24px; }
   .results-grid { grid-template-columns:1fr 1fr; } .result:nth-child(2n) { border-right:none; } .result { border-bottom:1px solid var(--rule); }
   .tl-wrap { padding:0 24px 48px; }
-  .modal-box { grid-template-columns:1fr; }
-  .modal-ba { grid-template-columns:1fr; }
-  .modal-ba-item:first-child { border-right:none; border-bottom:1px solid var(--rule); }
-  .modal-body-full { padding:28px 24px; }
-  .modal-footer { padding:0 24px 28px; }
   .contact-grid { grid-template-columns:1fr; } .contact-l { border-right:none; border-bottom:1px solid var(--rule); padding:44px 24px; } .contact-r { padding:36px 24px; }
   footer { padding:24px; flex-direction:column; gap:8px; text-align:center; }
 }
@@ -295,93 +258,7 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
     <button class="wf-btn" data-filter="tiktok">TikTok / LINE / デジタル</button>
   </div>
 
-  <div class="works-category fu" data-category="sns">
-    <span class="wcat-label">SNS / 販促バナー</span>
-  </div>
-  <div class="works-grid">
-    <div class="work fu" data-idx="0" data-filter="sns">
-      <img src="images/img_01.jpg" alt="SNS Banner Design" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">SNS Banner Design</div><div class="work-name">BLOOM SQUEEZE<br>入荷告知バナー</div></div></div>
-    </div>
-    <div class="work fu" data-idx="1" data-filter="sns">
-      <img src="images/img_02.jpg" alt="Instagram Story Design" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">Instagram Story Design</div><div class="work-name">JANE×スクイーズプラネット<br>インスタグラムストーリー</div></div></div>
-    </div>
-    <div class="work fu" data-idx="2" data-filter="sns">
-      <img src="images/img_03.jpg" alt="Promotion Flyer" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">Promotion Flyer</div><div class="work-name">大阪問屋雑貨菓子<br>自社認知獲得フライヤー</div></div></div>
-    </div>
-    <div class="work fu" data-idx="3" data-filter="sns">
-      <img src="images/img_04.jpg" alt="SNS Banner" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">SNS Banner</div><div class="work-name">海外お菓子・飲料<br>プロモーションバナー</div></div></div>
-    </div>
-  </div>
-
-  <div class="works-category fu" data-category="ec">
-    <span class="wcat-label">EC / BASE バナー</span>
-  </div>
-  <div class="works-grid">
-    <div class="work fu" data-idx="4" data-filter="ec">
-      <img src="images/img_05.jpg" alt="Event Campaign Design" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">Event Campaign Design</div><div class="work-name">ブラックフライデー<br>クーポン施策バナー</div></div></div>
-    </div>
-    <div class="work fu" data-idx="5" data-filter="ec">
-      <img src="images/img_06.jpg" alt="BASE Banner Design" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">BASE Banner Design</div><div class="work-name">スクイーズ商品<br>EC販促バナー（爆売れ大ヒット）</div></div></div>
-    </div>
-    <div class="work fu" data-idx="6" data-filter="ec">
-      <img src="images/img_07.jpg" alt="BASE Banner Design" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">BASE Banner Design</div><div class="work-name">LINE先行案内<br>EC販促バナー</div></div></div>
-    </div>
-    <div class="work fu" data-idx="7" data-filter="ec">
-      <img src="images/img_08.jpg" alt="Wholesale Banner" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">Wholesale Banner</div><div class="work-name">スーパーPコ<br>期間限定セールバナー</div></div></div>
-    </div>
-  </div>
-
-  <div class="works-category fu" data-category="product">
-    <span class="wcat-label">商品バナー / 店舗制作物</span>
-  </div>
-  <div class="works-grid">
-    <div class="work fu" data-idx="8" data-filter="product">
-      <img src="images/img_09.jpg" alt="Product Banner Design" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">Product Banner Design</div><div class="work-name">HARIBO Chamallows<br>入荷告知商品バナー</div></div></div>
-    </div>
-    <div class="work fu" data-idx="9" data-filter="product">
-      <img src="images/img_10.jpg" alt="Product Catalog Design" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">Product Catalog Design</div><div class="work-name">チャンドゥク<br>クッキー販促カタログ</div></div></div>
-    </div>
-    <div class="work fu" data-idx="10" data-filter="product">
-      <img src="images/img_11.jpg" alt="Signage Design" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">Signage Design</div><div class="work-name">スクイーズプラネット<br>店頭看板デザイン</div></div></div>
-    </div>
-    <div class="work fu" data-idx="11" data-filter="product">
-      <img src="images/img_12.jpg" alt="TikTok Thumbnail" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">TikTok Thumbnail</div><div class="work-name">TikTok<br>サムネイルデザイン（韓国お菓子）</div></div></div>
-    </div>
-  </div>
-
-  <div class="works-category fu" data-category="tiktok">
-    <span class="wcat-label">TikTok / LINE / デジタルプロダクト</span>
-  </div>
-  <div class="works-grid">
-    <div class="work fu" data-idx="12" data-filter="tiktok">
-      <img src="images/img_13.jpg" alt="TikTok Promotion Flyer" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">TikTok Promotion Flyer</div><div class="work-name">TikTok配信告知<br>店頭配布チラシ</div></div></div>
-    </div>
-    <div class="work fu" data-idx="13" data-filter="tiktok">
-      <img src="images/img_14.jpg" alt="TikTok Thumbnail" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">TikTok Thumbnail</div><div class="work-name">えっほえっほしてみた<br>TikTokサムネイル</div></div></div>
-    </div>
-    <div class="work fu" data-idx="14" data-filter="tiktok">
-      <img src="images/img_15.jpg" alt="LINE Rich Menu Design" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">LINE Rich Menu Design</div><div class="work-name">スクイーズプラネット<br>LINEリッチメニュー</div></div></div>
-    </div>
-    <div class="work fu" data-idx="15" data-filter="tiktok">
-      <img src="images/img_16.jpg" alt="Digital Product / note販売中" />
-      <div class="work-ov"><div class="work-info"><div class="work-cat">Digital Product / note販売中</div><div class="work-name">韓国旅行 旅のしおり<br>Canvaテンプレート</div></div></div>
-    </div>
-  </div>
+  <div id="worksContainer"></div>
 
 </section>
 
@@ -441,9 +318,6 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
   <p>OSAKA, JAPAN</p>
 </footer>
 
-<div class="modal-bg" id="modalBg">
-  <div class="modal-box" id="modalBox"></div>
-</div>
 
 <script>
 // カスタムカーソル（タッチデバイスでは無効化）
@@ -483,6 +357,99 @@ document.querySelectorAll('.fu').forEach(function(el){ el.classList.add('vis'); 
   sections.forEach(function(s){ observer.observe(s); });
 })();
 
+// Works データ（カード生成の単一ソース）
+var works = [
+  { filter:'sns', cat:'SNS Banner Design', title:'BLOOM SQUEEZE\n入荷告知バナー',
+    imgSrc:'images/img_17.jpg', tools:'Photoshop',
+    desc:'スクイーズの新商品入荷をSNS向けに告知するバナー。マンガ風コマ割りレイアウトで複数商品を見せつつ、入荷日を明確に訴求。当日制作・即投稿の運用フローを確立し、売り切れ前の購買を促す緊急感を演出しています。' },
+  { filter:'sns', cat:'Instagram Story Design', title:'JANE×スクイーズプラネット\nインスタグラムストーリー',
+    imgSrc:'images/img_18.jpg', tools:'Photoshop / Canva',
+    desc:'TikTokで紹介した商品の在庫告知ストーリー。スタッフ出演の親しみやすい雰囲気と商品グリッドを組み合わせ、TikTok→InstagramStory→ECという購買導線を設計した実例です。' },
+  { filter:'sns', cat:'Promotion Flyer', title:'大阪問屋雑貨菓子\n自社認知獲得フライヤー',
+    imgSrc:'images/img_19.jpg', tools:'Photoshop',
+    desc:'知名度が低かった時期に制作した来店促進フライヤー。「一般の方大歓迎」というコピーで入店ハードルを下げ、スタッフ写真で親しみやすさを演出。裏面のQRでSNSフォローへ誘導する設計です。' },
+  { filter:'sns', cat:'SNS Banner', title:'海外お菓子・飲料\nプロモーションバナー',
+    imgSrc:'images/img_20.jpg', tools:'Photoshop',
+    desc:'海外お菓子・飲料の品揃えをSNSで一気に伝えるバナー。パステルグラデーションで「映える」雰囲気を演出し、学生〜若年層が保存・シェアしたくなるビジュアルを目指しました。' },
+  { filter:'ec', cat:'Event Campaign Design', title:'ブラックフライデー\nクーポン施策バナー',
+    imgSrc:'images/img_21.jpg', tools:'Photoshop',
+    desc:'BASEのブラックフライデー告知バナー。FP視点で粗利を計算した上で割引率を設定し、15%OFF＋5%還元をわかりやすく整理。Pay IDアプリの使い方を4ステップで図解し、クーポン未適用の離脱を防ぎました。' },
+  { filter:'ec', cat:'BASE Banner Design', title:'スクイーズ商品\nEC販促バナー（爆売れ大ヒット）',
+    imgSrc:'images/img_22.jpg', tools:'Photoshop',
+    desc:'スタッフ2名の笑顔写真と商品を合成し、実店舗の信頼感をオンラインに転用したBASEバナー。「爆売れ大ヒット」というコピーで社会的証明を演出し、EC購買につなげました。' },
+  { filter:'ec', cat:'BASE Banner Design', title:'LINE先行案内\nEC販促バナー',
+    imgSrc:'images/img_23.jpg', tools:'Photoshop',
+    desc:'LINE会員向け先行案内バナー。「LINE会員だけが先に知れる」特別感を演出し、商品グリッドと店内写真で品揃えの豊かさを訴求。LINEからECへの送客を最大化する導線設計です。' },
+  { filter:'ec', cat:'Wholesale Banner', title:'スーパーPコ\n期間限定セールバナー',
+    imgSrc:'images/img_24.jpg', tools:'Photoshop',
+    desc:'卸専門サイト向けの期間限定セールバナー。バイヤーが重視する「売れ筋商品かどうか」を伝えるためTAMSシリーズを前面に出し、8/21〜8/28の期限で緊急感を演出しました。' },
+  { filter:'product', cat:'Product Banner Design', title:'HARIBO Chamallows\n入荷告知商品バナー',
+    imgSrc:'images/img_25.jpg', tools:'Photoshop',
+    desc:'SNSでバズ中のHARIBO Chamallowsの入荷告知バナー。「めっちゃうまいやん」という関西弁コピーで親近感を演出し、断面写真でおいしさをビジュアル化。バズのタイミングを逃さないスピード制作の実例です。' },
+  { filter:'product', cat:'Product Catalog Design', title:'チャンドゥク\nクッキー販促カタログ',
+    imgSrc:'images/img_26.jpg', tools:'Photoshop / Canva',
+    desc:'日本での認知度が低い韓国マシュマロのカタログ。「おいしい食べ方レシピ」を先頭に配置し、商品紹介より先に体験を見せる構成で購買ハードルを下げました。QRコードで動画レシピへ誘導する導線も設計。' },
+  { filter:'product', cat:'Signage Design', title:'スクイーズプラネット\n店頭看板デザイン',
+    imgSrc:'images/img_27.jpg', tools:'Photoshop / Illustrator',
+    desc:'店頭A型看板のデザイン。遠くからでも視認できる赤×白の高コントラスト配色を採用し、「韓国食品・海外お菓子・スクイーズ」の複数ジャンルを1枚にコンパクトにまとめました。' },
+  { filter:'product', cat:'TikTok Thumbnail', title:'TikTok\nサムネイルデザイン（韓国お菓子）',
+    imgSrc:'images/img_28.jpg', tools:'Photoshop / CapCut',
+    desc:'TikTok動画のサムネイルデザイン。スタッフの表情が見える写真を大きく配置し「人が出ている動画」と伝わる設計に。黄色の吹き出しテキストで目線誘導し、タイトルを0.5秒で読み取れる文字量に抑えました。' },
+  { filter:'tiktok', cat:'TikTok Promotion Flyer', title:'TikTok配信告知\n店頭配布チラシ',
+    imgSrc:'images/img_29.jpg', tools:'Photoshop',
+    desc:'毎週水・金のTikTok配信を告知する店頭チラシ。「フォローするとレジでプレゼント」というインセンティブ設計も担当し、SNSフォロー→来店→購買のO2O導線を1枚のチラシで完結させました。' },
+  { filter:'tiktok', cat:'TikTok Thumbnail', title:'えっほえっほしてみた\nTikTokサムネイル',
+    imgSrc:'images/img_30.jpg', tools:'CapCut / Photoshop',
+    desc:'トレンドダンスに乗せた商品紹介動画のサムネイル。ダンスシーンの左右分割レイアウトで「何をやっている動画か」を一目で伝え、商品名を大きく入れて視聴後の記憶に残る設計を意識しました。' },
+  { filter:'tiktok', cat:'LINE Rich Menu Design', title:'スクイーズプラネット\nLINEリッチメニュー',
+    imgSrc:'images/img_31.jpg', beforeSrc:'images/img_31_before.png', tools:'Photoshop',
+    desc:'LINE公式アカウントのリッチメニューをゼロから設計・制作。来店・EC購入・お問い合わせの優先順位でタップエリアを配置し、BASEへの送客リンクを最も目立つ位置に設置。LINE→EC購買の最短導線を実現しました。' },
+  { filter:'tiktok', cat:'Digital Product / note販売中', title:'韓国旅行 旅のしおり\nCanvaテンプレート',
+    imgSrc:'images/img_32.jpg', tools:'Canva',
+    desc:'「旅行の準備をもっと楽しく」をコンセプトにした8ページのCanvaテンプレート。74×105mmのミニサイズで旅程・予算・グルメ・持ち物を網羅。FP視点の予算管理ページも組み込み、noteにて500円で販売中です。' }
+];
+
+// XSS対策エスケープ
+function esc(str){
+  return (str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// カテゴリ定義
+var workCats = [
+  { key:'sns',     label:'SNS / 販促バナー' },
+  { key:'ec',      label:'EC / BASE バナー' },
+  { key:'product', label:'商品バナー / 店舗制作物' },
+  { key:'tiktok',  label:'TikTok / LINE / デジタル' }
+];
+
+// Works カードを生成
+(function(){
+  var container = document.getElementById('worksContainer');
+  var html = '';
+  workCats.forEach(function(cat){
+    var catWorks = works.filter(function(w){ return w.filter === cat.key; });
+    if(!catWorks.length) return;
+    html += '<div class="works-category fu" data-category="' + cat.key + '"><span class="wcat-label">' + cat.label + '</span></div>';
+    html += '<div class="works-grid" data-category="' + cat.key + '">';
+    catWorks.forEach(function(w){
+      var titleHtml = esc(w.title).replace(/\n/g,'<br>');
+      var badge = w.beforeSrc ? '<span class="work-ba-badge">Before / After</span>' : '';
+      html += '<div class="work fu" data-filter="' + w.filter + '">';
+      html += '<div class="work-img-wrap"><img src="' + esc(w.imgSrc) + '" alt="' + esc(w.cat) + '" loading="lazy"></div>';
+      html += '<div class="work-detail">';
+      html += badge;
+      html += '<div class="work-cat">' + esc(w.cat) + '</div>';
+      html += '<h3 class="work-name">' + titleHtml + '</h3>';
+      html += '<p class="work-desc">' + esc(w.desc) + '</p>';
+      if(w.tools) html += '<div class="work-tools">使用ツール：' + esc(w.tools) + '</div>';
+      html += '</div></div>';
+    });
+    html += '</div>';
+  });
+  container.innerHTML = html;
+  container.querySelectorAll('.fu').forEach(function(el){ el.classList.add('vis'); });
+})();
+
 // Works フィルター
 (function(){
   var btns = document.querySelectorAll('.wf-btn');
@@ -491,235 +458,16 @@ document.querySelectorAll('.fu').forEach(function(el){ el.classList.add('vis'); 
       var filter = btn.getAttribute('data-filter');
       btns.forEach(function(b){ b.classList.remove('active'); });
       btn.classList.add('active');
-      // 作品カードの表示切替
       document.querySelectorAll('.work').forEach(function(w){
-        if(filter === 'all' || w.getAttribute('data-filter') === filter){
-          w.classList.remove('hidden');
-        } else {
-          w.classList.add('hidden');
-        }
+        w.classList.toggle('hidden', filter !== 'all' && w.getAttribute('data-filter') !== filter);
       });
-      // カテゴリラベルの表示切替
-      document.querySelectorAll('.works-category').forEach(function(c){
-        if(filter === 'all' || c.getAttribute('data-category') === filter){
-          c.style.display = '';
-        } else {
-          c.style.display = 'none';
-        }
+      document.querySelectorAll('.works-category, .works-grid').forEach(function(el){
+        var c = el.getAttribute('data-category');
+        el.style.display = (filter === 'all' || c === filter) ? '' : 'none';
       });
     });
   });
 })();
-
-// Works モーダル
-// beforeSrc に Before画像のパスを入れると2枚比較レイアウトになります
-var works = [
-  {
-    imgSrc:'images/img_17.jpg', beforeSrc:null,
-    cat:'SNS Banner Design', title:'BLOOM SQUEEZE\n入荷告知バナー',
-    desc:'スクイーズの新商品入荷をSNS向けに告知するバナー。マンガ風コマ割りレイアウトで商品を多数見せつつ、入荷日を明確に訴求。小中学生〜親世代に向けて「かわいいスクイーズが勢ぞろい！」という熱量を視覚化し、購買タイミングを逃さない設計にしています。',
-    background:'スクイーズ新商品の入荷日に合わせた緊急訴求バナー。入荷情報をいち早くファンに届け、売り切れ前の購買を促すため当日制作・即投稿の運用フローを確立した。',
-    tools:'Photoshop',
-    points:'マンガ風コマ割りレイアウトで複数商品を一覧表示し、情報量と見やすさを両立。入荷日を最大フォントで強調して「今買わないと売り切れる」という緊急感を演出した。'
-  },
-  {
-    imgSrc:'images/img_18.jpg', beforeSrc:null,
-    cat:'Instagram Story Design', title:'JANE×スクイーズプラネット\nインスタグラムストーリー',
-    desc:'TikTokで紹介した商品のオンラインショップ在庫告知ストーリー。スタッフ出演の親しみやすい雰囲気と、iBLOOM新入荷の商品グリッドを組み合わせ、TikTok→InstagramStory→ECという購買導線を完成させた実例です。',
-    background:'TikTokで紹介した商品への問い合わせが多く、「どこで買えるか」をInstagramでも告知する必要が生じた。SNS間の送客導線を設計するために制作。',
-    tools:'Photoshop / Canva',
-    points:'スタッフの顔写真を入れることで「誰が紹介しているか」が分かる親近感を演出。商品グリッドの下にBASEへのリンクを設置し、ストーリーからECへの1タップ導線を実現した。'
-  },
-  {
-    imgSrc:'images/img_19.jpg', beforeSrc:null,
-    cat:'Promotion Flyer', title:'大阪問屋雑貨菓子\n自社認知獲得フライヤー',
-    desc:'知名度が低かった時期に制作した自社認知拡大フライヤー。「一般の方大歓迎」「大阪問屋雑貨菓子激安店」というコピーで来店ハードルを最小化。スタッフ写真と商品画像を組み合わせ、SNSフォロー誘導まで一気通貫で設計しました。',
-    background:'開店当初、問屋系店舗は「業者しか入れない」というイメージが強く一般客が来店しづらい状況だった。「一般の方大歓迎」という訴求を最優先にしたフライヤーが必要だった。',
-    tools:'Photoshop',
-    points:'コピーで来店ハードルを下げつつ、スタッフの顔写真で親しみやすさを担保。裏面にSNSアカウントのQRコードを配置し、紙→SNSフォローへの導線を一枚で完結させた。'
-  },
-  {
-    imgSrc:'images/img_20.jpg', beforeSrc:null,
-    cat:'SNS Banner', title:'海外お菓子・飲料\nプロモーションバナー',
-    desc:'インスタで話題の海外お菓子・飲料を扱う当店のSNS告知バナー。多数の商品を並べた「品揃えの豊かさ」訴求と、パステルグラデーションの背景でポップな雰囲気を演出。ターゲット（学生〜若年層）の「見て楽しい」感覚を引き出しつつ、来店・購入につながる導線設計を意識しています。',
-    background:'「海外お菓子が手に入る店」としての認知を広げるため、品揃えの豊富さをSNSで一気に伝えるバナーが必要だった。商品を並べただけでは生活感が出すぎるため世界観設計を重視した。',
-    tools:'Photoshop',
-    points:'パステルグラデーションの背景で「映える」雰囲気を演出し、学生〜若年層が「保存・シェアしたくなる」ビジュアルに仕上げた。価格を入れず「珍しさ」への興味を先行させた。'
-  },
-  {
-    imgSrc:'images/img_21.jpg', beforeSrc:null,
-    cat:'Event Campaign Design', title:'ブラックフライデー\nクーポン施策バナー',
-    desc:'BASEのブラックフライデーイベント告知バナー。15%OFFクーポン・5%還元というFP視点での割引設計を視覚的にわかりやすく整理。Pay IDアプリとの連携フロー（4ステップ）を図解し、購買ハードルを最小化。クーポン施策設計からビジュアル制作まで一貫した実例です。',
-    background:'BASE主催のブラックフライデーキャンペーンへの参加にあたり、クーポン率の設計から告知バナーまで一人で担当。FP視点で粗利を計算した上で無理のない割引率を設定した。',
-    tools:'Photoshop',
-    points:'「15%OFF＋5%還元」という複数特典を視覚的に整理し、お得感を最大化。Pay IDアプリの使い方を4ステップで図解することでクーポン適用の離脱を防いだ。割引率はFP視点で原価・粗利を計算した上で決定した。'
-  },
-  {
-    imgSrc:'images/img_22.jpg', beforeSrc:null,
-    cat:'BASE Banner Design', title:'スクイーズ商品\nEC販促バナー（爆売れ大ヒット）',
-    desc:'「爆売れ大ヒット！」のコピーでスクイーズ商品の人気を訴求したBASE内バナー。スタッフ2名の笑顔写真と商品を合成し、店舗の熱量を伝えるビジュアル設計。商品の多様さを一覧で見せつつ「詳しくはコチラ」への誘導を配置しました。',
-    background:'実店舗で売れ行きの良いスクイーズ商品をECでも販売開始するにあたり、実店舗の信頼感をオンラインに転用するバナーが必要だった。',
-    tools:'Photoshop',
-    points:'実店舗スタッフの笑顔写真を入れることで「ちゃんとした店が運営している」安心感を付加。「爆売れ大ヒット」というコピーで社会的証明（みんなが買っている）を演出した。'
-  },
-  {
-    imgSrc:'images/img_23.jpg', beforeSrc:null,
-    cat:'BASE Banner Design', title:'LINE先行案内\nEC販促バナー',
-    desc:'LINE会員向けの先行案内バナー。「LINE先行案内」でファン心理を刺激しつつ、人気商品のグリッドと店内写真を組み合わせて品揃えの豊かさを訴求。フォロワーのエンゲージメントを高め、LINEからECへの送客を最大化する設計です。',
-    background:'LINE会員を優遇する施策でロイヤル顧客化を図るため、LINE登録者への先行案内バナーを制作。「LINE会員だけが先に知れる」特別感を演出することが目的だった。',
-    tools:'Photoshop',
-    points:'「先行案内」という限定感で開封率・クリック率を向上させた。商品グリッドに実店舗写真を組み合わせることで、オンラインでも店舗の活気・品揃えを伝える構成にした。'
-  },
-  {
-    imgSrc:'images/img_24.jpg', beforeSrc:null,
-    cat:'Wholesale Banner', title:'スーパーPコ\n期間限定セールバナー',
-    desc:'卸専門サイト向けの期間限定セールバナー。8/21〜8/28の期間を明示し緊急感を演出。TAMSドリンクシリーズを前面に出し、バイヤー向けに「今すぐ仕入れたい」という購買意欲を引き出す構成です。',
-    background:'卸専門サイト「スーパーPコ」の期間限定セール告知バナー。一般消費者ではなくバイヤー向けのため、「売れる商品を仕入れる機会」という訴求軸に設計した。',
-    tools:'Photoshop',
-    tools:'Photoshop',
-    points:'期間（8/21〜8/28）を大きく明示して期限による緊急感を演出。バイヤーが重視する「売れ筋商品かどうか」を伝えるため、TAMSシリーズの話題性を前面に配置した。'
-  },
-  {
-    imgSrc:'images/img_25.jpg', beforeSrc:null,
-    cat:'Product Banner Design', title:'HARIBO Chamallows\n入荷告知商品バナー',
-    desc:'SNS界隈でバズり中のHARIBO Chamallowsの入荷告知バナー。「めっちゃうまいやん」というフレンドリーなコピーで親近感を演出しつつ、「大量入荷しました」という緊急感と価格（¥1,700）を明確に訴求。断面写真でおいしさをビジュアル化しています。',
-    background:'SNSでバズ中の商品の入荷を告知するため、「他より先にスピード制作して投稿する」ことが重要だった。バズのタイミングを逃さずに乗るスピード感が求められた制作。',
-    tools:'Photoshop',
-    points:'「めっちゃうまいやん」という関西弁コピーで親近感と信頼感を演出。断面写真でおいしさをビジュアル化し、価格（¥1,700）を明示することで「高いけど買う価値がある」判断を後押しした。'
-  },
-  {
-    imgSrc:'images/img_26.jpg', beforeSrc:null,
-    cat:'Product Catalog Design', title:'チャンドゥク\nクッキー販促カタログ',
-    desc:'入荷したチャンドゥク（韓国マシュマロ）の販促カタログ。「おいしい食べ方レシピ」「商品紹介」「食事シーン」の3軸でページを構成し、商品の楽しみ方を提案型で見せる設計。アレンジレシピ（クラッカーサンド）を動画形式で紹介する導線も設計しました。',
-    background:'韓国で人気のチャンドゥクは日本での認知度が低く、「何に使うのか分からない」という声があった。使い方を提案することで購買ハードルを下げるカタログが必要だった。',
-    tools:'Photoshop / Canva',
-    points:'「おいしい食べ方レシピ」を前面に出し、商品紹介より先に「体験」を見せる構成にした。アレンジレシピをQRコードで動画に誘導することで、紙媒体からオンラインへの導線も設計した。'
-  },
-  {
-    imgSrc:'images/img_27.jpg', beforeSrc:null,
-    cat:'Signage Design', title:'スクイーズプラネット\n店頭看板デザイン',
-    desc:'店頭に設置するA型看板のデザイン。「流行りを追いかける雑貨屋」というコンセプトを赤×白の高視認性カラーで表現。EAT-IN・お土産・韓国食品など複数の訴求を盛り込みつつ、通行人の視線を止めるインパクトを重視したデザインです。',
-    background:'店頭を通り過ぎる通行人を引き込むための看板。「何を売っている店か」を一瞬で伝え、立ち止まってもらうことが最優先の課題だった。',
-    tools:'Photoshop / Illustrator',
-    points:'遠くからでも視認できるよう赤×白の高コントラスト配色を採用。「韓国食品・海外お菓子・スクイーズ」という複数ジャンルをコンパクトにまとめ、「何でもある面白い店」という期待感を一枚で作った。'
-  },
-  {
-    imgSrc:'images/img_28.jpg', beforeSrc:null,
-    cat:'TikTok Thumbnail', title:'TikTok\nサムネイルデザイン（韓国お菓子）',
-    desc:'TikTok動画のサムネイルデザイン。「スタッフおすすめ」「商品紹介動画公開中」というCTAを大きく配置し、クリック率を最大化する構成。スタッフ2名が商品を持つ臨場感ある写真と、黄色の吹き出しで注目を集めるレイアウトです。',
-    background:'TikTokのFYP（おすすめ）経由での新規流入を増やすため、サムネイルのクリック率改善が課題だった。スクロール中の0.5秒で「見たい」と思わせる設計が求められた。',
-    tools:'Photoshop / CapCut',
-    points:'スタッフの表情が見える写真を大きく配置し「人が出ている動画」であることを明示。黄色の吹き出しテキストで目線誘導し、動画タイトルを一瞬で読み取れるよう文字量を最小化した。'
-  },
-  {
-    imgSrc:'images/img_29.jpg', beforeSrc:null,
-    cat:'TikTok Promotion Flyer', title:'TikTok配信告知\n店頭配布チラシ',
-    desc:'毎週水・金にTikTokで配信している「TikTokで話題のお菓子紹介」コーナーの店頭告知チラシ。スタッフ2名が出演するコンテンツをビジュアル化し、SNSフォロー→レジでプレゼントというO2O（オンライン to オフライン）の購買導線を設計。チラシ1枚でSNSと実店舗を繋ぐ施策の実例です。',
-    background:'実店舗に来ているお客様がTikTokを知らないケースが多く、SNSフォロワーを増やすO2O施策が必要だった。「フォローするとレジでプレゼント」というインセンティブ設計も同時に担当した。',
-    tools:'Photoshop',
-    points:'フォローするだけで特典がもらえるシンプルな設計で行動ハードルを最低限に。QRコードを大きく配置してその場でスキャンできる動線を確保。スタッフの笑顔写真でコンテンツへの親近感も演出した。'
-  },
-  {
-    imgSrc:'images/img_30.jpg', beforeSrc:null,
-    cat:'TikTok Thumbnail', title:'えっほえっほしてみた\nTikTokサムネイル',
-    desc:'HARIBOとチョコレートの商品を使ったトレンドダンス動画「えっほえっほしてみた」のサムネイルデザイン。商品名を大きく配置し、ダンスの動きを切り取ったスクショを左右分割レイアウトで見せる構成。TikTokのFYP（おすすめページ）でクリック率を最大化するサムネイル設計の実例です。',
-    background:'バズトレンドの「えっほえっほ」ダンスに乗せた商品紹介動画。トレンドに乗ることで拡散を狙い、商品の認知拡大を図る企画を自ら立案・撮影・編集まで担当した。',
-    tools:'CapCut / Photoshop',
-    points:'ダンスの動きが分かるシーンを左右分割で見せ「何をやっている動画か」を一目で伝える構成にした。商品名を大きく入れることでエンタメとしての視聴後に商品名が記憶に残る設計を意識した。'
-  },
-  {
-    imgSrc:'images/img_31.jpg', beforeSrc:'images/img_31_before.png',
-    cat:'LINE Rich Menu Design', title:'スクイーズプラネット\nLINEリッチメニュー',
-    desc:'LINE公式アカウントのリッチメニューをゼロから設計・制作。来店誘導・商品案内・BASE（EC）への動線を優先順位つきで整理し、タップしやすいUI設計を実現。SNS告知からEC購買まで、接触から購買まで最短経路で設計。Photoshopで制作し、導線設計から納品まで一貫対応。',
-    background:'LINE会員数は増えていたが、リッチメニューが未整備でECへの導線がなかった。「LINE登録者を購買に繋げる」ためにリッチメニューをゼロから設計・制作した。',
-    tools:'Photoshop',
-    points:'6分割のタップエリアを「来店」「EC購入」「お問い合わせ」の優先順位で配置。アイコンと文字を組み合わせて何をタップするか直感的に分かるUIにした。BASEへの送客リンクを最も目立つ位置に配置し、LINE→EC購買の最短導線を実現した。'
-  },
-  {
-    imgSrc:'images/img_32.jpg', beforeSrc:null,
-    cat:'Digital Product / note販売中', title:'韓国旅行 旅のしおり\nCanvaテンプレート',
-    desc:'「旅行の準備をもっと楽しく」をコンセプトに制作した8ページのCanvaテンプレート。74×105mmのミニサイズで、韓国のくすみカラーパレットを使用。旅程・予算管理・グルメメモ・持ち物リストまで網羅。FP視点の予算管理ページも組み込み、「楽しく使える家計管理」を旅とセットで設計。noteにて500円で販売中。',
-    background:'韓国旅行の準備で「使えるしおりテンプレートがない」という自身の経験から発案。FP資格を活かした予算管理ページを組み込むことで、他にないポジションを狙ったデジタル商品として制作した。',
-    tools:'Canva',
-    points:'74×105mmのミニサイズに設計することでスマホ画面で見やすく。旅程・予算・グルメ・持ち物を8ページにコンパクトに収め、Canvaでカスタマイズできる形で配布。FPらしい予算管理ページを「楽しく使えるデザイン」に落とし込んだ点がこだわりです。'
-  }
-];
-
-function openModal(i){
-  var w = works[i];
-  if(!w) return;
-  var box = document.getElementById('modalBox');
-  var hasBa = !!w.beforeSrc;
-  box.className = 'modal-box' + (hasBa ? ' has-ba' : '');
-
-  var metaHtml =
-    '<div class="m-meta">' +
-      (w.background ? '<div class="m-meta-item"><span class="m-meta-key">制作背景</span><span class="m-meta-val">' + esc(w.background) + '</span></div>' : '') +
-      (w.tools      ? '<div class="m-meta-item"><span class="m-meta-key">使用ツール</span><span class="m-meta-val">' + esc(w.tools)      + '</span></div>' : '') +
-      (w.points     ? '<div class="m-meta-item"><span class="m-meta-key">工夫したポイント</span><span class="m-meta-val">' + esc(w.points)  + '</span></div>' : '') +
-    '</div>';
-
-  if(hasBa){
-    // Before/After 2枚比較レイアウト
-    box.innerHTML =
-      '<div class="modal-ba">' +
-        '<div class="modal-ba-item"><span class="modal-ba-label before">Before</span><img src="' + esc(w.beforeSrc) + '" alt="Before"></div>' +
-        '<div class="modal-ba-item"><span class="modal-ba-label after">After</span><img src="' + esc(w.imgSrc) + '" alt="After"></div>' +
-      '</div>' +
-      '<div class="modal-body-full">' +
-        '<div class="m-cat">'   + esc(w.cat)   + '</div>' +
-        '<h3 class="m-title">'  + esc(w.title) + '</h3>' +
-        '<p class="m-desc">'    + esc(w.desc)  + '</p>' +
-        metaHtml +
-      '</div>' +
-      '<div class="modal-footer"><button class="m-close" id="mClose">Close</button></div>';
-  } else {
-    // 通常レイアウト（画像左・テキスト右）
-    box.innerHTML =
-      '<div class="modal-img"><img src="' + esc(w.imgSrc) + '" alt="' + esc(w.cat) + '"></div>' +
-      '<div class="modal-body">' +
-        '<div>' +
-          '<div class="m-cat">'  + esc(w.cat)   + '</div>' +
-          '<h3 class="m-title">' + esc(w.title) + '</h3>' +
-          '<p class="m-desc">'   + esc(w.desc)  + '</p>' +
-          metaHtml +
-        '</div>' +
-        '<button class="m-close" id="mClose">Close</button>' +
-      '</div>';
-  }
-
-  document.getElementById('mClose').addEventListener('click', closeModal);
-  box.scrollTop = 0;
-  document.getElementById('modalBg').classList.add('on');
-  document.body.style.overflow = 'hidden';
-}
-
-function esc(str){
-  return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/\n/g,'<br>');
-}
-
-function closeModal(){
-  document.getElementById('modalBg').classList.remove('on');
-  document.body.style.overflow = '';
-}
-
-// モーダル：背景クリックで閉じる
-document.getElementById('modalBg').addEventListener('click', function(e){
-  if(e.target === this) closeModal();
-});
-
-// モーダル：Escキーで閉じる
-document.addEventListener('keydown', function(e){
-  if(e.key === 'Escape') closeModal();
-});
-
-// Works カードにクリックイベントを付与
-document.querySelectorAll('.work').forEach(function(el){
-  el.addEventListener('click', function(){
-    var idx = parseInt(el.getAttribute('data-idx'), 10);
-    openModal(idx);
-  });
-});
 </script>
 </body>
 </html>
