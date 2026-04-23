@@ -77,18 +77,49 @@ section { border-top:1px solid var(--rule); }
 .works-category { padding:20px 48px 0; }
 .wcat-label { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--warm); display:inline-flex; align-items:center; gap:12px; }
 .wcat-label::before { content:''; width:20px; height:1px; background:var(--warm); }
-.works-grid { display:grid; grid-template-columns:1fr; border-top:1px solid var(--rule); margin-top:12px; }
-.work { border-right:none; border-bottom:1px solid var(--rule); overflow:hidden; background:var(--paper); display:flex; flex-direction:column; }
-.work-img-wrap { background:var(--paper2); flex-shrink:0; }
-.work-img-wrap img { width:100%; height:auto; max-height:600px; object-fit:contain; display:block; transition:opacity 0.3s ease; }
-.work:hover .work-img-wrap img { opacity:0.92; }
-.work-detail { padding:22px 28px 28px; display:flex; flex-direction:column; flex:1; }
-.work-cat { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm); margin-bottom:8px; }
-.work-name { font-size:15px; font-weight:500; line-height:1.5; color:var(--ink); margin-bottom:10px; }
-.work-desc { font-size:12px; color:#666; line-height:1.9; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; flex:1; }
-.work-tools { font-size:10px; color:var(--muted); margin-top:10px; letter-spacing:0.05em; }
-.work-ba-badge { display:inline-block; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; background:var(--warm); color:#fff; padding:2px 8px; margin-bottom:8px; align-self:flex-start; }
+.works-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--rule); margin-top:12px; }
+.work { border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); aspect-ratio:4/3; overflow:hidden; position:relative; background:var(--paper2); cursor:none; }
+.work:nth-child(4n) { border-right:none; }
+.work img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); display:block; }
+.work:hover img { transform:scale(1.06); }
+.work-ov { position:absolute; inset:0; background:rgba(26,26,26,0); display:flex; flex-direction:column; justify-content:flex-end; padding:16px; transition:background 0.35s ease; pointer-events:none; }
+.work:hover .work-ov { background:rgba(26,26,26,0.82); }
+.work-info { opacity:0; transform:translateY(6px); transition:all 0.28s ease; }
+.work:hover .work-info { opacity:1; transform:translateY(0); }
+.work-cat { font-family:'Noto Sans JP',sans-serif; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm); margin-bottom:4px; }
+.work-name { font-size:12px; color:var(--paper); line-height:1.4; }
 .work.hidden { display:none; }
+/* モーダル */
+.modal-bg { position:fixed; inset:0; background:rgba(26,26,26,0.93); z-index:1000; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity 0.3s ease; padding:40px; }
+.modal-bg.on { opacity:1; pointer-events:all; }
+.modal-box { background:var(--paper); max-width:860px; width:100%; max-height:90vh; overflow-y:auto; display:grid; grid-template-columns:1fr 1fr; transform:translateY(12px); transition:transform 0.3s ease; }
+.modal-bg.on .modal-box { transform:translateY(0); }
+.modal-img { background:var(--paper2); min-height:360px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.modal-img img { width:100%; height:100%; object-fit:contain; }
+.modal-body { padding:44px 36px; display:flex; flex-direction:column; justify-content:space-between; }
+.m-cat { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
+.m-title { font-family:'Noto Serif JP',serif; font-size:24px; font-weight:300; line-height:1.35; margin-bottom:18px; white-space:pre-line; }
+.m-desc { font-size:12px; line-height:2.0; color:#555; flex:1; }
+.m-close { margin-top:24px; background:none; border:1px solid var(--ink); padding:10px 20px; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; transition:all 0.2s; align-self:flex-start; font-family:'Noto Sans JP',sans-serif; }
+.m-close:hover { background:var(--ink); color:var(--paper); }
+.modal-box.has-ba { grid-template-columns:1fr; max-width:960px; }
+.modal-ba { display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--rule); }
+.modal-ba-item { position:relative; overflow:hidden; background:var(--paper2); min-height:280px; display:flex; align-items:center; justify-content:center; }
+.modal-ba-item:first-child { border-right:1px solid var(--rule); }
+.modal-ba-item img { width:100%; height:100%; object-fit:contain; display:block; }
+.modal-ba-label { position:absolute; top:12px; left:12px; font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; padding:4px 10px; }
+.modal-ba-label.before { background:var(--muted); color:var(--paper); }
+.modal-ba-label.after  { background:var(--warm); color:var(--ink); }
+.modal-body-full { padding:36px 44px; }
+.modal-body-full .m-cat { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
+.modal-body-full .m-title { font-family:'Noto Serif JP',serif; font-size:24px; font-weight:300; line-height:1.35; margin-bottom:12px; white-space:pre-line; }
+.modal-body-full .m-desc { font-size:12px; line-height:2.0; color:#555; margin-bottom:0; }
+.m-meta { margin-top:20px; border-top:1px solid var(--rule); padding-top:4px; }
+.m-meta-item { display:grid; grid-template-columns:110px 1fr; gap:16px; padding:14px 0; border-bottom:1px solid var(--rule); align-items:start; }
+.m-meta-item:last-child { border-bottom:none; }
+.m-meta-key { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); padding-top:2px; }
+.m-meta-val { font-size:12px; line-height:1.85; color:#555; }
+.modal-footer { display:flex; justify-content:flex-start; padding:0 44px 36px; }
 .dp-section { background:var(--paper2); border-top:1px solid var(--rule); }
 .dp-grid { display:grid; grid-template-columns:200px 1fr 1fr; border-top:1px solid var(--rule); }
 .dp-l { padding:52px 36px; border-right:1px solid var(--rule); background:var(--ink); color:var(--paper); display:flex; flex-direction:column; gap:14px; justify-content:center; }
@@ -151,7 +182,12 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
   .str-grid { grid-template-columns:1fr; } .str-item { border-right:none; border-bottom:1px solid var(--rule); }
   .svc-grid { grid-template-columns:1fr 1fr; } .svc:nth-child(4n) { border-right:1px solid var(--rule); } .svc:nth-child(2n) { border-right:none; }
   .works-filter { padding:16px 24px 0; }
-  .works-category { padding:16px 24px 0; } .work-detail { padding:18px 20px 22px; } .work-img-wrap img { max-height:400px; }
+  .works-category { padding:16px 24px 0; } .works-grid { grid-template-columns:repeat(2,1fr); } .work:nth-child(4n) { border-right:1px solid var(--rule); } .work:nth-child(2n) { border-right:none; }
+  .modal-box { grid-template-columns:1fr; }
+  .modal-ba { grid-template-columns:1fr; }
+  .modal-ba-item:first-child { border-right:none; border-bottom:1px solid var(--rule); }
+  .modal-body-full { padding:28px 24px; }
+  .modal-footer { padding:0 24px 28px; }
   .pricing-cta { flex-direction:column; gap:24px; align-items:flex-start; padding:36px 24px; }
   .dp-grid { grid-template-columns:1fr; } .dp-l { padding:44px 24px; } .dp-m { border-right:none; border-bottom:1px solid var(--rule); padding:36px 24px; } .dp-r { padding:36px 24px; }
   .results-grid { grid-template-columns:1fr 1fr; } .result:nth-child(2n) { border-right:none; } .result { border-bottom:1px solid var(--rule); }
@@ -318,6 +354,8 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
 </footer>
 
 
+<div class="modal-bg" id="modalBg"><div class="modal-box" id="modalBox"></div></div>
+
 <script>
 // カスタムカーソル（タッチデバイスでは無効化）
 (function(){
@@ -424,7 +462,7 @@ var workCats = [
   { key:'tiktok',  label:'TikTok / LINE / デジタル' }
 ];
 
-// Works カードを生成
+// Works カードを生成（モーダル用グリッド）
 (function(){
   var container = document.getElementById('worksContainer');
   var html = '';
@@ -433,18 +471,14 @@ var workCats = [
     if(!catWorks.length) return;
     html += '<div class="works-category fu" data-category="' + cat.key + '"><span class="wcat-label">' + cat.label + '</span></div>';
     html += '<div class="works-grid" data-category="' + cat.key + '">';
-    catWorks.forEach(function(w){
-      var titleHtml = esc(w.title).replace(/\n/g,'<br>');
-      var badge = w.beforeSrc ? '<span class="work-ba-badge">Before / After</span>' : '';
-      html += '<div class="work fu" data-filter="' + w.filter + '">';
-      html += '<div class="work-img-wrap"><img src="' + esc(w.imgSrc) + '" alt="' + esc(w.cat) + '" loading="lazy"></div>';
-      html += '<div class="work-detail">';
-      html += badge;
+    catWorks.forEach(function(w, i){
+      var idx = works.indexOf(w);
+      html += '<div class="work fu" data-filter="' + esc(w.filter) + '" data-idx="' + idx + '">';
+      html += '<img src="' + esc(w.imgSrc) + '" alt="' + esc(w.cat) + '" loading="lazy">';
+      html += '<div class="work-ov"><div class="work-info">';
       html += '<div class="work-cat">' + esc(w.cat) + '</div>';
-      html += '<h3 class="work-name">' + titleHtml + '</h3>';
-      html += '<p class="work-desc">' + esc(w.desc) + '</p>';
-      if(w.tools) html += '<div class="work-tools">使用ツール：' + esc(w.tools) + '</div>';
-      html += '</div></div>';
+      html += '<div class="work-name">' + esc(w.title).replace(/\n/g,'<br>') + '</div>';
+      html += '</div></div></div>';
     });
     html += '</div>';
   });
@@ -468,6 +502,72 @@ var workCats = [
         el.style.display = (filter === 'all' || c === filter) ? '' : 'none';
       });
     });
+  });
+})();
+
+// モーダル
+(function(){
+  var bg  = document.getElementById('modalBg');
+  var box = document.getElementById('modalBox');
+  if(!bg || !box) return;
+
+  function openModal(idx){
+    var w = works[idx];
+    if(!w) return;
+    var isBa = !!w.beforeSrc;
+    box.className = 'modal-box' + (isBa ? ' has-ba' : '');
+    var html = '';
+    if(isBa){
+      html += '<div class="modal-ba">';
+      html += '<div class="modal-ba-item"><img src="' + esc(w.beforeSrc) + '" alt="Before"><span class="modal-ba-label before">Before</span></div>';
+      html += '<div class="modal-ba-item"><img src="' + esc(w.imgSrc) + '" alt="After"><span class="modal-ba-label after">After</span></div>';
+      html += '</div>';
+      html += '<div class="modal-body-full">';
+      html += '<div class="m-cat">' + esc(w.cat) + '</div>';
+      html += '<div class="m-title">' + esc(w.title) + '</div>';
+      html += '<div class="m-desc">' + esc(w.desc) + '</div>';
+      if(w.tools){
+        html += '<div class="m-meta"><div class="m-meta-item"><span class="m-meta-key">Tools</span><span class="m-meta-val">' + esc(w.tools) + '</span></div></div>';
+      }
+      html += '</div>';
+      html += '<div class="modal-footer"><button class="m-close" id="mClose">Close</button></div>';
+    } else {
+      html += '<div class="modal-img"><img src="' + esc(w.imgSrc) + '" alt="' + esc(w.cat) + '"></div>';
+      html += '<div class="modal-body">';
+      html += '<div>';
+      html += '<div class="m-cat">' + esc(w.cat) + '</div>';
+      html += '<div class="m-title">' + esc(w.title) + '</div>';
+      html += '<div class="m-desc">' + esc(w.desc) + '</div>';
+      if(w.tools){
+        html += '<div class="m-meta"><div class="m-meta-item"><span class="m-meta-key">Tools</span><span class="m-meta-val">' + esc(w.tools) + '</span></div></div>';
+      }
+      html += '</div>';
+      html += '<button class="m-close" id="mClose">Close</button>';
+      html += '</div>';
+    }
+    box.innerHTML = html;
+    box.scrollTop = 0;
+    bg.classList.add('on');
+    var closeBtn = document.getElementById('mClose');
+    if(closeBtn) closeBtn.addEventListener('click', closeModal);
+  }
+
+  function closeModal(){
+    bg.classList.remove('on');
+  }
+
+  bg.addEventListener('click', function(e){
+    if(e.target === bg) closeModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeModal();
+  });
+
+  document.getElementById('worksContainer').addEventListener('click', function(e){
+    var card = e.target.closest('.work');
+    if(!card) return;
+    var idx = parseInt(card.getAttribute('data-idx'), 10);
+    openModal(idx);
   });
 })();
 </script>
