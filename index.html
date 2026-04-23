@@ -68,17 +68,6 @@ section { border-top:1px solid var(--rule); }
 .str-title { font-size:14px; font-weight:500; margin-bottom:10px; letter-spacing:0.03em; }
 .str-body { font-size:12px; line-height:2.0; color:#666; }
 .str-tag { display:inline-block; margin-top:16px; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; border-bottom:1px solid var(--warm); color:var(--warm); padding-bottom:2px; }
-.fp-section { background:var(--ink); color:var(--paper); border-top:none; }
-.fp-top { padding:60px 48px 40px; border-bottom:1px solid rgba(255,255,255,0.1); }
-.fp-eyebrow { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.28em; text-transform:uppercase; color:var(--warm); margin-bottom:16px; }
-.fp-headline { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,3.5vw,48px); font-weight:300; line-height:1.15; margin-bottom:16px; }
-.fp-subdesc { font-size:13px; color:rgba(248,246,242,0.85); line-height:1.9; max-width:600px; }
-.fp-points { display:grid; grid-template-columns:repeat(3,1fr); }
-.fp-point { padding:44px 40px; border-right:1px solid rgba(255,255,255,0.1); }
-.fp-point:last-child { border-right:none; }
-.fp-point-num { font-family:'Cormorant Garamond',serif; font-size:44px; font-weight:300; color:var(--warm); line-height:1; margin-bottom:16px; }
-.fp-point-title { font-size:13px; font-weight:500; margin-bottom:10px; }
-.fp-point-body { font-size:12px; line-height:1.9; color:rgba(248,246,242,0.85); }
 .svc-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--rule); }
 .svc { padding:36px 32px; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); }
 .svc:nth-child(4n) { border-right:none; }
@@ -200,7 +189,6 @@ footer p { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); 
   .sh { padding:36px 24px 28px; }
   .about-grid { grid-template-columns:1fr; } .about-l { border-right:none; border-bottom:1px solid var(--rule); padding:36px 24px; } .about-r { padding:36px 24px; }
   .str-grid { grid-template-columns:1fr; } .str-item { border-right:none; border-bottom:1px solid var(--rule); }
-  .fp-points { grid-template-columns:1fr; } .fp-point { border-right:none; border-bottom:1px solid rgba(255,255,255,0.1); padding:36px 24px; } .fp-point:last-child { border-bottom:none; } .fp-top { padding:44px 24px 32px; }
   .svc-grid { grid-template-columns:1fr 1fr; } .svc:nth-child(4n) { border-right:1px solid var(--rule); } .svc:nth-child(2n) { border-right:none; }
   .works-filter { padding:16px 24px 0; }
   .works-category { padding:16px 24px 0; } .works-grid { grid-template-columns:repeat(2,1fr); } .work:nth-child(4n) { border-right:1px solid var(--rule); } .work:nth-child(2n) { border-right:none; }
@@ -278,24 +266,12 @@ footer p { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); 
 <section id="strength">
   <div class="sh fu"><h2 class="sh-title">My Strength</h2><span class="sh-num">02</span></div>
   <div class="str-grid">
-    <div class="str-item fu"><div class="str-bg-num">01</div><div class="str-icon">🏪</div><h3 class="str-title">大阪唯一の専門店、現場2年の実務経験</h3><p class="str-body">スクイーズ・海外お菓子・韓国雑貨など複数ジャンルを扱うJANEで、EC運用・SNS運用・販促設計をワンオペで担当。ブラックフライデーなどの大規模イベント施策を設計・実行し、売上20%UPを達成。「バナー1枚の変化が売上にどう影響するか」をリアルタイムで検証し続けた実践経験です。</p><span class="str-tag">EC × Retail Expertise</span></div>
-    <div class="str-item fu"><div class="str-bg-num">02</div><div class="str-icon">📊</div><h3 class="str-title">FP資格×「カワイイ」の購買心理分析</h3><p class="str-body">ファイナンシャルプランナーの知識で、ターゲット（小中学生〜親世代）の財布の動き方を構造的に分析。「カワイイ」という感情を衝動買いへと繋げる訴求ポイントの選定、クーポン額・割引率の設計、広告コストに対するROI視点でのデザイン提案を行います。</p><span class="str-tag">FP × CVR Design</span></div>
-    <div class="str-item fu"><div class="str-bg-num">03</div><div class="str-icon">🔥</div><h3 class="str-title">ECの「熱量」を最大化するビジュアル設計</h3><p class="str-body">商品の魅力を「伝える」だけでなく、「欲しい」「今すぐ買いたい」という感情を引き出すビジュアル設計が専門。イベントバナー・SNS投稿・LINEリッチメニューを一貫した世界観で設計し、接触から購買までの導線をデザインで完結させます。</p><span class="str-tag">Funnel × Visual Strategy</span></div>
+    <div class="str-item fu"><div class="str-bg-num">01</div><div class="str-icon">🏪</div><h3 class="str-title">大阪唯一の専門店、現場2年の実務経験</h3><p class="str-body">JANEでEC・SNS・販促設計をワンオペで2年担当。ブラックフライデー等のイベント施策を企画から実行まで一気通貫で担い、売上20%UPを達成。</p><span class="str-tag">EC × Retail Expertise</span></div>
+    <div class="str-item fu"><div class="str-bg-num">02</div><div class="str-icon">📊</div><h3 class="str-title">FP資格×購買心理で、利益率まで踏み込む</h3><p class="str-body">広告コスト・粗利率・ターゲットの財布の動き方をFP視点で数字ベースに分析。ROI視点のデザイン提案とCVRが上がる訴求選定が強みです。</p><span class="str-tag">FP × CVR Design</span></div>
+    <div class="str-item fu"><div class="str-bg-num">03</div><div class="str-icon">🔥</div><h3 class="str-title">ECの「熱量」を最大化するビジュアル設計</h3><p class="str-body">「今すぐ買いたい」という感情を引き出すビジュアル設計が専門。バナー・SNS・LINEリッチメニューを一貫した世界観で設計し、購買導線をデザインで完結させます。</p><span class="str-tag">Funnel × Visual Strategy</span></div>
   </div>
 </section>
 
-<section class="fp-section">
-  <div class="fp-top">
-    <p class="fp-eyebrow">FP × EC Design Approach</p>
-    <h2 class="fp-headline">「カワイイ」を、売上のロジックに変換する。</h2>
-    <p class="fp-subdesc">感情で動く商品だからこそ、数字で設計する。FPの視点とEC現場の経験を掛け合わせた、唯一無二のアプローチです。</p>
-  </div>
-  <div class="fp-points">
-    <div class="fp-point"><div class="fp-point-num">01</div><h3 class="fp-point-title">利益率を理解したデザイン提案</h3><p class="fp-point-body">広告コスト・粗利率・クーポン原資を把握した上で制作。「どこにお金をかけるか」「どの訴求でCVRが上がるか」の判断軸を持って提案します。</p></div>
-    <div class="fp-point"><div class="fp-point-num">02</div><h3 class="fp-point-title">ターゲットの購買心理を設計に落とす</h3><p class="fp-point-body">小中学生の衝動買い心理、親世代の「安心感」訴求、ファンの「応援消費」。ライフステージ別の財布の動き方をビジュアルに変換します。</p></div>
-    <div class="fp-point"><div class="fp-point-num">03</div><h3 class="fp-point-title">イベント施策の一気通貫設計</h3><p class="fp-point-body">ブラックフライデー等のイベントで、クーポン設計→バナー制作→SNS告知→BASE運用まで一貫して担当。施策全体の熱量を最大化します。</p></div>
-  </div>
-</section>
 
 <section id="service">
   <div class="sh fu"><h2 class="sh-title">Service</h2><span class="sh-num">03</span></div>
