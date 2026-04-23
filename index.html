@@ -37,15 +37,9 @@ nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; justify
 .hero-sub { font-size:13px; line-height:2.1; color:#555; max-width:440px; margin-bottom:48px; border-left:2px solid var(--warm); padding-left:20px; }
 .hero-tags { display:flex; flex-wrap:wrap; gap:10px; }
 .tag { font-family:'Noto Sans JP',sans-serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; padding:8px 16px; border:1px solid var(--rule); color:var(--muted); }
-.hero-r { display:grid; grid-template-rows:1fr auto; background:var(--paper2); min-width:0; overflow:hidden; }
-.hero-photo { overflow:hidden; border-bottom:1px solid var(--rule); min-height:380px; }
+.hero-r { background:var(--paper2); min-width:0; overflow:hidden; }
+.hero-photo { overflow:hidden; min-height:380px; }
 .hero-photo img { width:100%; height:100%; object-fit:cover; object-position:center 15%; display:block; }
-.hero-kpis { display:grid; grid-template-columns:repeat(3,1fr); }
-.kpi { padding:24px 16px; border-right:1px solid var(--rule); text-align:center; }
-.kpi:last-child { border-right:none; }
-.kpi-num { font-family:'Playfair Display',serif; font-size:30px; font-weight:400; line-height:1; margin-bottom:6px; }
-.kpi-num span { font-size:15px; }
-.kpi-label { font-family:'Noto Sans JP',sans-serif; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); }
 section { border-top:1px solid var(--rule); }
 .sh { display:flex; justify-content:space-between; align-items:baseline; padding:48px 48px 40px; }
 .sh-title { font-family:'Noto Serif JP',serif; font-size:36px; font-weight:300; letter-spacing:-0.01em; }
@@ -185,7 +179,6 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
   .hero-r { order:2; display:flex; flex-direction:column; }
   .hero-photo { height:300px; min-height:0; }
   .hero-photo img { height:100%; object-fit:cover; object-position:center 15%; }
-  .hero-kpis { display:grid; grid-template-columns:repeat(3,1fr); }
   .sh { padding:36px 24px 28px; }
   .about-grid { grid-template-columns:1fr; } .about-l { border-right:none; border-bottom:1px solid var(--rule); padding:36px 24px; } .about-r { padding:36px 24px; }
   .str-grid { grid-template-columns:1fr; } .str-item { border-right:none; border-bottom:1px solid var(--rule); }
@@ -237,11 +230,6 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
   <div class="hero-r">
     <div class="hero-photo">
       <img src="images/img_00.jpg" alt="笹田麻衣" />
-    </div>
-    <div class="hero-kpis">
-      <div class="kpi"><div class="kpi-num">14.4<span>万</span></div><div class="kpi-label">Max Views</div></div>
-      <div class="kpi"><div class="kpi-num">+20<span>%</span></div><div class="kpi-label">Sales Up</div></div>
-      <div class="kpi"><div class="kpi-num">2<span>年</span></div><div class="kpi-label">JANE EC運用</div></div>
     </div>
   </div>
 </section>
