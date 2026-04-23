@@ -13,150 +13,150 @@
 <meta name="twitter:title" content="SASADA MAI — EC Sales Designer × FP">
 <meta name="twitter:description" content="大阪のECセールスデザイナー 笹田麻衣のポートフォリオ。FP資格×EC現場2年の経験でCVR改善を実現。">
 <meta name="twitter:image" content="images/img_00.jpg">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-:root { --ink:#111010; --paper:#f8f6f2; --paper2:#eeebe4; --rule:#d8d4cc; --muted:#8a8480; --warm:#c8a96e; }
+:root { --ink:#1A1A1A; --paper:#FFFFFF; --paper2:#F5F5F3; --rule:#E8E8E5; --muted:#8a8480; --warm:#C4714A; }
 html { scroll-behavior:smooth; }
 body { background:var(--paper); color:var(--ink); font-family:'Noto Sans JP',sans-serif; font-weight:300; line-height:1.7; cursor:none; }
 .cur { width:6px; height:6px; background:var(--ink); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:9999; }
 @media(hover:none),(pointer:coarse) { body{cursor:auto;} .cur,.cur-o{display:none;} .work,.m-close{cursor:pointer;} }
 .cur-o { width:28px; height:28px; border:1px solid var(--ink); border-radius:50%; position:fixed; top:-14px; left:-14px; pointer-events:none; z-index:9998; transition:all 0.1s ease; }
-nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; justify-content:space-between; align-items:center; padding:20px 48px; background:rgba(248,246,242,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--rule); }
-.nav-logo { font-family:'DM Mono',monospace; font-size:13px; letter-spacing:0.12em; text-decoration:none; color:var(--ink); }
+nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; justify-content:space-between; align-items:center; padding:20px 48px; background:rgba(255,255,255,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--rule); }
+.nav-logo { font-family:'Playfair Display',serif; font-size:13px; letter-spacing:0.12em; text-decoration:none; color:var(--ink); }
 .nav-links { display:flex; gap:32px; list-style:none; }
 .nav-links a { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; color:var(--muted); transition:color 0.2s; }
 .nav-links a:hover,
 .nav-links a.active { color:var(--ink); }
 .hero { min-height:100vh; display:grid; grid-template-columns:55% 45%; padding-top:68px; }
 .hero-l { display:flex; flex-direction:column; justify-content:center; padding:72px 52px; border-right:1px solid var(--rule); }
-.hero-eyebrow { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--muted); margin-bottom:32px; display:flex; align-items:center; gap:16px; }
+.hero-eyebrow { font-family:'Noto Sans JP',sans-serif; font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--muted); margin-bottom:32px; display:flex; align-items:center; gap:16px; }
 .hero-eyebrow::before { content:''; width:32px; height:1px; background:var(--warm); flex-shrink:0; }
-.hero-catch { font-family:'Cormorant Garamond',serif; font-size:clamp(36px,5vw,68px); font-weight:300; line-height:1.1; letter-spacing:-0.02em; margin-bottom:32px; }
+.hero-catch { font-family:'Noto Serif JP',serif; font-size:clamp(36px,5vw,68px); font-weight:300; line-height:1.1; letter-spacing:-0.02em; margin-bottom:32px; }
 .hero-catch em { font-style:italic; color:var(--warm); }
 .hero-sub { font-size:13px; line-height:2.1; color:#555; max-width:440px; margin-bottom:48px; border-left:2px solid var(--warm); padding-left:20px; }
 .hero-tags { display:flex; flex-wrap:wrap; gap:10px; }
-.tag { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; padding:8px 16px; border:1px solid var(--rule); color:var(--muted); }
+.tag { font-family:'Noto Sans JP',sans-serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; padding:8px 16px; border:1px solid var(--rule); color:var(--muted); }
 .hero-r { display:grid; grid-template-rows:1fr auto; background:var(--paper2); }
 .hero-photo { overflow:hidden; border-bottom:1px solid var(--rule); min-height:380px; }
 .hero-photo img { width:100%; height:100%; object-fit:cover; object-position:center 15%; display:block; }
 .hero-kpis { display:grid; grid-template-columns:repeat(3,1fr); }
 .kpi { padding:24px 16px; border-right:1px solid var(--rule); text-align:center; }
 .kpi:last-child { border-right:none; }
-.kpi-num { font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:300; line-height:1; margin-bottom:6px; }
+.kpi-num { font-family:'Playfair Display',serif; font-size:30px; font-weight:400; line-height:1; margin-bottom:6px; }
 .kpi-num span { font-size:15px; }
-.kpi-label { font-family:'DM Mono',monospace; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); }
+.kpi-label { font-family:'Noto Sans JP',sans-serif; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); }
 section { border-top:1px solid var(--rule); }
 .sh { display:flex; justify-content:space-between; align-items:baseline; padding:48px 48px 40px; }
-.sh-title { font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:300; letter-spacing:-0.01em; }
-.sh-num { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); }
+.sh-title { font-family:'Noto Serif JP',serif; font-size:36px; font-weight:300; letter-spacing:-0.01em; }
+.sh-num { font-family:'Playfair Display',serif; font-size:10px; color:var(--muted); }
 .about-grid { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--rule); }
 .about-l { padding:52px 48px; border-right:1px solid var(--rule); }
-.about-lead { font-family:'Cormorant Garamond',serif; font-size:21px; font-weight:300; line-height:1.75; margin-bottom:28px; }
+.about-lead { font-family:'Noto Serif JP',serif; font-size:21px; font-weight:300; line-height:1.75; margin-bottom:28px; }
 .about-body { font-size:13px; line-height:2.1; color:#555; }
 .about-r { padding:52px 48px; }
 .fact { display:grid; grid-template-columns:100px 1fr; gap:16px; padding:18px 0; border-bottom:1px solid var(--rule); align-items:start; }
 .fact:first-child { border-top:1px solid var(--rule); }
-.fact-l { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); padding-top:2px; }
+.fact-l { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); padding-top:2px; }
 .fact-r { font-size:13px; line-height:1.8; }
 .fact-r strong { font-weight:500; }
 .str-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--rule); }
 .str-item { padding:44px 40px; border-right:1px solid var(--rule); position:relative; overflow:hidden; }
 .str-item:last-child { border-right:none; }
-.str-bg-num { font-family:'Cormorant Garamond',serif; font-size:80px; font-weight:300; line-height:1; color:var(--paper2); position:absolute; top:24px; right:24px; pointer-events:none; }
+.str-bg-num { font-family:'Playfair Display',serif; font-size:80px; font-weight:400; line-height:1; color:var(--paper2); position:absolute; top:24px; right:24px; pointer-events:none; }
 .str-icon { font-size:22px; margin-bottom:18px; }
 .str-title { font-size:14px; font-weight:500; margin-bottom:10px; letter-spacing:0.03em; }
 .str-body { font-size:12px; line-height:2.0; color:#666; }
-.str-tag { display:inline-block; margin-top:16px; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; border-bottom:1px solid var(--warm); color:var(--warm); padding-bottom:2px; }
+.str-tag { display:inline-block; margin-top:16px; font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; border-bottom:1px solid var(--warm); color:var(--warm); padding-bottom:2px; }
 .svc-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--rule); }
 .svc { padding:36px 32px; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); }
 .svc:nth-child(4n) { border-right:none; }
 .svc-icon { font-size:20px; margin-bottom:16px; }
 .svc-title { font-size:13px; font-weight:500; margin-bottom:8px; }
 .svc-body { font-size:13px; line-height:1.9; color:#666; margin-bottom:14px; }
-.svc-note { font-family:'DM Mono',monospace; font-size:9px; color:var(--muted); letter-spacing:0.1em; }
+.svc-note { font-family:'Noto Sans JP',sans-serif; font-size:9px; color:var(--muted); letter-spacing:0.1em; }
 /* Works フィルター */
 .works-filter { padding:24px 48px 0; border-top:1px solid var(--rule); display:flex; gap:8px; flex-wrap:wrap; }
-.wf-btn { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; padding:8px 16px; border:1px solid var(--rule); background:none; color:var(--muted); cursor:pointer; transition:all 0.2s; }
+.wf-btn { font-family:'Noto Sans JP',sans-serif; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; padding:8px 16px; border:1px solid var(--rule); background:none; color:var(--muted); cursor:pointer; transition:all 0.2s; }
 .wf-btn:hover { color:var(--ink); border-color:var(--ink); }
 .wf-btn.active { background:var(--ink); color:var(--paper); border-color:var(--ink); }
 .works-category { padding:20px 48px 0; }
-.wcat-label { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--warm); display:inline-flex; align-items:center; gap:12px; }
+.wcat-label { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--warm); display:inline-flex; align-items:center; gap:12px; }
 .wcat-label::before { content:''; width:20px; height:1px; background:var(--warm); }
 .works-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--rule); margin-top:12px; }
 .work { border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); aspect-ratio:4/3; overflow:hidden; position:relative; background:var(--paper2); cursor:none; }
 .work:nth-child(4n) { border-right:none; }
 .work img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); display:block; }
 .work:hover img { transform:scale(1.06); }
-.work-ov { position:absolute; inset:0; background:rgba(17,16,16,0); display:flex; flex-direction:column; justify-content:flex-end; padding:16px; transition:background 0.35s ease; pointer-events:none; }
-.work:hover .work-ov { background:rgba(17,16,16,0.82); }
+.work-ov { position:absolute; inset:0; background:rgba(26,26,26,0); display:flex; flex-direction:column; justify-content:flex-end; padding:16px; transition:background 0.35s ease; pointer-events:none; }
+.work:hover .work-ov { background:rgba(26,26,26,0.82); }
 .work-info { opacity:0; transform:translateY(6px); transition:all 0.28s ease; }
 .work:hover .work-info { opacity:1; transform:translateY(0); }
-.work-cat { font-family:'DM Mono',monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm); margin-bottom:4px; }
+.work-cat { font-family:'Noto Sans JP',sans-serif; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm); margin-bottom:4px; }
 .work-name { font-size:12px; color:var(--paper); line-height:1.4; }
 .work.hidden { display:none; }
 .dp-section { background:var(--paper2); border-top:1px solid var(--rule); }
 .dp-grid { display:grid; grid-template-columns:200px 1fr 1fr; border-top:1px solid var(--rule); }
 .dp-l { padding:52px 36px; border-right:1px solid var(--rule); background:var(--ink); color:var(--paper); display:flex; flex-direction:column; gap:14px; justify-content:center; }
-.dp-badge { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm); }
-.dp-title { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:300; line-height:1.35; }
-.dp-price { font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:300; color:var(--warm); }
-.dp-btn { display:inline-block; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none; color:var(--paper); border:1px solid rgba(255,255,255,0.3); padding:10px 16px; transition:all 0.2s; align-self:flex-start; }
+.dp-badge { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm); }
+.dp-title { font-family:'Noto Serif JP',serif; font-size:22px; font-weight:300; line-height:1.35; }
+.dp-price { font-family:'Playfair Display',serif; font-size:36px; font-weight:400; color:var(--warm); }
+.dp-btn { display:inline-block; font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none; color:var(--paper); border:1px solid rgba(255,255,255,0.3); padding:10px 16px; transition:all 0.2s; align-self:flex-start; }
 .dp-btn:hover { background:var(--warm); border-color:var(--warm); color:var(--ink); }
 .dp-m { padding:52px 44px; border-right:1px solid var(--rule); }
 .dp-icon { font-size:32px; margin-bottom:16px; }
 .dp-story { font-size:13px; line-height:2.1; color:#555; }
 .dp-r { padding:52px 44px; }
-.dp-r-label { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:var(--muted); margin-bottom:20px; }
+.dp-r-label { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:var(--muted); margin-bottom:20px; }
 .dp-pt { display:grid; grid-template-columns:68px 1fr; gap:12px; padding:12px 0; border-bottom:1px solid var(--rule); }
 .dp-pt:last-child { border-bottom:none; }
-.dp-pt-key { font-family:'DM Mono',monospace; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--warm); padding-top:2px; }
+.dp-pt-key { font-family:'Noto Sans JP',sans-serif; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--warm); padding-top:2px; }
 .dp-pt-val { font-size:12px; line-height:1.85; color:#555; }
 .results-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--rule); }
 .result { padding:40px 32px; border-right:1px solid var(--rule); }
 .result:last-child { border-right:none; }
-.r-num { font-family:'Cormorant Garamond',serif; font-size:42px; font-weight:300; line-height:1; margin-bottom:8px; }
+.r-num { font-family:'Playfair Display',serif; font-size:42px; font-weight:400; line-height:1; margin-bottom:8px; }
 .r-num span { font-size:18px; }
-.r-lbl { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+.r-lbl { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
 .r-desc { font-size:13px; color:#666; line-height:1.8; }
 .tl-wrap { padding:0 48px 64px; }
 .tl-item { display:grid; grid-template-columns:120px 1fr; gap:44px; padding:26px 0; border-bottom:1px solid var(--rule); }
-.tl-year { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); padding-top:3px; letter-spacing:0.1em; }
+.tl-year { font-family:'Playfair Display',serif; font-size:10px; color:var(--muted); padding-top:3px; letter-spacing:0.1em; }
 .tl-title { font-size:13px; font-weight:500; margin-bottom:6px; }
 .tl-desc { font-size:12px; color:#666; line-height:1.85; }
 .contact-grid { display:grid; grid-template-columns:1fr 1fr; }
 .contact-l { padding:72px 48px; border-right:1px solid var(--rule); }
-.contact-title { font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4vw,56px); font-weight:300; line-height:1.1; margin-bottom:20px; }
+.contact-title { font-family:'Noto Serif JP',serif; font-size:clamp(34px,4vw,56px); font-weight:300; line-height:1.1; margin-bottom:20px; }
 .contact-sub { font-size:12px; color:#666; line-height:2.0; }
 .contact-r { padding:72px 48px; display:flex; flex-direction:column; justify-content:center; }
 .c-link { display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--ink); font-size:13px; padding:15px 0; border-bottom:1px solid var(--rule); transition:gap 0.2s; }
 .c-link:first-child { border-top:1px solid var(--rule); }
 .c-link:hover { gap:22px; }
-.c-lbl { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); width:84px; flex-shrink:0; }
+.c-lbl { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); width:84px; flex-shrink:0; }
 .c-arr { margin-left:auto; font-size:11px; color:var(--muted); }
 footer { padding:28px 48px; border-top:1px solid var(--rule); display:flex; justify-content:space-between; align-items:center; }
-footer p { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:0.1em; }
+footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--muted); letter-spacing:0.1em; }
 .fu { opacity:1; transform:none; }
 .fu.vis { opacity:1; transform:none; }
 /* 料金CTA */
 .pricing-cta { background:var(--ink); color:var(--paper); padding:48px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--rule); }
-.pricing-cta-eyebrow { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--warm); margin-bottom:10px; }
-.pricing-cta-headline { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:300; line-height:1.2; margin-bottom:8px; }
+.pricing-cta-eyebrow { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--warm); margin-bottom:10px; }
+.pricing-cta-headline { font-family:'Noto Serif JP',serif; font-size:28px; font-weight:300; line-height:1.2; margin-bottom:8px; }
 .pricing-cta-sub { font-size:12px; color:rgba(248,246,242,0.85); line-height:1.8; }
-.pricing-cta-btn { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; color:var(--warm); border:1px solid var(--warm); padding:14px 28px; transition:all 0.2s; flex-shrink:0; }
+.pricing-cta-btn { font-family:'Noto Sans JP',sans-serif; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; color:var(--warm); border:1px solid var(--warm); padding:14px 28px; transition:all 0.2s; flex-shrink:0; }
 .pricing-cta-btn:hover { background:var(--warm); color:var(--ink); }
 /* モーダル */
-.modal-bg { position:fixed; inset:0; background:rgba(17,16,16,0.93); z-index:1000; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity 0.3s ease; padding:40px; }
+.modal-bg { position:fixed; inset:0; background:rgba(26,26,26,0.93); z-index:1000; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity 0.3s ease; padding:40px; }
 .modal-bg.on { opacity:1; pointer-events:all; }
 .modal-box { background:var(--paper); max-width:860px; width:100%; max-height:90vh; overflow-y:auto; display:grid; grid-template-columns:1fr 1fr; transform:translateY(12px); transition:transform 0.3s ease; }
 .modal-bg.on .modal-box { transform:translateY(0); }
 .modal-img { background:var(--paper2); min-height:360px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
 .modal-img img { width:100%; height:100%; object-fit:contain; }
 .modal-body { padding:44px 36px; display:flex; flex-direction:column; justify-content:space-between; }
-.m-cat { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
-.m-title { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:300; line-height:1.35; margin-bottom:18px; white-space:pre-line; }
+.m-cat { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
+.m-title { font-family:'Noto Serif JP',serif; font-size:24px; font-weight:300; line-height:1.35; margin-bottom:18px; white-space:pre-line; }
 .m-desc { font-size:12px; line-height:2.0; color:#555; flex:1; }
-.m-close { margin-top:24px; background:none; border:1px solid var(--ink); padding:10px 20px; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; transition:all 0.2s; align-self:flex-start; font-family:'DM Mono',monospace; }
+.m-close { margin-top:24px; background:none; border:1px solid var(--ink); padding:10px 20px; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; transition:all 0.2s; align-self:flex-start; font-family:'Noto Sans JP',sans-serif; }
 .m-close:hover { background:var(--ink); color:var(--paper); }
 /* モーダル Before/After レイアウト */
 .modal-box.has-ba { grid-template-columns:1fr; max-width:960px; }
@@ -164,18 +164,18 @@ footer p { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); 
 .modal-ba-item { position:relative; overflow:hidden; background:var(--paper2); min-height:280px; display:flex; align-items:center; justify-content:center; }
 .modal-ba-item:first-child { border-right:1px solid var(--rule); }
 .modal-ba-item img { width:100%; height:100%; object-fit:contain; display:block; }
-.modal-ba-label { position:absolute; top:12px; left:12px; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; padding:4px 10px; }
+.modal-ba-label { position:absolute; top:12px; left:12px; font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; padding:4px 10px; }
 .modal-ba-label.before { background:var(--muted); color:var(--paper); }
 .modal-ba-label.after  { background:var(--warm); color:var(--ink); }
 /* モーダル 詳細情報（制作背景・ツール・ポイント） */
 .modal-body-full { padding:36px 44px; }
-.modal-body-full .m-cat { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
-.modal-body-full .m-title { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:300; line-height:1.35; margin-bottom:12px; white-space:pre-line; }
+.modal-body-full .m-cat { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
+.modal-body-full .m-title { font-family:'Noto Serif JP',serif; font-size:24px; font-weight:300; line-height:1.35; margin-bottom:12px; white-space:pre-line; }
 .modal-body-full .m-desc { font-size:12px; line-height:2.0; color:#555; margin-bottom:0; }
 .m-meta { margin-top:20px; border-top:1px solid var(--rule); padding-top:4px; }
 .m-meta-item { display:grid; grid-template-columns:110px 1fr; gap:16px; padding:14px 0; border-bottom:1px solid var(--rule); align-items:start; }
 .m-meta-item:last-child { border-bottom:none; }
-.m-meta-key { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); padding-top:2px; }
+.m-meta-key { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); padding-top:2px; }
 .m-meta-val { font-size:12px; line-height:1.85; color:#555; }
 .modal-footer { display:flex; justify-content:flex-start; padding:0 44px 36px; }
 @media(max-width:900px) {
@@ -224,8 +224,8 @@ footer p { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); 
 <section class="hero">
   <div class="hero-l">
     <p class="hero-eyebrow">大阪唯一のスクイーズ専門店 EC運用 × FP × Sales Designer</p>
-    <h1 class="hero-catch">「カワイイ」の熱量を、<br><em>売上のロジック</em>に<br>変換します。</h1>
-    <p class="hero-sub">大阪唯一のスクイーズ専門店「JANE」のEC・SNS運用を2年間担当。小中学生から親世代まで動かすビジュアルの熱量と、ファイナンシャルプランナー（FP）の計数的思考を掛け合わせ、EC事業者の利益率まで踏み込んだデザイン提案を行います。</p>
+    <h1 class="hero-catch">「カワイイ」が、<br><em>売れる理由</em>に<br>なる仕事をしています。</h1>
+    <p class="hero-sub">大阪唯一のスクイーズ専門店「JANE」のEC・SNS運用を2年間ひとりで担当してきました。FP資格で数字も読めるので、「なぜ売れるか」まで一緒に考えながらデザインします。</p>
     <div class="hero-tags">
       <span class="tag">EC Sales Design</span>
       <span class="tag">SNS Strategy</span>
@@ -250,8 +250,8 @@ footer p { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); 
   <div class="sh fu"><h2 class="sh-title">About</h2><span class="sh-num">01</span></div>
   <div class="about-grid">
     <div class="about-l fu">
-      <p class="about-lead">現場2年 × FP資格。「なぜ売れるか」を語れる、EC特化のセールスデザイナー。</p>
-      <p class="about-body">大阪唯一のスクイーズ専門店「JANE」で、SNS運用・EC運営・販促デザインをすべて一人で担当してきました。小中学生〜親世代というターゲットの購買行動を肌感覚で理解し、ブラックフライデーなどのイベント施策からバナー制作・BASE運用まで、売上に直結する判断を毎日繰り返してきた実務経験があります。<br><br>加えて、ファイナンシャルプランナー（FP）の資格を持つことで、クライアントの利益率・広告コスト・顧客の購買心理を数字ベースで読み解く力があります。「なぜその構成にするのか」「その施策でCVRはどう変わるか」を論理的に説明し、ECビジネスのパートナーとして機能することが私の提供価値です。</p>
+      <p class="about-lead">現場2年 × FP資格。「なぜ売れるか」をきちんと説明できるデザイナーを目指しています。</p>
+      <p class="about-body">大阪唯一のスクイーズ専門店「JANE」で、SNS運用・EC運営・販促デザインをすべて一人で担当してきました。小中学生〜親世代というターゲットの購買行動を肌感覚で理解し、ブラックフライデーなどのイベント施策からバナー制作・BASE運用まで、売上に直結する判断を毎日繰り返してきた実務経験があります。<br><br>FP資格があることで、広告コストや利益率も一緒に考えながら提案ができます。「なぜこのデザインにするか」「どこを変えると数字が動くか」を言葉で伝えながら、EC運用のパートナーとして一緒に動きたいと思っています。</p>
     </div>
     <div class="about-r fu">
       <div class="fact"><span class="fact-l">Base</span><span class="fact-r">大阪府在住 / リモート全国対応</span></div>
@@ -267,8 +267,8 @@ footer p { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); 
   <div class="sh fu"><h2 class="sh-title">My Strength</h2><span class="sh-num">02</span></div>
   <div class="str-grid">
     <div class="str-item fu"><div class="str-bg-num">01</div><div class="str-icon">🏪</div><h3 class="str-title">大阪唯一の専門店、現場2年の実務経験</h3><p class="str-body">JANEでEC・SNS・販促設計をワンオペで2年担当。ブラックフライデー等のイベント施策を企画から実行まで一気通貫で担い、売上20%UPを達成。</p><span class="str-tag">EC × Retail Expertise</span></div>
-    <div class="str-item fu"><div class="str-bg-num">02</div><div class="str-icon">📊</div><h3 class="str-title">FP資格×購買心理で、利益率まで踏み込む</h3><p class="str-body">広告コスト・粗利率・ターゲットの財布の動き方をFP視点で数字ベースに分析。ROI視点のデザイン提案とCVRが上がる訴求選定が強みです。</p><span class="str-tag">FP × CVR Design</span></div>
-    <div class="str-item fu"><div class="str-bg-num">03</div><div class="str-icon">🔥</div><h3 class="str-title">ECの「熱量」を最大化するビジュアル設計</h3><p class="str-body">「今すぐ買いたい」という感情を引き出すビジュアル設計が専門。バナー・SNS・LINEリッチメニューを一貫した世界観で設計し、購買導線をデザインで完結させます。</p><span class="str-tag">Funnel × Visual Strategy</span></div>
+    <div class="str-item fu"><div class="str-bg-num">02</div><div class="str-icon">📊</div><h3 class="str-title">FP資格×購買心理で、利益率まで踏み込む</h3><p class="str-body">広告コスト・粗利率・ターゲットの財布の動き方をFP視点で数字ベースに分析。ROI視点のデザイン提案とCVRが上がる訴求選定が強みです。</p><span class="str-tag">FP × Design</span></div>
+    <div class="str-item fu"><div class="str-bg-num">03</div><div class="str-icon">🔥</div><h3 class="str-title">「買いたい」気持ちに火をつけるデザイン</h3><p class="str-body">バナー・SNS・LINEリッチメニューを一貫したトーンで作り、「見た瞬間に欲しくなる」ビジュアルを目指しています。</p><span class="str-tag">EC × Visual Design</span></div>
   </div>
 </section>
 
