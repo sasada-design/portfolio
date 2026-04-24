@@ -187,9 +187,9 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
   .hero { grid-template-columns:1fr; display:flex; flex-direction:column; min-height:100svh; overflow:hidden; }
   .hero-l { padding:60px 24px 16px; order:1; border-right:none; }
   .hero-tags { display:none; }
-  .hero-r { order:2; display:flex; flex-direction:column; }
-  .hero-photo { height:450px; min-height:0; }
-  .hero-photo img { height:100%; object-fit:contain; object-position:center top; }
+  .hero-r { order:2; display:flex; flex-direction:column; width:100%; padding:0; margin:0; }
+  .hero-photo { width:100%; height:auto; min-height:0; }
+  .hero-photo img { width:100%; height:auto; object-fit:cover; object-position:center top; display:block; }
   .sh { padding:36px 24px 28px; }
   .about-grid { grid-template-columns:1fr; } .about-l { border-right:none; border-bottom:1px solid var(--rule); padding:36px 24px; } .about-r { padding:36px 24px; }
   .str-grid { grid-template-columns:1fr; } .str-item { border-right:none; border-bottom:1px solid var(--rule); }
