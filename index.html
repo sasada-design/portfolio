@@ -28,7 +28,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; justify
 .nav-links a { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; color:var(--muted); transition:color 0.2s; }
 .nav-links a:hover,
 .nav-links a.active { color:var(--ink); }
-.hero { min-height:100vh; display:grid; grid-template-columns:55% 1fr; padding-top:68px; overflow:hidden; }
+.hero { min-height:100vh; display:grid; grid-template-columns:55% 1fr; padding-top:68px; overflow:hidden; position:relative; z-index:1; }
 .hero-l { display:flex; flex-direction:column; justify-content:center; padding:72px 52px; border-right:1px solid var(--rule); min-width:0; }
 .hero-eyebrow { font-family:'Noto Sans JP',sans-serif; font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--muted); margin-bottom:32px; display:flex; align-items:center; gap:16px; }
 .hero-eyebrow::before { content:''; width:32px; height:1px; background:var(--warm); flex-shrink:0; }
@@ -184,7 +184,7 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
 .pricing-cta-btn:hover { background:var(--warm); color:var(--ink); }
 @media(max-width:900px) {
   nav { padding:18px 24px; } .nav-links { display:none; }
-  .hero { grid-template-columns:1fr; display:flex; flex-direction:column; min-height:100svh; }
+  .hero { grid-template-columns:1fr; display:flex; flex-direction:column; min-height:100svh; overflow:hidden; }
   .hero-l { padding:88px 24px 32px; order:1; border-right:none; }
   .hero-r { order:2; display:flex; flex-direction:column; }
   .hero-photo { height:300px; min-height:0; }
