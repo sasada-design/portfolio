@@ -1,79 +1,130 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLGMG0NPS4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZLGMG0NPS4');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SASADA MAI — EC Sales Designer × FP</title>
-<meta name="description" content="大阪のECセールスデザイナー 笹田麻衣のポートフォリオ。JANE（スクイーズ専門店）でEC・SNS運用2年。FP資格×デザインで売上に直結するビジュアル提案を行います。">
-<meta property="og:title" content="SASADA MAI — EC Sales Designer × FP">
-<meta property="og:description" content="大阪のECセールスデザイナー 笹田麻衣のポートフォリオ。FP資格×EC現場2年の経験でCVR改善を実現。バナー・SNS運用・イベント施策をワンストップで提供。">
+<title>SASADA MAI — 小売・EC専門 セールスデザイナー × FP</title>
+<meta name="description" content="雑貨店・小売店の売上を伸ばすクリエイティブパートナー、笹田麻衣のポートフォリオ。大阪唯一のスクイーズ専門店EC・SNS運用2年。売上20%UP・TikTok14.4万再生の実績。">
+<meta property="og:title" content="SASADA MAI — 小売・EC専門 セールスデザイナー × FP">
+<meta property="og:description" content="雑貨店・小売店の売上を伸ばすクリエイティブパートナー。大阪唯一のスクイーズ専門店EC・SNS運用2年。売上20%UP達成。">
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/img_00.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SASADA MAI — EC Sales Designer × FP">
-<meta name="twitter:description" content="大阪のECセールスデザイナー 笹田麻衣のポートフォリオ。FP資格×EC現場2年の経験でCVR改善を実現。">
+<meta name="twitter:title" content="SASADA MAI — 小売・EC専門 セールスデザイナー × FP">
+<meta name="twitter:description" content="雑貨店・小売店の売上を伸ばすクリエイティブパートナー。売上20%UP・TikTok14.4万再生の現場経験。">
 <meta name="twitter:image" content="images/img_00.jpg">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-:root { --ink:#1A1A1A; --paper:#FFFFFF; --paper2:#F5F5F3; --rule:#E8E8E5; --muted:#8a8480; --warm:#C4714A; }
+:root { --ink:#1A1A1A; --paper:#FFFFFF; --paper2:#F5F5F3; --rule:#E8E8E5; --muted:#8a8480; --warm:#c8401a; }
 html { scroll-behavior:smooth; }
 body { background:var(--paper); color:var(--ink); font-family:'Noto Sans JP',sans-serif; font-weight:300; line-height:1.7; cursor:none; overflow-x:hidden; }
 .cur { width:6px; height:6px; background:var(--ink); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:9999; }
-@media(hover:none),(pointer:coarse) { body{cursor:auto;} .cur,.cur-o{display:none;} .work,.m-close{cursor:pointer;} }
+@media(hover:none),(pointer:coarse) { body{cursor:auto;} .cur,.cur-o{display:none;} .work,.work-feat,.m-close{cursor:pointer;} }
 .cur-o { width:28px; height:28px; border:1px solid var(--ink); border-radius:50%; position:fixed; top:-14px; left:-14px; pointer-events:none; z-index:9998; transition:all 0.1s ease; }
 nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; justify-content:space-between; align-items:center; padding:20px 48px; background:rgba(255,255,255,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--rule); }
-.nav-logo { font-family:'Playfair Display',serif; font-size:13px; letter-spacing:0.12em; text-decoration:none; color:var(--ink); }
+.nav-logo { font-family:'Noto Serif JP',serif; font-size:13px; letter-spacing:0.12em; text-decoration:none; color:var(--ink); }
 .nav-links { display:flex; gap:32px; list-style:none; }
 .nav-links a { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; color:var(--muted); transition:color 0.2s; }
 .nav-links a:hover,
 .nav-links a.active { color:var(--ink); }
+/* Hero */
 .hero { min-height:100vh; display:grid; grid-template-columns:55% 1fr; padding-top:68px; overflow:hidden; position:relative; z-index:1; }
-.hero-l { display:flex; flex-direction:column; justify-content:center; padding:72px 52px; border-right:1px solid var(--rule); min-width:0; }
+.hero-l { display:flex; flex-direction:column; justify-content:center; padding:94px 68px; border-right:1px solid var(--rule); min-width:0; }
 .hero-eyebrow { font-family:'Noto Sans JP',sans-serif; font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--muted); margin-bottom:32px; display:flex; align-items:center; gap:16px; }
 .hero-eyebrow::before { content:''; width:32px; height:1px; background:var(--warm); flex-shrink:0; }
-.hero-catch { font-family:'Noto Serif JP',serif; font-size:clamp(22px,3.2vw,48px); font-weight:300; line-height:1.3; letter-spacing:-0.01em; margin-bottom:32px; }
-.hero-catch em { font-style:italic; color:var(--warm); }
-.hero-sub { font-size:13px; line-height:2.1; color:#555; max-width:440px; margin-bottom:48px; border-left:2px solid var(--warm); padding-left:20px; }
+.hero-catch { font-family:'Noto Serif JP',serif; font-size:clamp(22px,3.2vw,46px); font-weight:300; line-height:1.4; letter-spacing:-0.01em; margin-bottom:32px; }
+.hero-catch em { font-style:normal; color:var(--warm); }
+.hero-sub { font-size:13px; line-height:2.2; color:#555; max-width:440px; margin-bottom:48px; border-left:2px solid var(--warm); padding-left:20px; }
 .hero-tags { display:flex; flex-wrap:wrap; gap:10px; }
 .tag { font-family:'Noto Sans JP',sans-serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; padding:8px 16px; border:1px solid var(--rule); color:var(--muted); }
 .hero-r { background:var(--paper2); min-width:0; overflow:hidden; }
 .hero-photo { overflow:hidden; min-height:380px; }
 .hero-photo img { width:100%; height:100%; object-fit:cover; object-position:center 15%; display:block; }
+/* Section共通 */
 section { border-top:1px solid var(--rule); }
-.sh { display:flex; justify-content:space-between; align-items:baseline; padding:48px 48px 40px; }
-.sh-title { font-family:'Noto Serif JP',serif; font-size:36px; font-weight:300; letter-spacing:-0.01em; }
-.sh-num { font-family:'Playfair Display',serif; font-size:10px; color:var(--muted); }
+.sh { display:flex; justify-content:space-between; align-items:baseline; padding:62px 48px 52px; }
+.sh-title { font-family:'Noto Serif JP',serif; font-size:44px; font-weight:300; letter-spacing:-0.02em; }
+.sh-num { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--muted); letter-spacing:0.15em; }
+/* About */
 .about-grid { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--rule); }
-.about-l { padding:52px 48px; border-right:1px solid var(--rule); }
-.about-lead { font-family:'Noto Serif JP',serif; font-size:21px; font-weight:300; line-height:1.75; margin-bottom:28px; }
+.about-l { padding:68px 48px; border-right:1px solid var(--rule); }
+.about-lead { font-family:'Noto Serif JP',serif; font-size:24px; font-weight:300; line-height:1.75; margin-bottom:28px; }
 .about-body { font-size:13px; line-height:2.1; color:#555; }
-.about-r { padding:52px 48px; }
+.about-r { padding:68px 48px; }
 .fact { display:grid; grid-template-columns:100px 1fr; gap:16px; padding:18px 0; border-bottom:1px solid var(--rule); align-items:start; }
 .fact:first-child { border-top:1px solid var(--rule); }
 .fact-l { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); padding-top:2px; }
 .fact-r { font-size:13px; line-height:1.8; }
 .fact-r strong { font-weight:500; }
+/* Strength */
 .str-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--rule); }
-.str-item { padding:44px 40px; border-right:1px solid var(--rule); position:relative; overflow:hidden; }
+.str-item { padding:57px 52px; border-right:1px solid var(--rule); position:relative; overflow:hidden; }
 .str-item:last-child { border-right:none; }
-.str-bg-num { font-family:'Playfair Display',serif; font-size:80px; font-weight:400; line-height:1; color:var(--paper2); position:absolute; top:24px; right:24px; pointer-events:none; }
-.str-icon { font-size:22px; margin-bottom:18px; }
-.str-title { font-size:14px; font-weight:500; margin-bottom:10px; letter-spacing:0.03em; }
-.str-body { font-size:12px; line-height:2.0; color:#666; }
+.str-bg-num { font-family:'Noto Serif JP',serif; font-size:80px; font-weight:300; line-height:1; color:var(--rule); position:absolute; top:24px; right:24px; pointer-events:none; }
+.str-title { font-size:16px; font-weight:500; margin-bottom:12px; letter-spacing:0.02em; }
+.str-body { font-size:12px; line-height:2.1; color:#666; }
 .str-tag { display:inline-block; margin-top:16px; font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; border-bottom:1px solid var(--warm); color:var(--warm); padding-bottom:2px; }
+/* Service */
 .svc-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--rule); }
-.svc { padding:36px 32px; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+.svc { padding:47px 42px; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); }
 .svc:nth-child(4n) { border-right:none; }
-.svc-icon { font-size:20px; margin-bottom:16px; }
-.svc-title { font-size:13px; font-weight:500; margin-bottom:8px; }
+.svc-label { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm); margin-bottom:16px; }
+.svc-title { font-size:15px; font-weight:500; margin-bottom:10px; }
 .svc-body { font-size:13px; line-height:1.9; color:#666; margin-bottom:14px; }
 .svc-note { font-family:'Noto Sans JP',sans-serif; font-size:9px; color:var(--muted); letter-spacing:0.1em; }
+/* Package */
+.pkg-wrap { background:var(--paper2); border-top:1px solid var(--rule); }
+.pkg-header { padding:52px 48px 36px; border-bottom:1px solid var(--rule); }
+.pkg-header-eyebrow { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--warm); margin-bottom:12px; }
+.pkg-header-title { font-family:'Noto Serif JP',serif; font-size:28px; font-weight:300; }
+.pkg-grid { display:grid; grid-template-columns:repeat(3,1fr); }
+.pkg-item { padding:52px 44px; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+.pkg-item:last-child { border-right:none; }
+.pkg-badge { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm); border:1px solid var(--warm); display:inline-block; padding:3px 9px; }
+.pkg-title { font-size:15px; font-weight:500; margin-bottom:8px; margin-top:14px; }
+.pkg-price { font-family:'Noto Serif JP',serif; font-size:26px; font-weight:300; color:var(--warm); margin-bottom:28px; }
+.pkg-list { list-style:none; }
+.pkg-list li { font-size:12px; color:#555; line-height:1.9; padding:8px 0; border-bottom:1px solid var(--rule); display:flex; align-items:baseline; gap:10px; }
+.pkg-list li::before { content:'—'; color:var(--warm); font-size:10px; flex-shrink:0; }
+.pkg-list li:last-child { border-bottom:none; }
+/* 選ばれる理由 */
+.reason-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--rule); }
+.reason-item { padding:57px 52px; border-right:1px solid var(--rule); }
+.reason-item:last-child { border-right:none; }
+.reason-num { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; color:var(--warm); margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+.reason-num::after { content:''; flex:1; height:1px; background:var(--rule); }
+.reason-title { font-size:17px; font-weight:500; margin-bottom:14px; letter-spacing:0.02em; }
+.reason-body { font-size:12px; line-height:2.2; color:#555; }
 /* Works フィルター */
-.works-filter { padding:24px 48px 0; border-top:1px solid var(--rule); display:flex; gap:8px; flex-wrap:wrap; }
+.works-filter { padding:32px 48px 0; border-top:1px solid var(--rule); display:flex; gap:8px; flex-wrap:wrap; }
 .wf-btn { font-family:'Noto Sans JP',sans-serif; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; padding:8px 16px; border:1px solid var(--rule); background:none; color:var(--muted); cursor:pointer; transition:all 0.2s; }
 .wf-btn:hover { color:var(--ink); border-color:var(--ink); }
 .wf-btn.active { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+/* Works Featured */
+.works-feat-wrap { border-top:1px solid var(--rule); }
+.works-feat-label { padding:24px 48px 0; }
+.wfeat-label { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--warm); display:inline-flex; align-items:center; gap:12px; }
+.wfeat-label::before { content:''; width:20px; height:1px; background:var(--warm); }
+.works-feat-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--rule); margin-top:12px; }
+.work-feat { border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); aspect-ratio:4/3; overflow:hidden; position:relative; background:var(--paper2); cursor:none; }
+.work-feat:last-child { border-right:none; }
+.work-feat img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); display:block; }
+.work-feat:hover img { transform:scale(1.06); }
+.work-feat-ov { position:absolute; inset:0; background:rgba(26,26,26,0); display:flex; flex-direction:column; justify-content:flex-end; padding:16px; transition:background 0.35s ease; pointer-events:none; }
+.work-feat:hover .work-feat-ov { background:rgba(26,26,26,0.82); }
+.work-feat-info { opacity:0; transform:translateY(6px); transition:all 0.28s ease; }
+.work-feat:hover .work-feat-info { opacity:1; transform:translateY(0); }
+/* Works category */
 .works-category { padding:20px 48px 0; }
 .wcat-label { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--warm); display:inline-flex; align-items:center; gap:12px; }
 .wcat-label::before { content:''; width:20px; height:1px; background:var(--warm); }
@@ -98,9 +149,14 @@ section { border-top:1px solid var(--rule); }
 .modal-img img { width:100%; height:100%; object-fit:contain; }
 .modal-body { padding:44px 36px; display:flex; flex-direction:column; justify-content:space-between; }
 .m-cat { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
-.m-title { font-family:'Noto Serif JP',serif; font-size:24px; font-weight:300; line-height:1.35; margin-bottom:18px; white-space:pre-line; }
-.m-desc { font-size:12px; line-height:2.0; color:#555; flex:1; }
-.m-close { margin-top:24px; background:none; border:1px solid var(--ink); padding:10px 20px; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; transition:all 0.2s; align-self:flex-start; font-family:'Noto Sans JP',sans-serif; }
+.m-title { font-family:'Noto Serif JP',serif; font-size:24px; font-weight:300; line-height:1.35; margin-bottom:14px; white-space:pre-line; }
+.m-desc { font-size:12px; line-height:2.0; color:#555; }
+.m-csr { margin-top:14px; border-top:1px solid var(--rule); }
+.m-csr-item { display:grid; grid-template-columns:40px 1fr; gap:10px; padding:9px 0; border-bottom:1px solid var(--rule); align-items:start; }
+.m-csr-item:last-child { border-bottom:none; }
+.m-csr-key { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.1em; color:var(--warm); padding-top:2px; font-weight:500; }
+.m-csr-val { font-size:11px; line-height:1.85; color:#555; }
+.m-close { margin-top:20px; background:none; border:1px solid var(--ink); padding:10px 20px; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; transition:all 0.2s; align-self:flex-start; font-family:'Noto Sans JP',sans-serif; }
 .m-close:hover { background:var(--ink); color:var(--paper); }
 .modal-box.has-ba { grid-template-columns:1fr; max-width:960px; }
 .modal-ba { display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--rule); }
@@ -109,12 +165,12 @@ section { border-top:1px solid var(--rule); }
 .modal-ba-item img { width:100%; height:100%; object-fit:contain; display:block; }
 .modal-ba-label { position:absolute; top:12px; left:12px; font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; padding:4px 10px; }
 .modal-ba-label.before { background:var(--muted); color:var(--paper); }
-.modal-ba-label.after  { background:var(--warm); color:var(--ink); }
+.modal-ba-label.after  { background:var(--warm); color:var(--paper); }
 .modal-body-full { padding:36px 44px; }
 .modal-body-full .m-cat { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
 .modal-body-full .m-title { font-family:'Noto Serif JP',serif; font-size:24px; font-weight:300; line-height:1.35; margin-bottom:12px; white-space:pre-line; }
 .modal-body-full .m-desc { font-size:12px; line-height:2.0; color:#555; margin-bottom:0; }
-.m-meta { margin-top:20px; border-top:1px solid var(--rule); padding-top:4px; }
+.m-meta { margin-top:16px; border-top:1px solid var(--rule); padding-top:4px; }
 .m-meta-item { display:grid; grid-template-columns:110px 1fr; gap:16px; padding:14px 0; border-bottom:1px solid var(--rule); align-items:start; }
 .m-meta-item:last-child { border-bottom:none; }
 .m-meta-key { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); padding-top:2px; }
@@ -125,63 +181,68 @@ section { border-top:1px solid var(--rule); }
 .pickup-grid { display:grid; grid-template-columns:40% 60%; border-top:1px solid var(--rule); }
 .pickup-img { background:var(--paper2); overflow:hidden; min-height:240px; display:flex; align-items:center; justify-content:center; border-right:1px solid var(--rule); }
 .pickup-img img { width:70%; height:auto; object-fit:contain; display:block; }
-.pickup-body { padding:36px 44px; display:flex; flex-direction:column; justify-content:center; }
+.pickup-body { padding:47px 57px; display:flex; flex-direction:column; justify-content:center; }
 .pickup-eyebrow { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.28em; text-transform:uppercase; color:var(--warm); margin-bottom:20px; display:flex; align-items:center; gap:12px; }
 .pickup-eyebrow::before { content:''; width:20px; height:1px; background:var(--warm); flex-shrink:0; }
-.pickup-title { font-family:'Noto Serif JP',serif; font-size:22px; font-weight:300; line-height:1.35; margin-bottom:28px; }
+.pickup-title { font-family:'Noto Serif JP',serif; font-size:26px; font-weight:300; line-height:1.35; margin-bottom:28px; }
 .pickup-meta { display:flex; flex-direction:column; gap:0; margin-bottom:28px; border-top:1px solid var(--rule); }
 .pickup-meta-item { display:grid; grid-template-columns:88px 1fr; gap:16px; padding:14px 0; border-bottom:1px solid var(--rule); align-items:start; }
 .pickup-meta-key { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); padding-top:2px; }
-.pickup-meta-val { font-size:12px; line-height:1.85; color:#555; }.dp-section { background:var(--paper2); border-top:1px solid var(--rule); }
+.pickup-meta-val { font-size:12px; line-height:1.85; color:#555; }
+/* Digital Product */
+.dp-section { background:var(--paper2); border-top:1px solid var(--rule); }
 .dp-grid { display:grid; grid-template-columns:200px 1fr 1fr; border-top:1px solid var(--rule); }
-.dp-l { padding:52px 36px; border-right:1px solid var(--rule); background:var(--ink); color:var(--paper); display:flex; flex-direction:column; gap:14px; justify-content:center; }
+.dp-l { padding:68px 44px; border-right:1px solid var(--rule); background:var(--ink); color:var(--paper); display:flex; flex-direction:column; gap:14px; justify-content:center; }
 .dp-badge { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm); }
 .dp-title { font-family:'Noto Serif JP',serif; font-size:22px; font-weight:300; line-height:1.35; }
-.dp-price { font-family:'Playfair Display',serif; font-size:36px; font-weight:400; color:var(--warm); }
+.dp-price { font-family:'Noto Serif JP',serif; font-size:36px; font-weight:300; color:var(--warm); }
 .dp-btn { display:inline-block; font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none; color:var(--paper); border:1px solid rgba(255,255,255,0.3); padding:10px 16px; transition:all 0.2s; align-self:flex-start; }
-.dp-btn:hover { background:var(--warm); border-color:var(--warm); color:var(--ink); }
-.dp-m { padding:52px 44px; border-right:1px solid var(--rule); }
-.dp-icon { font-size:32px; margin-bottom:16px; }
+.dp-btn:hover { background:var(--warm); border-color:var(--warm); color:var(--paper); }
+.dp-m { padding:68px 57px; border-right:1px solid var(--rule); }
 .dp-story { font-size:13px; line-height:2.1; color:#555; }
-.dp-r { padding:52px 44px; }
+.dp-r { padding:68px 57px; }
 .dp-r-label { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:var(--muted); margin-bottom:20px; }
 .dp-pt { display:grid; grid-template-columns:68px 1fr; gap:12px; padding:12px 0; border-bottom:1px solid var(--rule); }
 .dp-pt:last-child { border-bottom:none; }
 .dp-pt-key { font-family:'Noto Sans JP',sans-serif; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--warm); padding-top:2px; }
 .dp-pt-val { font-size:12px; line-height:1.85; color:#555; }
+/* Results */
 .results-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--rule); }
-.result { padding:40px 32px; border-right:1px solid var(--rule); }
+.result { padding:52px 42px; border-right:1px solid var(--rule); }
 .result:last-child { border-right:none; }
-.r-num { font-family:'Playfair Display',serif; font-size:42px; font-weight:400; line-height:1; margin-bottom:8px; }
+.r-num { font-family:'Noto Serif JP',serif; font-size:42px; font-weight:300; line-height:1; margin-bottom:8px; }
 .r-num span { font-size:18px; }
 .r-lbl { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
 .r-desc { font-size:13px; color:#666; line-height:1.8; }
-.tl-wrap { padding:0 48px 64px; }
+/* Timeline */
+.tl-wrap { padding:0 62px 83px; }
 .tl-item { display:grid; grid-template-columns:120px 1fr; gap:44px; padding:26px 0; border-bottom:1px solid var(--rule); }
-.tl-year { font-family:'Playfair Display',serif; font-size:10px; color:var(--muted); padding-top:3px; letter-spacing:0.1em; }
+.tl-year { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--muted); padding-top:3px; letter-spacing:0.1em; }
 .tl-title { font-size:13px; font-weight:500; margin-bottom:6px; }
 .tl-desc { font-size:12px; color:#666; line-height:1.85; }
+/* Contact */
 .contact-grid { display:grid; grid-template-columns:1fr 1fr; }
-.contact-l { padding:72px 48px; border-right:1px solid var(--rule); }
-.contact-title { font-family:'Noto Serif JP',serif; font-size:clamp(24px,2.8vw,38px); font-weight:300; line-height:1.25; margin-bottom:20px; }
+.contact-l { padding:94px 62px; border-right:1px solid var(--rule); }
+.contact-title { font-family:'Noto Serif JP',serif; font-size:clamp(26px,3vw,42px); font-weight:300; line-height:1.25; margin-bottom:20px; }
 .contact-sub { font-size:12px; color:#666; line-height:2.0; }
-.contact-r { padding:72px 48px; display:flex; flex-direction:column; justify-content:center; }
+.contact-r { padding:94px 62px; display:flex; flex-direction:column; justify-content:center; }
 .c-link { display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--ink); font-size:13px; padding:15px 0; border-bottom:1px solid var(--rule); transition:gap 0.2s; }
 .c-link:first-child { border-top:1px solid var(--rule); }
 .c-link:hover { gap:22px; }
 .c-lbl { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); width:84px; flex-shrink:0; }
 .c-arr { margin-left:auto; font-size:11px; color:var(--muted); }
-footer { padding:28px 48px; border-top:1px solid var(--rule); display:flex; justify-content:space-between; align-items:center; }
+footer { padding:36px 48px; border-top:1px solid var(--rule); display:flex; justify-content:space-between; align-items:center; }
 footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--muted); letter-spacing:0.1em; }
 .fu { opacity:1; transform:none; }
 .fu.vis { opacity:1; transform:none; }
 /* 料金CTA */
-.pricing-cta { background:var(--ink); color:var(--paper); padding:48px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--rule); }
+.pricing-cta { background:var(--ink); color:var(--paper); padding:62px 48px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--rule); }
 .pricing-cta-eyebrow { font-family:'Noto Sans JP',sans-serif; font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--warm); margin-bottom:10px; }
 .pricing-cta-headline { font-family:'Noto Serif JP',serif; font-size:28px; font-weight:300; line-height:1.2; margin-bottom:8px; }
 .pricing-cta-sub { font-size:12px; color:rgba(248,246,242,0.85); line-height:1.8; }
 .pricing-cta-btn { font-family:'Noto Sans JP',sans-serif; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; color:var(--warm); border:1px solid var(--warm); padding:14px 28px; transition:all 0.2s; flex-shrink:0; }
-.pricing-cta-btn:hover { background:var(--warm); color:var(--ink); }
+.pricing-cta-btn:hover { background:var(--warm); color:var(--paper); }
+/* Responsive */
 @media(max-width:900px) {
   nav { padding:18px 24px; } .nav-links { display:none; }
   .hero { grid-template-columns:1fr; display:flex; flex-direction:column; min-height:100svh; overflow:hidden; }
@@ -190,23 +251,25 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
   .hero-r { order:2; display:flex; flex-direction:column; width:100%; padding:0; margin:0; }
   .hero-photo { width:100%; height:auto; min-height:0; }
   .hero-photo img { width:100%; height:auto; object-fit:cover; object-position:center top; display:block; }
-  .sh { padding:36px 24px 28px; }
+  .sh { padding:36px 24px 28px; } .sh-title { font-size:32px; }
   .about-grid { grid-template-columns:1fr; } .about-l { border-right:none; border-bottom:1px solid var(--rule); padding:36px 24px; } .about-r { padding:36px 24px; }
-  .str-grid { grid-template-columns:1fr; } .str-item { border-right:none; border-bottom:1px solid var(--rule); }
-  .svc-grid { grid-template-columns:1fr 1fr; } .svc:nth-child(4n) { border-right:1px solid var(--rule); } .svc:nth-child(2n) { border-right:none; }
+  .str-grid { grid-template-columns:1fr; } .str-item { border-right:none; border-bottom:1px solid var(--rule); padding:44px 24px; }
+  .reason-grid { grid-template-columns:1fr; } .reason-item { border-right:none; border-bottom:1px solid var(--rule); padding:44px 24px; } .reason-item:last-child { border-bottom:none; }
+  .svc-grid { grid-template-columns:1fr 1fr; } .svc:nth-child(4n) { border-right:1px solid var(--rule); } .svc:nth-child(2n) { border-right:none; } .svc { padding:36px 20px; }
+  .pkg-grid { grid-template-columns:1fr; } .pkg-item { border-right:none; padding:36px 24px; } .pkg-item:last-child { border-bottom:none; } .pkg-header { padding:36px 24px 28px; }
   .works-filter { padding:16px 24px 0; }
+  .works-feat-label { padding:16px 24px 0; }
+  .works-feat-grid { grid-template-columns:repeat(2,1fr); } .work-feat:nth-child(2) { border-right:none; }
   .works-category { padding:16px 24px 0; } .works-grid { grid-template-columns:repeat(2,1fr); } .work:nth-child(4n) { border-right:1px solid var(--rule); } .work:nth-child(2n) { border-right:none; }
   .modal-box { grid-template-columns:1fr; }
   .modal-ba { grid-template-columns:1fr; }
   .modal-ba-item:first-child { border-right:none; border-bottom:1px solid var(--rule); }
   .modal-body-full { padding:28px 24px; }
   .modal-footer { padding:0 24px 28px; }
-  .pickup-grid { grid-template-columns:1fr; }
-  .pickup-img { border-right:none; border-bottom:1px solid var(--rule); min-height:240px; }
-  .pickup-body { padding:36px 24px; }
+  .pickup-grid { grid-template-columns:1fr; } .pickup-img { border-right:none; border-bottom:1px solid var(--rule); min-height:240px; } .pickup-body { padding:36px 24px; }
   .pricing-cta { flex-direction:column; gap:24px; align-items:flex-start; padding:36px 24px; }
   .dp-grid { grid-template-columns:1fr; } .dp-l { padding:44px 24px; } .dp-m { border-right:none; border-bottom:1px solid var(--rule); padding:36px 24px; } .dp-r { padding:36px 24px; }
-  .results-grid { grid-template-columns:1fr 1fr; } .result:nth-child(2n) { border-right:none; } .result { border-bottom:1px solid var(--rule); }
+  .results-grid { grid-template-columns:1fr 1fr; } .result:nth-child(2n) { border-right:none; } .result { border-bottom:1px solid var(--rule); padding:36px 24px; }
   .tl-wrap { padding:0 24px 48px; }
   .contact-grid { grid-template-columns:1fr; } .contact-l { border-right:none; border-bottom:1px solid var(--rule); padding:44px 24px; } .contact-r { padding:36px 24px; }
   footer { padding:24px; flex-direction:column; gap:8px; text-align:center; }
@@ -230,9 +293,9 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
 
 <section class="hero">
   <div class="hero-l">
-    <p class="hero-eyebrow">大阪唯一のスクイーズ専門店 EC運用 × FP × Sales Designer</p>
-    <h1 class="hero-catch">「カワイイ」が、<br><em>売れる理由</em>に<br>なる仕事をしています。</h1>
-    <p class="hero-sub">大阪唯一のスクイーズ専門店「JANE」のEC・SNS運用を2年間ひとりで担当してきました。FP資格で数字も読めるので、「なぜ売れるか」まで一緒に考えながらデザインします。</p>
+    <p class="hero-eyebrow">小売・EC専門 セールスデザイナー × FP</p>
+    <h1 class="hero-catch">雑貨店・小売店の売上を伸ばす、<br><em>クリエイティブパートナー。</em></h1>
+    <p class="hero-sub">大阪唯一のスクイーズ専門店のEC・SNS運用を2年ひとりで担当。<br>売上20%UP・TikTok14.4万再生を達成した現場経験と、<br>FP資格による数字視点で、あなたの店の"売れる導線"を一緒に設計します。</p>
     <div class="hero-tags">
       <span class="tag">EC Sales Design</span>
       <span class="tag">SNS Strategy</span>
@@ -268,24 +331,78 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
 <section id="strength">
   <div class="sh fu"><h2 class="sh-title">My Strength</h2></div>
   <div class="str-grid">
-    <div class="str-item fu"><div class="str-bg-num">01</div><div class="str-icon">🏪</div><h3 class="str-title">大阪唯一の専門店、現場2年の実務経験</h3><p class="str-body">JANEでEC・SNS・販促設計をワンオペで2年担当。ブラックフライデー等のイベント施策を企画から実行まで一気通貫で担い、売上20%UPを達成。</p><span class="str-tag">EC × Retail Expertise</span></div>
-    <div class="str-item fu"><div class="str-bg-num">02</div><div class="str-icon">📊</div><h3 class="str-title">FP資格×購買心理で、利益率まで踏み込む</h3><p class="str-body">広告コスト・粗利率・ターゲットの財布の動き方をFP視点で数字ベースに分析。ROI視点のデザイン提案とCVRが上がる訴求選定が強みです。</p><span class="str-tag">FP × Design</span></div>
-    <div class="str-item fu"><div class="str-bg-num">03</div><div class="str-icon">🔥</div><h3 class="str-title">「買いたい」気持ちに火をつけるデザイン</h3><p class="str-body">バナー・SNS・LINEリッチメニューを一貫したトーンで作り、「見た瞬間に欲しくなる」ビジュアルを目指しています。</p><span class="str-tag">EC × Visual Design</span></div>
+    <div class="str-item fu">
+      <div class="str-bg-num">01</div>
+      <h3 class="str-title">大阪唯一の専門店、現場2年の実務経験</h3>
+      <p class="str-body">JANEでEC・SNS・販促設計をワンオペで2年担当。ブラックフライデー等のイベント施策を企画から実行まで一気通貫で担い、売上20%UPを達成。</p>
+      <span class="str-tag">EC × Retail Expertise</span>
+    </div>
+    <div class="str-item fu">
+      <div class="str-bg-num">02</div>
+      <h3 class="str-title">FP資格×購買心理で、利益率まで踏み込む</h3>
+      <p class="str-body">広告コスト・粗利率・ターゲットの財布の動き方をFP視点で数字ベースに分析。ROI視点のデザイン提案とCVRが上がる訴求選定が強みです。</p>
+      <span class="str-tag">FP × Design</span>
+    </div>
+    <div class="str-item fu">
+      <div class="str-bg-num">03</div>
+      <h3 class="str-title">「買いたい」気持ちに火をつけるデザイン</h3>
+      <p class="str-body">バナー・SNS・LINEリッチメニューを一貫したトーンで作り、「見た瞬間に欲しくなる」ビジュアルを目指しています。</p>
+      <span class="str-tag">EC × Visual Design</span>
+    </div>
   </div>
 </section>
-
 
 <section id="service">
   <div class="sh fu"><h2 class="sh-title">Service</h2></div>
   <div class="svc-grid">
-    <div class="svc fu"><div class="svc-icon">🖼</div><h3 class="svc-title">EC・販促バナー制作</h3><p class="svc-body">商品ページ・SNS広告・イベントバナー。CVRを意識した構図と訴求設計で制作します。</p><p class="svc-note">納期 2〜3営業日〜</p></div>
-    <div class="svc fu"><div class="svc-icon">🎉</div><h3 class="svc-title">イベント施策一気通貫</h3><p class="svc-body">ブラックフライデー・季節イベント等のクーポン設計からバナー・SNS・BASE告知まで一貫担当。</p><p class="svc-note">企画〜納品まで対応</p></div>
-    <div class="svc fu"><div class="svc-icon">📱</div><h3 class="svc-title">SNS運用・コンテンツ設計</h3><p class="svc-body">TikTok・Instagram・X向けの投稿デザイン・キャプション・スケジュール管理。ファン作りから購買導線まで設計。</p><p class="svc-note">月額 / 単発どちらも対応</p></div>
-    <div class="svc fu"><div class="svc-icon">📋</div><h3 class="svc-title">LINEリッチメニュー</h3><p class="svc-body">来店・購入・問い合わせへの導線を設計した上でデザイン。ECへの送客を最大化します。</p><p class="svc-note">設計〜納品まで一括</p></div>
-    <div class="svc fu"><div class="svc-icon">🎬</div><h3 class="svc-title">商品動画・リール制作</h3><p class="svc-body">TikTok・Instagram Reels・YouTube Shorts向け動画編集。商品の「欲しい」を引き出すビジュアル構成で制作。</p><p class="svc-note">1本〜対応可</p></div>
-    <div class="svc fu"><div class="svc-icon">💡</div><h3 class="svc-title">EC改善提案・コンサル</h3><p class="svc-body">既存ECページ・SNSを分析し「なぜ売れないか」をFP視点の数字ベースで提案。利益率まで踏み込んだアドバイスが可能。</p><p class="svc-note">単発〜継続対応</p></div>
-    <div class="svc fu"><div class="svc-icon">📄</div><h3 class="svc-title">カタログ・チラシ制作</h3><p class="svc-body">店舗配布・EC同梱・イベント用チラシ、商品カタログ。印刷対応データで納品します。</p><p class="svc-note">A4〜A3 / デジタル版も対応</p></div>
-    <div class="svc fu"><div class="svc-icon">📦</div><h3 class="svc-title">その他ご相談</h3><p class="svc-body">記載以外のご依頼もお気軽にどうぞ。まずヒアリングした上でご提案します。</p><p class="svc-note">まずはDMで相談無料</p></div>
+    <div class="svc fu"><div class="svc-label">BANNER</div><h3 class="svc-title">EC・販促バナー制作</h3><p class="svc-body">商品ページ・SNS広告・イベントバナー。CVRを意識した構図と訴求設計で制作します。</p><p class="svc-note">納期 2〜3営業日〜</p></div>
+    <div class="svc fu"><div class="svc-label">EVENT</div><h3 class="svc-title">イベント施策一気通貫</h3><p class="svc-body">ブラックフライデー・季節イベント等のクーポン設計からバナー・SNS・BASE告知まで一貫担当。</p><p class="svc-note">企画〜納品まで対応</p></div>
+    <div class="svc fu"><div class="svc-label">SNS</div><h3 class="svc-title">SNS運用・コンテンツ設計</h3><p class="svc-body">TikTok・Instagram・X向けの投稿デザイン・キャプション・スケジュール管理。ファン作りから購買導線まで設計。</p><p class="svc-note">月額 / 単発どちらも対応</p></div>
+    <div class="svc fu"><div class="svc-label">LINE</div><h3 class="svc-title">LINEリッチメニュー</h3><p class="svc-body">来店・購入・問い合わせへの導線を設計した上でデザイン。ECへの送客を最大化します。</p><p class="svc-note">設計〜納品まで一括</p></div>
+    <div class="svc fu"><div class="svc-label">VIDEO</div><h3 class="svc-title">商品動画・リール制作</h3><p class="svc-body">TikTok・Instagram Reels・YouTube Shorts向け動画編集。商品の「欲しい」を引き出すビジュアル構成で制作。</p><p class="svc-note">1本〜対応可</p></div>
+    <div class="svc fu"><div class="svc-label">CONSULT</div><h3 class="svc-title">EC改善提案・コンサル</h3><p class="svc-body">既存ECページ・SNSを分析し「なぜ売れないか」をFP視点の数字ベースで提案。利益率まで踏み込んだアドバイスが可能。</p><p class="svc-note">単発〜継続対応</p></div>
+    <div class="svc fu"><div class="svc-label">PRINT</div><h3 class="svc-title">カタログ・チラシ制作</h3><p class="svc-body">店舗配布・EC同梱・イベント用チラシ、商品カタログ。印刷対応データで納品します。</p><p class="svc-note">A4〜A3 / デジタル版も対応</p></div>
+    <div class="svc fu"><div class="svc-label">OTHER</div><h3 class="svc-title">その他ご相談</h3><p class="svc-body">記載以外のご依頼もお気軽にどうぞ。まずヒアリングした上でご提案します。</p><p class="svc-note">まずはDMで相談無料</p></div>
+  </div>
+  <div class="pkg-wrap fu">
+    <div class="pkg-header">
+      <p class="pkg-header-eyebrow">Recommended Package</p>
+      <h3 class="pkg-header-title">おすすめパッケージ</h3>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg-item">
+        <span class="pkg-badge">MONTHLY</span>
+        <h4 class="pkg-title">SNS運用スターターパック</h4>
+        <div class="pkg-price">月額 ¥30,000〜</div>
+        <ul class="pkg-list">
+          <li>投稿デザイン 4枚/月</li>
+          <li>キャプション作成</li>
+          <li>ハッシュタグ設計</li>
+          <li>月次レポート</li>
+        </ul>
+      </div>
+      <div class="pkg-item">
+        <span class="pkg-badge">SET</span>
+        <h4 class="pkg-title">販促チラシ＋SNS展開セット</h4>
+        <div class="pkg-price">¥15,000〜</div>
+        <ul class="pkg-list">
+          <li>A4チラシ 1点</li>
+          <li>Instagram告知用バナー 2枚</li>
+          <li>キャプション文</li>
+        </ul>
+      </div>
+      <div class="pkg-item">
+        <span class="pkg-badge">FULL</span>
+        <h4 class="pkg-title">EC改善 まるごとパック</h4>
+        <div class="pkg-price">¥50,000〜</div>
+        <ul class="pkg-list">
+          <li>ECページ診断</li>
+          <li>バナー制作 3点</li>
+          <li>SNS投稿 5本</li>
+          <li>LINEリッチメニュー 1点</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -298,8 +415,34 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
   <a href="pricing.html" class="pricing-cta-btn">料金を見る →</a>
 </div>
 
+<section id="reason">
+  <div class="sh fu"><h2 class="sh-title">なぜ、笹田麻衣に頼むのか。</h2></div>
+  <div class="reason-grid">
+    <div class="reason-item fu">
+      <div class="reason-num">01</div>
+      <h3 class="reason-title">現場を知っている</h3>
+      <p class="reason-body">小売店での2年間のワンオペ経験。売れない理由・売れる瞬間を肌で知っているから、デザインの根拠を言葉で説明できます。</p>
+    </div>
+    <div class="reason-item fu">
+      <div class="reason-num">02</div>
+      <h3 class="reason-title">数字で判断できる</h3>
+      <p class="reason-body">FP資格により、広告コスト・粗利率・ROIを踏まえた上でデザイン提案が可能。感覚ではなくデータで動きます。</p>
+    </div>
+    <div class="reason-item fu">
+      <div class="reason-num">03</div>
+      <h3 class="reason-title">納品して終わりにしない</h3>
+      <p class="reason-body">バナー1枚でも、導線設計・SNS展開・反応の振り返りまでセットで考えます。売上につながらなければ意味がないと思っているから。</p>
+    </div>
+  </div>
+</section>
+
 <section id="works">
   <div class="sh fu"><h2 class="sh-title">Works</h2></div>
+
+  <div class="works-feat-wrap fu">
+    <div class="works-feat-label"><span class="wfeat-label">代表作品</span></div>
+    <div class="works-feat-grid" id="worksFeatured"></div>
+  </div>
 
   <div class="works-filter fu">
     <button class="wf-btn active" data-filter="all">All</button>
@@ -310,7 +453,6 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
   </div>
 
   <div id="worksContainer"></div>
-
 </section>
 
 <section class="pickup-section">
@@ -339,9 +481,17 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
 <section class="dp-section">
   <div class="sh fu" style="border-top:none;"><h2 class="sh-title">Digital Product</h2></div>
   <div class="dp-grid">
-    <div class="dp-l fu"><div class="dp-badge">note にて販売中</div><div class="dp-title">韓国旅行<br>旅のしおり<br>Canvaテンプレート</div><div class="dp-price">¥500</div><a href="https://note.com/sasakamaboko01" class="dp-btn" target="_blank">noteで見る →</a></div>
-    <div class="dp-m fu"><div class="dp-icon">✈️</div><p class="dp-story">「旅行の準備をもっと楽しく、もっと使いやすく」という思いから生まれたテンプレートです。<br><br>Canvaで誰でも簡単にカスタマイズできる8ページ構成にしました。韓国のくすみカラーパレットとフォントを選定し、旅程・予算・持ち物・グルメメモまで網羅。FP視点の予算管理ページもさりげなく組み込んでいます。</p></div>
-    <div class="dp-r fu"><p class="dp-r-label">制作のこだわり</p>
+    <div class="dp-l fu">
+      <div class="dp-badge">note にて販売中</div>
+      <div class="dp-title">韓国旅行<br>旅のしおり<br>Canvaテンプレート</div>
+      <div class="dp-price">¥500</div>
+      <a href="https://note.com/sasakamaboko01" class="dp-btn" target="_blank">noteで見る →</a>
+    </div>
+    <div class="dp-m fu">
+      <p class="dp-story">「旅行の準備をもっと楽しく、もっと使いやすく」という思いから生まれたテンプレートです。<br><br>Canvaで誰でも簡単にカスタマイズできる8ページ構成にしました。韓国のくすみカラーパレットとフォントを選定し、旅程・予算・持ち物・グルメメモまで網羅。FP視点の予算管理ページもさりげなく組み込んでいます。</p>
+    </div>
+    <div class="dp-r fu">
+      <p class="dp-r-label">制作のこだわり</p>
       <div class="dp-pt"><span class="dp-pt-key">Target</span><span class="dp-pt-val">韓国旅行を計画中の20〜40代女性。デザインに時間をかけたくないけど、可愛くまとめたい人。</span></div>
       <div class="dp-pt"><span class="dp-pt-key">Design</span><span class="dp-pt-val">74×105mmのミニサイズ設計。韓国のくすみカラーパレットで統一感のある仕上がり。</span></div>
       <div class="dp-pt"><span class="dp-pt-key">Value</span><span class="dp-pt-val">旅程・予算管理・グルメ・持ち物・フォトメモなど網羅。スマホ1台で完結。</span></div>
@@ -392,11 +542,9 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
   <p>OSAKA, JAPAN</p>
 </footer>
 
-
 <div class="modal-bg" id="modalBg"><div class="modal-box" id="modalBox"></div></div>
 
 <script>
-// カスタムカーソル（タッチデバイスでは無効化）
 (function(){
   var isTouch = window.matchMedia('(pointer: coarse)').matches;
   var curEl = document.getElementById('cur');
@@ -412,10 +560,8 @@ footer p { font-family:'Noto Sans JP',sans-serif; font-size:10px; color:var(--mu
   });
 })();
 
-// 全要素を表示
 document.querySelectorAll('.fu').forEach(function(el){ el.classList.add('vis'); });
 
-// アクティブナビ（IntersectionObserver）
 (function(){
   var sections = document.querySelectorAll('section[id]');
   var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
@@ -433,61 +579,115 @@ document.querySelectorAll('.fu').forEach(function(el){ el.classList.add('vis'); 
   sections.forEach(function(s){ observer.observe(s); });
 })();
 
-// Works データ（カード生成の単一ソース）
 var works = [
+  { filter:'featured', cat:'Catalog Design', title:'Janeカタログ\nA4×8P',
+    imgSrc:'images/img_01.jpg', tools:'Photoshop / Illustrator',
+    challenge:'商品の魅力が店頭だけでは伝わりきらず、初来店のお客様が購買に至りにくかった。',
+    solution:'A4×8Pのカタログに商品ラインナップと世界観を凝縮。店頭配布・EC同梱・イベント配布に対応するデザインで制作。',
+    result:'来店・リピート購入のきっかけになるツールとして活用。商品認知の拡大に貢献。',
+    desc:'JANEのブランドカタログ。商品ラインナップと世界観をA4・8ページに凝縮し、店頭配布・EC同梱・イベント配布に対応した設計。はじめてのお客様にも伝わる導線を意識しました。' },
+  { filter:'featured', cat:'Digital Product / note販売中', title:'韓国旅行 旅のしおり\nCanvaテンプレート',
+    imgSrc:'images/img_32.jpg', tools:'Canva',
+    challenge:'旅行準備に時間がかかるという声が多く、手軽に使えるテンプレートへのニーズがあった。',
+    solution:'Canvaで誰でもカスタマイズできる8ページ構成。FP視点の予算管理ページも組み込んだ実用的なデザインで制作。',
+    result:'noteにて¥500で販売。継続的な購入実績あり。',
+    desc:'「旅行の準備をもっと楽しく」をコンセプトにした8ページのCanvaテンプレート。74×105mmのミニサイズで旅程・予算・グルメ・持ち物を網羅。FP視点の予算管理ページも組み込み、noteにて500円で販売中です。' },
+  { filter:'featured', cat:'Signage Design', title:'新今宮駅\nデジタルサイネージ',
+    imgSrc:'images/img_signage.jpg', tools:'Premiere Pro / Photoshop',
+    challenge:'15秒という制約の中で、インバウンド客が多い新今宮駅で店の魅力を瞬時に伝えなければならなかった。',
+    solution:'「人が出る映像」を採用。文字不要で視覚だけで伝わる構成にし、QRコードはGoogleマップ連携で外国人でも来店できる導線を確保。',
+    result:'JR西日本から直接打診を受けて実現。インバウンド客の来店導線を視覚設計で確保した。',
+    desc:'2025年11月、JR新今宮駅サイネージ担当者からの直接打診で実現。15秒という制約に対し「人が出る映像」を採用。インバウンド客が多い特性上、文字不要で視覚だけで伝わるデザインを意識しました。' },
   { filter:'sns', cat:'SNS Banner Design', title:'BLOOM SQUEEZE\n入荷告知バナー',
     imgSrc:'images/img_17.jpg', tools:'Photoshop',
+    challenge:'新商品入荷の告知を素早くSNSで発信する必要があったが、制作時間が限られていた。',
+    solution:'マンガ風コマ割りレイアウトで複数商品を見せつつ入荷日を明確に訴求。当日制作・即投稿フローを確立。',
+    result:'売り切れ前の購買を促す緊急感を演出し、販売機会損失を防いだ。',
     desc:'スクイーズの新商品入荷をSNS向けに告知するバナー。マンガ風コマ割りレイアウトで複数商品を見せつつ、入荷日を明確に訴求。当日制作・即投稿の運用フローを確立し、売り切れ前の購買を促す緊急感を演出しています。' },
   { filter:'sns', cat:'Instagram Story Design', title:'JANE×スクイーズプラネット\nインスタグラムストーリー',
     imgSrc:'images/img_18.jpg', tools:'Photoshop / Canva',
+    challenge:'TikTokで興味を持った商品を、そのままECで購入してもらう導線が整っていなかった。',
+    solution:'スタッフ出演の親しみやすい雰囲気と商品グリッドを組み合わせ、TikTok→InstagramStory→ECという購買導線を設計。',
+    result:'SNS各媒体の連携強化によりEC送客率の向上に貢献。',
     desc:'TikTokで紹介した商品の在庫告知ストーリー。スタッフ出演の親しみやすい雰囲気と商品グリッドを組み合わせ、TikTok→InstagramStory→ECという購買導線を設計した実例です。' },
   { filter:'sns', cat:'Promotion Flyer', title:'大阪問屋雑貨菓子\n自社認知獲得フライヤー',
     imgSrc:'images/img_19.jpg', tools:'Photoshop',
+    challenge:'知名度が低く、一般客が来店しにくいという課題があった。',
+    solution:'「一般の方大歓迎」というコピーで入店ハードルを下げ、スタッフ写真で親しみやすさを演出。裏面QRでSNSフォローへ誘導する設計。',
+    result:'新規来客の増加に貢献。SNSフォロワー獲得の入口として機能した。',
     desc:'知名度が低かった時期に制作した来店促進フライヤー。「一般の方大歓迎」というコピーで入店ハードルを下げ、スタッフ写真で親しみやすさを演出。裏面のQRでSNSフォローへ誘導する設計です。' },
   { filter:'sns', cat:'SNS Banner', title:'海外お菓子・飲料\nプロモーションバナー',
     imgSrc:'images/img_20.jpg', tools:'Photoshop',
+    challenge:'海外お菓子の品揃えが伝わりにくく、SNSでの拡散が少なかった。',
+    solution:'パステルトーンで「映える」雰囲気を演出し、学生・若年層が保存・シェアしたくなるビジュアルを設計。',
+    result:'SNSでのリーチ拡大と保存数の増加に貢献。',
     desc:'海外お菓子・飲料の品揃えをSNSで一気に伝えるバナー。パステルグラデーションで「映える」雰囲気を演出し、学生〜若年層が保存・シェアしたくなるビジュアルを目指しました。' },
   { filter:'ec', cat:'Event Campaign Design', title:'ブラックフライデー\nクーポン施策バナー',
     imgSrc:'images/img_21.jpg', tools:'Photoshop',
+    challenge:'複雑なクーポン構造が購買の壁になっており、途中離脱が発生していた。',
+    solution:'FP視点で粗利計算した上で割引率を設定。Pay IDアプリの使い方を4ステップで図解し、クーポン未適用の離脱を防ぐ設計に。',
+    result:'イベント期間中の売上向上に貢献。クーポン適用率が改善した。',
     desc:'BASEのブラックフライデー告知バナー。FP視点で粗利を計算した上で割引率を設定し、15%OFF＋5%還元をわかりやすく整理。Pay IDアプリの使い方を4ステップで図解し、クーポン未適用の離脱を防ぎました。' },
   { filter:'ec', cat:'BASE Banner Design', title:'スモアチョコマロウ\nEC販促バナー（爆売れ大ヒット）',
     imgSrc:'images/img_22.jpg', tools:'Photoshop',
-    desc:'BASE内で最も成果を出したバナー。背景にマシュマロを割る画像をぼかしで敷き、食欲を刺激するビジュアルを演出。「当店売上ランキング1位」の権威性と「数量限定」の限定ワードで今すぐ買う理由を作り、売れてる雰囲気を視覚的に伝える設計にしました。' },
+    challenge:'認知度が低い商品の購買ハードルを下げ、売上につなげる必要があった。',
+    solution:'食欲を刺激する背景処理、「売上ランキング1位」の権威性、「数量限定」の限定性を組み合わせ今すぐ買う理由を設計。',
+    result:'BASE内で最も高い売上成果を出したバナーとなった。',
+    desc:'BASE内で最も成果を出したバナー。背景にマシュマロを割る画像をぼかしで敷き、食欲を刺激するビジュアルを演出。「当店売上ランキング1位」の権威性と「数量限定」の限定ワードで今すぐ買う理由を作りました。' },
   { filter:'ec', cat:'BASE Banner Design', title:'LINE先行案内\nEC販促バナー',
     imgSrc:'images/img_23.jpg', tools:'Photoshop',
+    challenge:'LINE会員への特別感が伝わらず、ECへの送客率が低かった。',
+    solution:'「LINE会員だけが先に知れる」特別感を演出し、商品グリッドと店内写真で品揃えの豊かさを訴求する設計に。',
+    result:'LINE→EC購買導線の強化に貢献。LINE会員への送客率が向上した。',
     desc:'LINE会員向け先行案内バナー。「LINE会員だけが先に知れる」特別感を演出し、商品グリッドと店内写真で品揃えの豊かさを訴求。LINEからECへの送客を最大化する導線設計です。' },
   { filter:'product', cat:'Product Banner Design', title:'HARIBO Chamallows\n入荷告知商品バナー',
     imgSrc:'images/img_25.jpg', tools:'Photoshop',
+    challenge:'SNSでバズ中の商品の在庫告知を、バズの熱量が冷めないうちに即座に発信する必要があった。',
+    solution:'「めっちゃうまいやん」という関西弁コピーで親近感を演出し、断面写真でおいしさをビジュアル化。スピード制作で即日投稿。',
+    result:'バズのタイミングを活かした販売促進に成功。商品の認知度向上につながった。',
     desc:'SNSでバズ中のHARIBO Chamallowsの入荷告知バナー。「めっちゃうまいやん」という関西弁コピーで親近感を演出し、断面写真でおいしさをビジュアル化。バズのタイミングを逃さないスピード制作の実例です。' },
   { filter:'product', cat:'Product Catalog Design', title:'チャンドゥク\nクッキー販促カタログ',
     imgSrc:'images/img_26.jpg', tools:'Photoshop / Canva',
+    challenge:'日本での認知度が低い韓国マシュマロの購買ハードルを下げる必要があった。',
+    solution:'「おいしい食べ方レシピ」を先頭に配置し、商品紹介より先に体験を見せる構成で購買ハードルを下げた。QRコードで動画レシピへ誘導。',
+    result:'商品の食べ方提案により購買のきっかけを増やし、販売促進に貢献。',
     desc:'日本での認知度が低い韓国マシュマロのカタログ。「おいしい食べ方レシピ」を先頭に配置し、商品紹介より先に体験を見せる構成で購買ハードルを下げました。QRコードで動画レシピへ誘導する導線も設計。' },
   { filter:'product', cat:'Signage Design', title:'スクイーズプラネット\n店頭看板デザイン',
     imgSrc:'images/img_27.jpg', tools:'Photoshop / Illustrator',
+    challenge:'複数ジャンルを扱う店舗の特性が、遠目からでは伝わりにくかった。',
+    solution:'赤×白の高コントラスト配色で遠くからでも視認できる設計。複数ジャンルを1枚にコンパクトにまとめた。',
+    result:'店頭での認知率向上と通行客への訴求力強化に貢献。',
     desc:'店頭A型看板のデザイン。遠くからでも視認できる赤×白の高コントラスト配色を採用し、「韓国食品・海外お菓子・スクイーズ」の複数ジャンルを1枚にコンパクトにまとめました。' },
   { filter:'product', cat:'TikTok Thumbnail', title:'TikTok\nサムネイルデザイン（韓国お菓子）',
     imgSrc:'images/img_28.jpg', tools:'Photoshop / CapCut',
+    challenge:'動画の内容が一瞬で伝わらず、クリック率・視聴開始率が低い課題があった。',
+    solution:'スタッフの表情を大きく配置し「人が出ている動画」と伝わる設計に。黄色吹き出しで目線誘導し、0.5秒で読める文字量に抑えた。',
+    result:'サムネイル改善によりクリック率・視聴率の向上に貢献。',
     desc:'TikTok動画のサムネイルデザイン。スタッフの表情が見える写真を大きく配置し「人が出ている動画」と伝わる設計に。黄色の吹き出しテキストで目線誘導し、タイトルを0.5秒で読み取れる文字量に抑えました。' },
   { filter:'tiktok', cat:'TikTok Promotion Flyer', title:'TikTok配信告知\n店頭配布チラシ',
     imgSrc:'images/img_29.jpg', tools:'Photoshop',
+    challenge:'SNSのフォロワーが増えない、オフライン客とオンラインが繋がっていないという課題があった。',
+    solution:'「フォローするとレジでプレゼント」というインセンティブ設計でSNSフォロー→来店→購買のO2O導線を1枚のチラシで完結させた。',
+    result:'SNSフォロワー獲得と来店促進を同時に実現するO2O施策として機能した。',
     desc:'毎週水・金のTikTok配信を告知する店頭チラシ。「フォローするとレジでプレゼント」というインセンティブ設計も担当し、SNSフォロー→来店→購買のO2O導線を1枚のチラシで完結させました。' },
   { filter:'tiktok', cat:'TikTok Thumbnail', title:'えっほえっほしてみた\nTikTokサムネイル',
     imgSrc:'images/img_30.jpg', tools:'CapCut / Photoshop',
+    challenge:'トレンドダンス動画で商品名を記憶してもらうのが難しかった。',
+    solution:'ダンスシーンの左右分割レイアウトで「何をやっている動画か」を一目で伝え、商品名を大きく入れて視聴後の記憶に残る設計を意識した。',
+    result:'トレンド×商品紹介の組み合わせで拡散を促進。',
     desc:'トレンドダンスに乗せた商品紹介動画のサムネイル。ダンスシーンの左右分割レイアウトで「何をやっている動画か」を一目で伝え、商品名を大きく入れて視聴後の記憶に残る設計を意識しました。' },
   { filter:'tiktok', cat:'LINE Rich Menu Design', title:'スクイーズプラネット\nLINEリッチメニュー',
     imgSrc:'images/img_31.jpg', beforeSrc:'images/img_31_before.png', tools:'Photoshop',
-    desc:'LINE公式アカウントのリッチメニューをゼロから設計・制作。来店・EC購入・お問い合わせの優先順位でタップエリアを配置し、BASEへの送客リンクを最も目立つ位置に設置。LINE→EC購買の最短導線を実現しました。' },
-  { filter:'tiktok', cat:'Digital Product / note販売中', title:'韓国旅行 旅のしおり\nCanvaテンプレート',
-    imgSrc:'images/img_32.jpg', tools:'Canva',
-    desc:'「旅行の準備をもっと楽しく」をコンセプトにした8ページのCanvaテンプレート。74×105mmのミニサイズで旅程・予算・グルメ・持ち物を網羅。FP視点の予算管理ページも組み込み、noteにて500円で販売中です。' }
+    challenge:'LINE公式アカウントからECへの送客率が低く、タップエリアの設計が最適化されていなかった。',
+    solution:'来店・EC購入・問い合わせの優先順位でタップエリアを配置し、BASEへの送客リンクを最も目立つ位置に設置。',
+    result:'Before/Afterで視認性が大幅改善。LINE→EC購買の最短導線を実現した。',
+    desc:'LINE公式アカウントのリッチメニューをゼロから設計・制作。来店・EC購入・お問い合わせの優先順位でタップエリアを配置し、BASEへの送客リンクを最も目立つ位置に設置。LINE→EC購買の最短導線を実現しました。' }
 ];
 
-// XSS対策エスケープ
 function esc(str){
   return (str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-// カテゴリ定義
 var workCats = [
   { key:'sns',     label:'SNS / 販促バナー' },
   { key:'ec',      label:'EC / BASE バナー' },
@@ -495,7 +695,23 @@ var workCats = [
   { key:'tiktok',  label:'TikTok / LINE / デジタル' }
 ];
 
-// Works カードを生成（モーダル用グリッド）
+(function(){
+  var container = document.getElementById('worksFeatured');
+  if(!container) return;
+  var html = '';
+  works.filter(function(w){ return w.filter === 'featured'; }).forEach(function(w){
+    var idx = works.indexOf(w);
+    html += '<div class="work-feat fu" data-idx="' + idx + '">';
+    html += '<img src="' + esc(w.imgSrc) + '" alt="' + esc(w.cat) + '" loading="lazy">';
+    html += '<div class="work-feat-ov"><div class="work-feat-info">';
+    html += '<div class="work-cat">' + esc(w.cat) + '</div>';
+    html += '<div class="work-name">' + esc(w.title).replace(/\n/g,'<br>') + '</div>';
+    html += '</div></div></div>';
+  });
+  container.innerHTML = html;
+  container.querySelectorAll('.fu').forEach(function(el){ el.classList.add('vis'); });
+})();
+
 (function(){
   var container = document.getElementById('worksContainer');
   var html = '';
@@ -504,7 +720,7 @@ var workCats = [
     if(!catWorks.length) return;
     html += '<div class="works-category fu" data-category="' + cat.key + '"><span class="wcat-label">' + cat.label + '</span></div>';
     html += '<div class="works-grid" data-category="' + cat.key + '">';
-    catWorks.forEach(function(w, i){
+    catWorks.forEach(function(w){
       var idx = works.indexOf(w);
       html += '<div class="work fu" data-filter="' + esc(w.filter) + '" data-idx="' + idx + '">';
       html += '<img src="' + esc(w.imgSrc) + '" alt="' + esc(w.cat) + '" loading="lazy">';
@@ -519,7 +735,6 @@ var workCats = [
   container.querySelectorAll('.fu').forEach(function(el){ el.classList.add('vis'); });
 })();
 
-// Works フィルター
 (function(){
   var btns = document.querySelectorAll('.wf-btn');
   btns.forEach(function(btn){
@@ -538,7 +753,6 @@ var workCats = [
   });
 })();
 
-// モーダル
 (function(){
   var bg  = document.getElementById('modalBg');
   var box = document.getElementById('modalBox');
@@ -549,6 +763,18 @@ var workCats = [
     if(!w) return;
     var isBa = !!w.beforeSrc;
     box.className = 'modal-box' + (isBa ? ' has-ba' : '');
+    var csrHtml = '';
+    if(w.challenge){
+      csrHtml += '<div class="m-csr">';
+      csrHtml += '<div class="m-csr-item"><span class="m-csr-key">課題</span><span class="m-csr-val">' + esc(w.challenge) + '</span></div>';
+      csrHtml += '<div class="m-csr-item"><span class="m-csr-key">解決</span><span class="m-csr-val">' + esc(w.solution) + '</span></div>';
+      csrHtml += '<div class="m-csr-item"><span class="m-csr-key">結果</span><span class="m-csr-val">' + esc(w.result) + '</span></div>';
+      csrHtml += '</div>';
+    }
+    var metaHtml = '';
+    if(w.tools){
+      metaHtml = '<div class="m-meta"><div class="m-meta-item"><span class="m-meta-key">Tools</span><span class="m-meta-val">' + esc(w.tools) + '</span></div></div>';
+    }
     var html = '';
     if(isBa){
       html += '<div class="modal-ba">';
@@ -559,9 +785,7 @@ var workCats = [
       html += '<div class="m-cat">' + esc(w.cat) + '</div>';
       html += '<div class="m-title">' + esc(w.title) + '</div>';
       html += '<div class="m-desc">' + esc(w.desc) + '</div>';
-      if(w.tools){
-        html += '<div class="m-meta"><div class="m-meta-item"><span class="m-meta-key">Tools</span><span class="m-meta-val">' + esc(w.tools) + '</span></div></div>';
-      }
+      html += csrHtml + metaHtml;
       html += '</div>';
       html += '<div class="modal-footer"><button class="m-close" id="mClose">Close</button></div>';
     } else {
@@ -571,9 +795,7 @@ var workCats = [
       html += '<div class="m-cat">' + esc(w.cat) + '</div>';
       html += '<div class="m-title">' + esc(w.title) + '</div>';
       html += '<div class="m-desc">' + esc(w.desc) + '</div>';
-      if(w.tools){
-        html += '<div class="m-meta"><div class="m-meta-item"><span class="m-meta-key">Tools</span><span class="m-meta-val">' + esc(w.tools) + '</span></div></div>';
-      }
+      html += csrHtml + metaHtml;
       html += '</div>';
       html += '<button class="m-close" id="mClose">Close</button>';
       html += '</div>';
@@ -585,22 +807,21 @@ var workCats = [
     if(closeBtn) closeBtn.addEventListener('click', closeModal);
   }
 
-  function closeModal(){
-    bg.classList.remove('on');
-  }
+  function closeModal(){ bg.classList.remove('on'); }
 
-  bg.addEventListener('click', function(e){
-    if(e.target === bg) closeModal();
-  });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') closeModal();
+  bg.addEventListener('click', function(e){ if(e.target === bg) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  document.getElementById('worksFeatured').addEventListener('click', function(e){
+    var card = e.target.closest('.work-feat');
+    if(!card) return;
+    openModal(parseInt(card.getAttribute('data-idx'), 10));
   });
 
   document.getElementById('worksContainer').addEventListener('click', function(e){
     var card = e.target.closest('.work');
     if(!card) return;
-    var idx = parseInt(card.getAttribute('data-idx'), 10);
-    openModal(idx);
+    openModal(parseInt(card.getAttribute('data-idx'), 10));
   });
 })();
 </script>
