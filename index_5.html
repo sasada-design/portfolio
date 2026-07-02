@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HANSOKU TIMES | 笹田麻衣 — 世界観で売る販促資料デザイナー</title>
+<meta name="description" content="世界観で売る販促資料デザイナー・笹田麻衣のポートフォリオ。スクイーズ専門店EC・SNS運用2年、TikTok14.4万再生、売上20%UP。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:   #1C1C1C;
+  --paper: #F7F4ED;
+  --red:   #D93A2B;
+  --yellow:#F2C124;
+  --muted: #7A7060;
+  --rule:  #C8BFA8;
+  --white: #FFFFFF;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ===== MASTHEAD ===== */
+.masthead {
+  border-top: 5px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 8px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white);
+}
+.masthead-meta {
+  font-size: 11px;
+  color: var(--muted);
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: .08em;
+}
+
+/* ===== NAMEPLATE ===== */
+.nameplate {
+  background: var(--white);
+  text-align: center;
+  padding: 18px 24px 22px;
+  border-bottom: 3px double var(--ink);
+}
+.nameplate-catch {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 13px;
+  letter-spacing: .35em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.nameplate h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(2.6rem, 8vw, 5rem);
+  font-weight: 900;
+  letter-spacing: .1em;
+  line-height: 1;
+}
+.nameplate h1 em {
+  color: var(--red);
+  font-style: normal;
+}
+.nameplate-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(13px, 2vw, 18px);
+  letter-spacing: .25em;
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+/* ===== RED RIBBON ===== */
+.ribbon {
+  background: var(--red);
+  color: white;
+  padding: 7px 24px;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 13px;
+  letter-spacing: .1em;
+  text-align: center;
+}
+
+/* ===== WRAPPER ===== */
+.main-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== HERO ===== */
+.hero-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0;
+  border-bottom: 2px solid var(--ink);
+}
+.hero-main {
+  border-right: 1px solid var(--rule);
+  padding: 24px 24px 24px 0;
+}
+.hero-kicker {
+  display: inline-block;
+  background: var(--ink);
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: .15em;
+  padding: 2px 8px;
+  margin-bottom: 12px;
+}
+.hero-headline {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.5rem, 3.2vw, 2.3rem);
+  font-weight: 900;
+  line-height: 1.35;
+  margin-bottom: 14px;
+}
+.hero-headline em { color: var(--red); font-style: normal; }
+
+.hero-img-wrap {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  margin: 12px 0;
+  background: #e0dcd0;
+}
+.hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.img-ph {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #ddd8cc, #c8c0b0);
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  padding: 16px;
+}
+.img-ph strong { font-size: 14px; color: var(--ink); display: block; }
+.img-ph code { font-size: 11px; background: rgba(0,0,0,.08); padding: 2px 6px; border-radius: 2px; }
+
+.caption {
+  font-size: 11px;
+  color: var(--muted);
+  border-top: 1px solid var(--rule);
+  padding-top: 6px;
+  margin-top: 8px;
+  margin-bottom: 14px;
+}
+.hero-body {
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: #333;
+}
+
+/* ===== SIDEBAR ===== */
+.hero-side { padding: 24px 0 24px 20px; }
+
+.profile-box {
+  border: 1px solid var(--rule);
+  padding: 16px;
+  background: var(--white);
+  margin-bottom: 12px;
+}
+.box-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: .2em;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+}
+.profile-img-wrap {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 12px;
+  background: #d8d0c0;
+}
+.profile-img-wrap img { width:100%; height:100%; object-fit:cover; }
+.profile-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3px;
+}
+.profile-role {
+  font-size: 11px;
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.profile-text { font-size: 12px; line-height: 1.8; color: #444; }
+
+.stat-box {
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  background: var(--ink);
+  color: white;
+}
+.stat-box.red { background: var(--red); }
+.stat-box.yellow { background: var(--yellow); color: var(--ink); }
+.stat-num {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.stat-label { font-size: 11px; margin-top: 4px; opacity: .85; }
+
+/* ===== SECTION HEAD ===== */
+.section-head {
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding: 10px 0;
+  margin: 30px 0 18px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+.section-head h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+  font-weight: 900;
+}
+.section-head .sub {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: .15em;
+  color: var(--muted);
+}
+
+/* ===== WORKS GRID ===== */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.work-item {
+  background: var(--white);
+  overflow: hidden;
+}
+.work-img {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #e8e4da;
+}
+.work-img img {
+  width:100%; height:100%; object-fit:cover;
+  transition: transform .3s ease;
+}
+.work-item:hover .work-img img { transform: scale(1.04); }
+.work-info { padding: 8px 10px; }
+.work-tag {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px;
+  letter-spacing: .08em;
+  color: var(--red);
+}
+.work-title { font-size: 13px; font-weight: 700; line-height: 1.4; }
+
+/* ===== CATALOG FEATURE ===== */
+.catalog-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding: 28px 0;
+  margin: 30px 0;
+  align-items: center;
+}
+.catalog-mockup {
+  aspect-ratio: 16/10;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,.25);
+  background: #111;
+}
+.catalog-mockup img { width:100%; height:100%; object-fit:cover; border-radius:4px; }
+
+.catalog-badge {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  margin-bottom: 14px;
+  transform: rotate(-1.5deg);
+}
+.catalog-text h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+.catalog-text h3 em { color: var(--red); font-style: normal; }
+.catalog-text p { font-size: 13px; line-height: 1.9; color: #444; }
+
+/* ===== FLOW ===== */
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--rule);
+  margin: 16px 0;
+}
+.flow-item {
+  padding: 20px 16px;
+  border-right: 1px solid var(--rule);
+}
+.flow-item:last-child { border-right: none; }
+.flow-num {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--red);
+  line-height: 1;
+}
+.flow-label { font-size: 13px; font-weight: 700; margin: 6px 0 4px; }
+.flow-text { font-size: 11px; color: var(--muted); line-height: 1.6; }
+
+/* ===== STICKIES ===== */
+.sticky-row {
+  padding: 28px 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.sticky {
+  background: var(--yellow);
+  padding: 12px 16px;
+  font-size: 12px;
+  line-height: 1.6;
+  transform: rotate(1.5deg);
+  display: inline-block;
+  box-shadow: 2px 3px 8px rgba(0,0,0,.12);
+}
+.sticky.pink { background: #FFD0D0; transform: rotate(-1.2deg); }
+
+/* ===== CONTACT ===== */
+.contact-strip {
+  background: var(--ink);
+  color: white;
+  padding: 40px 24px;
+  text-align: center;
+}
+.contact-strip h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.contact-strip p { font-size: 13px; opacity: .7; margin-bottom: 24px; }
+.contact-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contact-link {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 1px solid rgba(255,255,255,.3);
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: .08em;
+  transition: background .2s, border-color .2s;
+}
+.contact-link:hover { background: rgba(255,255,255,.1); border-color: white; }
+.contact-link.primary { background: var(--red); border-color: var(--red); }
+
+/* ===== FOOTER ===== */
+footer {
+  border-top: 3px double var(--ink);
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--muted);
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: .05em;
+  background: var(--white);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero-section { grid-template-columns: 1fr; }
+  .hero-main { border-right: none; border-bottom: 1px solid var(--rule); padding-right: 0; }
+  .hero-side { padding: 16px 0 0; }
+  .works-grid { grid-template-columns: repeat(2, 1fr); }
+  .catalog-feature { grid-template-columns: 1fr; gap: 20px; }
+  .flow-grid { grid-template-columns: repeat(2, 1fr); }
+  .flow-item:nth-child(2) { border-right: none; }
+  .flow-item { border-bottom: 1px solid var(--rule); }
+}
+@media (max-width: 480px) {
+  .works-grid { grid-template-columns: 1fr; }
+  .flow-grid { grid-template-columns: 1fr; }
+  .flow-item { border-right: none; }
+  .contact-links { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <span class="masthead-meta">VOL.1 — 2026</span>
+  <span class="masthead-meta">OSAKA, JAPAN</span>
+  <span class="masthead-meta">笹田麻衣 PORTFOLIO</span>
+</header>
+
+<!-- NAMEPLATE -->
+<div class="nameplate">
+  <p class="nameplate-catch">SEKAI-KAN × HANSOKU</p>
+  <h1><em>HANSOKU</em> TIMES</h1>
+  <p class="nameplate-title">BY SASADA MAI — 世界観で売る販促資料デザイナー</p>
+</div>
+
+<!-- RIBBON -->
+<div class="ribbon">「触れた瞬間、欲しくなる」を作るのが私の仕事です。</div>
+
+<div class="main-wrap">
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="hero-main">
+      <span class="hero-kicker">FEATURED WORK — 代表作品</span>
+      <h2 class="hero-headline">水を握れ。触れた瞬間、<br><em>もう戻れない。</em></h2>
+
+      <div class="hero-img-wrap">
+        <!--
+          ★ここに水感スクイーズ販促資料の画像を配置してください
+          例: <img src="images/work_mizukan.jpg" alt="水感スクイーズ販促資料">
+        -->
+        <div class="img-ph">
+          <strong>🌊 水感スクイーズ 卸向け販促資料</strong>
+          <code>images/work_mizukan.jpg</code>
+        </div>
+      </div>
+      <p class="caption">▲ 水感スクイーズ 卸向け販促資料 ／ A4横・Photoshop制作 ／ Jane（スクイーズプラネット）</p>
+      <p class="hero-body">
+        「水を含んだような究極のうるぷにテクスチャ」を言葉とビジュアルで表現した卸向け販促資料。
+        コピーライティングから写真選定・レイアウト設計まで一貫制作。
+        <strong>「触れた瞬間にわかる、本物の弾力」</strong>という体験を、A4の紙面で伝えきることを目指した。
+        世界観から逆算して言葉を選び、「見た目で伝わる」デザインに仕上げている。
+      </p>
+    </div>
+
+    <aside class="hero-side">
+      <div class="profile-box">
+        <div class="box-title">DESIGNER PROFILE</div>
+        <div class="profile-img-wrap">
+          <!--
+            ★プロフィール写真: <img src="images/profile.jpg" alt="笹田麻衣">
+          -->
+          <img src="images/img_00.jpg" alt="笹田麻衣" onerror="this.style.display='none'">
+        </div>
+        <p class="profile-name">笹田 麻衣</p>
+        <p class="profile-role">販促資料デザイナー / 大阪府在住</p>
+        <p class="profile-text">
+          雑貨店・小売・ECの現場を2年間ひとりで担当。
+          売れる瞬間を肌で知っているから、
+          「なぜこのデザインにするか」を言葉で説明できる。<br><br>
+          Photoshop専門（Adobe認定プロフェッショナル取得）。
+          FP資格保有で数字にも強い。
+          大阪府在住・リモート全国対応。
+        </p>
+      </div>
+      <div class="stat-box red">
+        <div class="stat-num">14.4万</div>
+        <div class="stat-label">TikTok最大再生数<br>スクイーズ再入荷動画</div>
+      </div>
+      <div class="stat-box yellow">
+        <div class="stat-num">+20%</div>
+        <div class="stat-label">担当期間中の売上UP<br>SNS × 販促 × 導線設計の複合効果</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">2年</div>
+        <div class="stat-label">JANE EC・SNS・販促を<br>ワンオペで一貫担当</div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- WORKS -->
+  <div class="section-head">
+    <h2>制作実績</h2>
+    <span class="sub">WORKS — 販促資料 / バナー / カタログ</span>
+  </div>
+
+  <div class="works-grid">
+    <div class="work-item">
+      <div class="work-img">
+        <!--★ <img src="images/work_ring.jpg" alt="リング販促資料"> -->
+        <div class="img-ph"><strong>Cubic Zirconia Rings</strong><code>work_ring.jpg</code></div>
+      </div>
+      <div class="work-info">
+        <div class="work-tag">JEWELRY / 卸向け販促資料</div>
+        <div class="work-title">キュービックジルコニア ファッションリング</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-img">
+        <!--★ <img src="images/work_necklace.jpg" alt="ネックレス販促資料"> -->
+        <div class="img-ph"><strong>Cubic Zirconia Necklace</strong><code>work_necklace.jpg</code></div>
+      </div>
+      <div class="work-info">
+        <div class="work-tag">JEWELRY / 卸向け販促資料</div>
+        <div class="work-title">キュービックジルコニア ネックレス</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-img">
+        <!--★ <img src="images/work_slime.jpg" alt="スライム販促資料"> -->
+        <div class="img-ph"><strong>ふわとろスライム</strong><code>work_slime.jpg</code></div>
+      </div>
+      <div class="work-info">
+        <div class="work-tag">TOY / 卸向け販促資料</div>
+        <div class="work-title">ふわとろスライム 4種アソート</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-img">
+        <!--★ <img src="images/work_tote.jpg" alt="クリアトート販促資料"> -->
+        <div class="img-ph"><strong>CREAR TOTE クリアトート</strong><code>work_tote.jpg</code></div>
+      </div>
+      <div class="work-info">
+        <div class="work-tag">BAG / 夏商材 販促資料</div>
+        <div class="work-title">キッズクリアビーチトートバッグ</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-img">
+        <!--★ <img src="images/work_redbull.jpg" alt="RedBull販促資料"> -->
+        <div class="img-ph"><strong>Red Bull 販促資料</strong><code>work_redbull.jpg</code></div>
+      </div>
+      <div class="work-info">
+        <div class="work-tag">DRINK / 卸向け販促資料</div>
+        <div class="work-title">レッドブル 2種アソート</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-img">
+        <!--★ <img src="images/work_oikos.jpg" alt="oikos販促資料"> -->
+        <div class="img-ph"><strong>oikos プロテインドリンク</strong><code>work_oikos.jpg</code></div>
+      </div>
+      <div class="work-info">
+        <div class="work-tag">HEALTH / 卸向け販促資料</div>
+        <div class="work-title">oikosプロテインドリンクアソート</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATALOG FEATURE -->
+  <div class="catalog-feature">
+    <div class="catalog-mockup">
+      <!--
+        ★カタログのモックアップ画像を配置してください
+        例: <img src="images/catalog_mockup.jpg" alt="Janeカタログモックアップ">
+      -->
+      <div class="img-ph" style="background:linear-gradient(145deg,#2a2a2a,#111);">
+        <strong style="color:white;">📋 A4×8ページ カタログ モックアップ</strong>
+        <code style="color:#aaa;">images/catalog_mockup.jpg</code>
+      </div>
+    </div>
+    <div class="catalog-text">
+      <span class="catalog-badge">大型案件 実績</span>
+      <h3>A4×8ページ<br>約<em>30商品</em>を4日間で。</h3>
+      <p>
+        Jane（スクイーズプラネット）の卸向け商品カタログを一人で制作。
+        スクイーズ・食品・キャラクターグッズなど多品目を、
+        整理されながらも「手に取りたくなる」ビジュアルで構成した。<br><br>
+        商品写真の選定からコピーライティング・印刷対応データ納品まで一貫対応。
+        世界観を崩さず、情報量と見やすさを両立させることにこだわった。
+      </p>
+    </div>
+  </div>
+
+  <!-- FLOW -->
+  <div class="section-head">
+    <h2>制作の流れ</h2>
+    <span class="sub">HOW IT WORKS</span>
+  </div>
+  <div class="flow-grid">
+    <div class="flow-item">
+      <div class="flow-num">01</div>
+      <div class="flow-label">ヒアリング</div>
+      <div class="flow-text">商品の強みとターゲット、目的を丁寧にお伺いします</div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-num">02</div>
+      <div class="flow-label">ご提案・お見積り</div>
+      <div class="flow-text">目的に合った構成と金額をご提案します</div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-num">03</div>
+      <div class="flow-label">制作</div>
+      <div class="flow-text">世界観から逆算して、伝わる・売れるデザインに仕上げます</div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-num">04</div>
+      <div class="flow-label">納品・サポート</div>
+      <div class="flow-text">公開後も反応を見ながら改善提案まで対応します</div>
+    </div>
+  </div>
+
+  <div class="sticky-row">
+    <div class="sticky">
+      販促資料・バナー・カタログ・SNS画像<br>なんでもご相談ください！
+    </div>
+    <div class="sticky pink">
+      大阪府在住 / リモート全国対応<br>まずはDMからお気軽に ☺
+    </div>
+  </div>
+
+</div><!-- /main-wrap -->
+
+<!-- CONTACT -->
+<div class="contact-strip">
+  <h2>世界観で売れるデザイン、<br>一緒に作りませんか。</h2>
+  <p>販促資料 / バナー / SNS画像 / カタログ — まずはお気軽にご相談ください</p>
+  <div class="contact-links">
+    <a href="https://www.instagram.com/web.design_sasada.mai" class="contact-link primary">Instagram @web.design_sasada.mai</a>
+    <a href="https://www.tiktok.com/@sasakamaboko_1" class="contact-link">TikTok @sasakamaboko_1</a>
+    <a href="mailto:maimaimaitan88@gmail.com" class="contact-link">メールで相談する</a>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 SASADA MAI — ALL RIGHTS RESERVED</span>
+  <span>OSAKA, JAPAN</span>
+</footer>
+
+</body>
+</html>
